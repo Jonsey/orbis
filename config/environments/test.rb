@@ -1,10 +1,6 @@
-# Settings specified here will take precedence over those in config/environment.rb
-
-# The test environment is used exclusively to run your application's
-# test suite.  You never need to work with it otherwise.  Remember that
-# your test database is "scratch space" for the test suite and is wiped
-# and recreated between test runs.  Don't rely on the data there!
-config.cache_classes = true
+# I am putting this in to get through the 
+# See http://rails.lighthouseapp.com/projects/8994/tickets/802-eager-load-application-classes-can-block-migration
+config.cache_classes = (File.basename($0) == "rake") ? false : true
 
 # Log error messages when you accidentally call methods on nil.
 config.whiny_nils = true
@@ -22,7 +18,8 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-# Use SQL instead of Active Record's schema dumper when creating the test database.
-# This is necessary if your schema can't be completely dumped by the schema dumper,
-# like if you have constraints or database-specific column types
-# config.active_record.schema_format = :sql
+config.gem "rspec", :lib => false, :version => ">= 1.2.9"
+config.gem "rspec-rails", :lib => false, :version => ">= 1.2.9"
+
+config.gem "cucumber", :lib => false, :version => ">= 0.4.2"
+config.gem "webrat", :lib => false, :version => ">= 0.5.3"
