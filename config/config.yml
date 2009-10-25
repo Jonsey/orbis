@@ -1,0 +1,18 @@
+development: &local
+    site_name: Starter app
+    site_domain: "localhost:3000"
+    site_title: Starter app title
+    site_tag: Starter app tag
+    admin_email: admin@starterapp.com
+    accounts_email: accounts@starterapp.com
+    info_email: info@starterapp.com
+    dev_email: damianajones@yahoo.co.uk
+
+test:
+  <<: *local
+  site_domain: www.starterapp.com
+
+production:
+  <<: *local
+  site_domain: www.starterapp.com
+

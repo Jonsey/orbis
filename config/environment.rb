@@ -3,6 +3,10 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  config.gem 'configatron'
+  config.gem "authlogic"
+  config.gem "markup-validity"
+  config.gem "tidy-table"
 
   config.time_zone = 'UTC'
 
