@@ -3,7 +3,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   filter_parameter_logging :password, :password_confirmation
-  helper_method :current_user_session, :current_user
+  helper_method \
+  :current_user_session, :current_user,
+  :logged_in?, :current_user_is_admin?
+
+  protected
+
+  def clear_authlogic_session
+    sess = current_user_session
+    sess.destroy if sess
+  end
 
   private
     def current_user_session
@@ -24,7 +33,7 @@ class ApplicationController < ActionController::Base
         return false
       end
     end
- 
+
     def require_no_user
       if current_user
         store_location
@@ -33,11 +42,11 @@ class ApplicationController < ActionController::Base
         return false
       end
     end
-    
+
     def store_location
       session[:return_to] = request.request_uri
     end
-    
+
     def redirect_back_or_default(default)
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil

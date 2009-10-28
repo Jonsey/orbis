@@ -2,6 +2,25 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environment'))
 require 'spec/autorun'
 require 'spec/rails'
+require 'lockdown/rspec_helper'
+module Lockdown
+  module RspecHelper
+    def mock_user_group
+      mock_model(UserGroup)
+    end
+
+    def mock_user
+      mock_model  User,
+                  :login => 'John',
+                  :email  => 'email@example.com',
+                  :password   => "mysecret",
+                  :password_confirmation   => "mysecret",
+                  :null_object => true
+    end
+  end
+end
+
+include Lockdown::RspecHelper
 
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'

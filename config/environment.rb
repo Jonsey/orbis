@@ -5,8 +5,9 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
   config.gem 'configatron'
   config.gem "authlogic"
-  config.gem "markup-validity"
-  config.gem "tidy-table"
+  config.gem "lockdown"
+  config.gem "markup_validity"
+  config.gem "tidy_table"
 
   config.time_zone = 'UTC'
 

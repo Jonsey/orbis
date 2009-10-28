@@ -1,1 +1,19 @@
+<%= page_title 'Login' %>
 
+<% form_for @user_session, :url => user_session_path do |f| %>
+  <%= f.error_messages %>
+
+  <div>
+    <%= f.label :login %>
+    <%= f.text_field :login %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class='buttons clearfix'>
+    <%= f.submit 'Login' %>
+  </div>
+<% end %>

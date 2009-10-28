@@ -5,8 +5,8 @@ Feature:  Register a new user
 
   Background:
   Given the following users already exist:
-  | login  | email             | password     |
-  | norman | normal@norman.com | normalnorman |
+  | login  | email             | password     | usergroup |
+  | norman | normal@norman.com | normalnorman |           |
 
   Scenario: enter valid registration details
     Given I am on the registration page
