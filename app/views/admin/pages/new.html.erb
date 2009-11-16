@@ -1,0 +1,6 @@
+<% form_for [:admin, @page] do |f| %>
+<%= render :partial => 'form', :locals => { :f => f } %>
+<div>
+  <%= f.submit "Create" %>
+</div>
+<% end %>

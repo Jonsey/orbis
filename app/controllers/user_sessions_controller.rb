@@ -1,5 +1,4 @@
 class UserSessionsController < ApplicationController
-  after_filter :set_lockdown_values, :only => :create
 
   def new
     @user_session = UserSession.new
@@ -9,7 +8,8 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:success] = "Welcome #{current_user.login}"
-      redirect_to account_path
+      set_lockdown_values
+      redirect_to admin_pages_path
     else
       render :action => :new
     end

@@ -1,0 +1,30 @@
+<div class="create-new-page">
+<fieldset>
+<%= f.error_messages %>
+<div class="row">
+  <div class="cell">
+   <%= f.label :proposed_parent_id %>
+   <%= f.collection_select :proposed_parent_id, Page.all, :id, :name, :include_blank => true %>
+ </div>
+</div>
+
+<div class="row">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+<div class="row">
+  <%= f.label :controller %>
+  <%= f.text_field :controller %>
+</div>
+<div class="row">
+  <%= f.label :action %>
+  <%= f.text_field :action %>
+</div>
+<div class="row">
+  <%= f.label :parameters %>
+  <%= f.text_field :parameters %>
+</div>
+
+
+</fieldset>
+</div>

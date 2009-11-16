@@ -3,6 +3,10 @@ require File.expand_path(File.join(File.dirname(__FILE__),'..','config','environ
 require 'spec/autorun'
 require 'spec/rails'
 require 'lockdown/rspec_helper'
+require "authlogic/test_case" # include at the top of test_helper.rb
+
+include Authlogic::TestCase
+
 module Lockdown
   module RspecHelper
     def mock_user_group

@@ -22,9 +22,9 @@ class CreateUsers < ActiveRecord::Migration
 
     usr = User.create \
               :login => 'admin',
-              :email => 'admin@yoursite.com',
-              :password => 'betterpassword',
-              :password_confirmation => 'betterpassword'
+              :email => 'damianajones@yahoo.co.uk',
+              :password => 'orgone642',
+              :password_confirmation => 'orgone642'
 
     add_index :users, :login
     add_index :users, :persistence_token

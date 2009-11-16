@@ -2,7 +2,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: StarterHerUp_development
+  database: orbis_development
   pool: 5
   username: root
   password:
@@ -12,7 +12,7 @@ test: &TEST
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: StarterHerUp_test
+  database: orbis_test
   pool: 5
   username: root
   password:
@@ -22,7 +22,7 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: StarterHerUp_production
+  database: orbis_production
   pool: 5
   username: root
   password:

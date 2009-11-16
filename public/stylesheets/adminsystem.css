@@ -1,0 +1,93 @@
+/* 
+-----------------------------------------------
+
+Rural & Web Admin System v1.0 - Master Stylesheet
+Author:   Finn Beales - finn@ruralandweb.com
+Version:  11/2009
+
+
+CONTENTS:
+
+
+----------------------------------------------- */
+
+body { background:#eee url(../images/bg-body.png) top repeat-x; font-family:Arial, Tahoma, Verdana, sans-serif; }
+#header { -webkit-text-stroke:1px transparent; float:none; overflow:hidden; }
+@media only screen and (max-device-width:480px) {
+body {
+-webkit-text-stroke:0 black;
+}
+}
+
+#nav-main, #nav-sub, #content, #footer { float:none; overflow:hidden; display:block; }
+input[type="checkbox"], input[type="radio"], input.checkbox, input.radio { top:0; }
+#header h1 			{ float:left; margin:40px 0 0 12px; color:#fff; padding:0 0 2px; }
+#nav-global 		{ float:right; margin-top:5px; }
+#nav-global ul 	{ list-style:none; overflow:hidden; margin:0 0 0 10px; padding:0 0 0 1px; height:1%; }
+#nav-global ul li { float:left; display:inline; margin:0 19px 0 -10px; padding:0 0 0 9px; background:url(../images/devider-nav-global.gif) no-repeat 0 50%; }
+#nav-global ul a 	{ color:#fff; }
+#nav-global .active { font-weight:bold; }
+#nav-main ul 		{ list-style:none; overflow:hidden; margin:32px 0 0 10px; padding:0; height:36px; }
+#nav-main ul li 	{ float:left; display:inline; margin:0 0 0 -2px; background:url(../images/devider-nav-main.gif) no-repeat 0 1px; }
+#nav-main ul a 	{ text-transform:uppercase; color:#fff; float:left; height:26px; padding:10px 17px 0; font-weight:bold; }
+#nav-main ul li.active { background:#fff; color:#000; margin:0 -2px; position:relative; background:url(../images/nav-main-active.gif) no-repeat; }
+#nav-main ul li.active a { color:#000; padding:10px 19px 0; background:url(../images/nav-main-active.gif) no-repeat 100% 100%; }
+#nav-sub ul 		{ list-style:none; overflow:hidden; margin:8px 0 0 10px; padding:0; }
+#nav-sub ul li 	{ float:left; margin-right:18px; padding:0 10px; }
+#nav-sub ul a 		{ color:#999; font-weight:bold; }
+#nav-sub ul a:hover { color:#333; text-decoration:none; }
+#nav-sub ul li.active a { color:#333; }
+#content .head 	{ border-bottom:1px solid #eaeaea; width:930px; margin:30px 0 0 10px; }
+#content h2 		{ background-color:#f4f4f4; font-size:14px; font-weight:bold; text-transform:uppercase; padding:17px 0 17px 17px; margin:0; border:1px solid #fff; }
+#canvas 				{ width:896px; background-color:#fff; border:1px solid #eaeaea; border-top:none; margin:0 0 0 9px; padding:17px; }
+
+table.tbl-standard th { background-color:#f2f1ed; border-bottom:1px solid #e6e7e0; padding:15px 0 10px 10px; }
+table.tbl-standard td { padding:10px 0 15px 10px; }
+
+
+#tabs .tabset 		{ margin:9px 0 0; padding:0; list-style:none; text-transform:uppercase; overflow:hidden; line-height:30px; float:left; }
+#tabs .tabset li 	{ float:left; background:#fff; border:1px solid #f5f5f5; border-bottom:none; }
+#tabs .tabset a 	{ color:#666; background:#eee; border:1px solid #fff; border-bottom:none; float:left; padding:0 18px 1px; text-decoration:none; outline:none; }
+#tabs .tabset a:hover { color:#000; background:#fff; }
+#tabs .tabset li.active { margin:2px 0 0; border:1px solid #e4e4e4; border-bottom:none; }
+#tabs .tabset li.active a { background:#fff; color:#333; padding:0 18px; font-weight:bold; }
+
+.viewing-records 	{ border:1px solid #e4e4e4; border-top:none; overflow:hidden; height:1%; color:#666; margin:0 0 17px; padding:10px 10px 10px 16px; }
+
+.find 				{ margin:0; padding:0; float:right; }
+.find fieldset 	{ margin:0; padding:0; border:none; float:left; }
+.find label 		{ float:left; font-weight:normal; margin:2px 15px 0 0; }
+.find .text 		{ float:left; margin:0; padding:2px 5px; width:134px; font:12px/14px Arial, Tahoma, sans-serif; }
+
+.holder-tabs 		{ width:100%; overflow:hidden; background:url(../images/border.gif) repeat-x 0 100%; }
+
+.btn-del, .btn-create { float:left; overflow:hidden; color:#666; line-height:14px; background:url(../images/btn-del.gif) no-repeat; padding:0 0 0 31px; }
+.btn-del span, .btn-create span { float:left; padding:9px 10px 8px 0; cursor:pointer; background:url(../images/btn-del.gif) no-repeat 100% 100%; }
+.btn-del:hover, .btn-create:hover { text-decoration:underline; color:#666; }
+.btn-create 		{ background:url(../images/btn-create.gif) no-repeat; }
+.btn-create span 	{ background:url(../images/btn-create.gif) no-repeat 100% 100%; }
+
+.holder-tabs .btn-del { float:right; }
+
+.tbl-standard h4 	{ color:#900; margin:0; font-size:1em; line-height:1; }
+
+#create-new-user 	{ width:929px; border:1px solid #eaeaea; border-bottom:none; border-right-color:#fff; border-top:none; margin:-2px 0 0 9px; position:relative; overflow:hidden; background:#f4f4f4 url(../images/border-white.gif) repeat-x 0 100%; }
+#create-new-user .breadcrumb { margin:0 0 0 -1px; padding:10px 0 0; list-style:none; width:186px; float:right; color:#333; font-weight:bold; position:relative; }
+
+* html #create-new-user .breadcrumb { margin-left:-4px; }
+
+#create-new-user .breadcrumb li { padding:9px 0 9px 24px; margin:1px 0 0; background:#e8e8e8; }
+#create-new-user .breadcrumb li.active { background:#d1d1d1 url(../images/bread-active.gif) no-repeat 0 50%; }
+.create-new-user { margin:0; padding:17px; border:none; overflow:hidden; height:1%; color:#666; border:1px solid #e8e8e8; border-right:none; background:#fff url(../images/border.gif) repeat-y 100% 0; }
+.create-new-user form { margin:0; padding:0; }
+.create-new-user fieldset { margin:0; padding:0; border:none; }
+.create-new-user .row { width:100%; overflow:hidden; padding:0 0 15px; margin:6px 0 0; }
+.create-new-user .cell { width:150px; padding:0 20px 0 0; float:left; }
+.create-new-user .auto-id { margin:0 0 0 10px; }
+.create-new-user label { display:block; padding:0 0 5px; }
+.create-new-user .text { margin:0; padding:2px 5px; width:134px; font:12px/14px Arial, Tahoma, sans-serif; }
+
+
+#footer 			{ padding:3px 0 20px; margin:22px 0 0; background:url(../images/bg-footer.gif) no-repeat 12px 0; }
+#footer p 		{ color:#666; margin:0 0 0 43px; }
+#footer a 		{ color:#900; }

@@ -10,7 +10,11 @@ development: &local
 
 test:
   <<: *local
-  site_domain: www.starterapp.com
+  site_domain: "localhost:3000"
+
+cucumber:
+  <<: *local
+  site_domain: "localhost:3000"
 
 production:
   <<: *local

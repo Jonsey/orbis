@@ -1,16 +1,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <%= html_title configatron.site_name %>
 
+
+    <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
+    <%= stylesheet_link_tag 'adminsystem.css', :media => 'screen' %>
+    <!--[if IE]><%= stylesheet_link_tag 'ie.css', :media => "screen, projection" %><![endif]-->
     <%= stylesheet_link_tag 'application.css', :media => 'screen, projection' %>
+
+    <%= javascript_include_tag "prototype" %>
+    <%= javascript_include_tag 'jquery' %>
+    <%= javascript_include_tag 'jquery.livequery' %>
+
+    <script type="text/javascript">
+      var $j = jQuery.noConflict();
+    </script>
+
+    <%= yield :tinymce %>
+    <%= javascript_include_tag "scriptaculous" %>
+    <%= javascript_include_tag "effects" %>
+    <%= javascript_include_tag "controls" %>
+    <%= javascript_include_tag "tabs" %>
+    <%= yield :tinymce_init %>
 
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= display_flash %>
-    <%= yield %>
+    <div class="container">
+      <div class="span-24 last" id="header">
+        <h1>Orbis Resourcing Website</h1>
+        <div class="span-7" id="nav-global">
+          <%= render :partial => 'layouts/account_bar' %>
+        </div><!-- / nav-global -->
+      </div><!-- / header -->
+
+      <div class="span-24" id="nav-main">
+        <%= render_nav_main %>
+      </div><!-- / nav-main -->
+
+      <div class="span-24" id="nav-sub">
+        <%= render_nav_sub %>
+      </div><!-- / nav-sub -->
+
+      <div class="span-24" id="content">
+        <div class="head">
+          <%= yield :page_title %>
+        </div>
+        <div id="canvas">
+          <%= display_flash %>
+          <%= yield %>
+        </div> <!-- / canvas -->
+      </div><!-- / content -->
+    </div><!-- / container -->
   </body>
 </html>
