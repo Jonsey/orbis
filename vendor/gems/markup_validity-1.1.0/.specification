@@ -1,0 +1,186 @@
+--- !ruby/object:Gem::Specification 
+name: markup_validity
+version: !ruby/object:Gem::Version 
+  version: 1.1.0
+platform: ruby
+authors: 
+- Aaron Patterson
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-08-06 00:00:00 +01:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: nokogiri
+  type: :runtime
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 1.3.1
+    version: 
+- !ruby/object:Gem::Dependency 
+  name: hoe
+  type: :development
+  version_requirement: 
+  version_requirements: !ruby/object:Gem::Requirement 
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        version: 2.3.2
+    version: 
+description: |-
+  MarkupValidity provides test/unit and rspec helpers for checking the validity
+  of your documents.  Shortcuts for verifying xhtml-transitional and
+  xhtml-strict documents are provided as well.  MarkupValidity will not only
+  tell you when your document is invalid, but it will tell you what it *should*
+  be.
+email: 
+- aaronp@rubyforge.org
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- Manifest.txt
+- CHANGELOG.rdoc
+- README.rdoc
+files: 
+- .autotest
+- CHANGELOG.rdoc
+- Manifest.txt
+- README.rdoc
+- Rakefile
+- lib/markup_validity.rb
+- lib/markup_validity/MarkUp.html
+- lib/markup_validity/SCHEMA.html
+- lib/markup_validity/assertions.rb
+- lib/markup_validity/examples.html
+- lib/markup_validity/rspec.rb
+- lib/markup_validity/templates.html
+- lib/markup_validity/validator.rb
+- lib/markup_validity/xframes-1.xsd
+- lib/markup_validity/xhtml-access-1.xsd
+- lib/markup_validity/xhtml-applet-1.xsd
+- lib/markup_validity/xhtml-attribs-1.xsd
+- lib/markup_validity/xhtml-base-1.xsd
+- lib/markup_validity/xhtml-basic-form-1.xsd
+- lib/markup_validity/xhtml-basic-table-1.xsd
+- lib/markup_validity/xhtml-basic10-model-1.xsd
+- lib/markup_validity/xhtml-basic10-module-redefines-1.xsd
+- lib/markup_validity/xhtml-basic10-modules-1.xsd
+- lib/markup_validity/xhtml-basic10.xsd
+- lib/markup_validity/xhtml-basic11-model-1.xsd
+- lib/markup_validity/xhtml-basic11-modules-1.xsd
+- lib/markup_validity/xhtml-basic11.xsd
+- lib/markup_validity/xhtml-bdo-1.xsd
+- lib/markup_validity/xhtml-blkphras-1.xsd
+- lib/markup_validity/xhtml-blkpres-1.xsd
+- lib/markup_validity/xhtml-blkstruct-1.xsd
+- lib/markup_validity/xhtml-charent-1.xsd
+- lib/markup_validity/xhtml-copyright-1.xsd
+- lib/markup_validity/xhtml-csismap-1.xsd
+- lib/markup_validity/xhtml-datatypes-1.xsd
+- lib/markup_validity/xhtml-edit-1.xsd
+- lib/markup_validity/xhtml-events-1.xsd
+- lib/markup_validity/xhtml-form-1.xsd
+- lib/markup_validity/xhtml-frames-1.xsd
+- lib/markup_validity/xhtml-framework-1.xsd
+- lib/markup_validity/xhtml-hypertext-1.xsd
+- lib/markup_validity/xhtml-iframe-1.xsd
+- lib/markup_validity/xhtml-image-1.xsd
+- lib/markup_validity/xhtml-inlphras-1.xsd
+- lib/markup_validity/xhtml-inlpres-1.xsd
+- lib/markup_validity/xhtml-inlstruct-1.xsd
+- lib/markup_validity/xhtml-inlstyle-1.xsd
+- lib/markup_validity/xhtml-inputmode-1.xsd
+- lib/markup_validity/xhtml-lat1.ent
+- lib/markup_validity/xhtml-legacy-1.xsd
+- lib/markup_validity/xhtml-link-1.xsd
+- lib/markup_validity/xhtml-list-1.xsd
+- lib/markup_validity/xhtml-meta-1.xsd
+- lib/markup_validity/xhtml-metaAttributes-1.xsd
+- lib/markup_validity/xhtml-misc-1.xsd
+- lib/markup_validity/xhtml-nameident-1.xsd
+- lib/markup_validity/xhtml-notations-1.xsd
+- lib/markup_validity/xhtml-object-1.xsd
+- lib/markup_validity/xhtml-param-1.xsd
+- lib/markup_validity/xhtml-pres-1.xsd
+- lib/markup_validity/xhtml-print-1.xsd
+- lib/markup_validity/xhtml-print-model-1.xsd
+- lib/markup_validity/xhtml-print-modules-1.xsd
+- lib/markup_validity/xhtml-rdfa-1.dtd
+- lib/markup_validity/xhtml-rdfa-1.xsd
+- lib/markup_validity/xhtml-rdfa-model-1.xsd
+- lib/markup_validity/xhtml-rdfa-modules-1.xsd
+- lib/markup_validity/xhtml-ruby-1.xsd
+- lib/markup_validity/xhtml-ruby-basic-1.xsd
+- lib/markup_validity/xhtml-script-1.xsd
+- lib/markup_validity/xhtml-special.ent
+- lib/markup_validity/xhtml-ssismap-1.xsd
+- lib/markup_validity/xhtml-struct-1.xsd
+- lib/markup_validity/xhtml-style-1.xsd
+- lib/markup_validity/xhtml-symbol.ent
+- lib/markup_validity/xhtml-table-1.xsd
+- lib/markup_validity/xhtml-target-1.xsd
+- lib/markup_validity/xhtml-text-1.xsd
+- lib/markup_validity/xhtml1-strict.dtd
+- lib/markup_validity/xhtml1-strict.xsd
+- lib/markup_validity/xhtml1-transitional.dtd
+- lib/markup_validity/xhtml1-transitional.xsd
+- lib/markup_validity/xhtml11-model-1.xsd
+- lib/markup_validity/xhtml11-module-redefines-1.xsd
+- lib/markup_validity/xhtml11-modules-1.xsd
+- lib/markup_validity/xhtml11.xsd
+- lib/markup_validity/xhtml2.xsd
+- lib/markup_validity/xml-events-1.xsd
+- lib/markup_validity/xml-events-2.xsd
+- lib/markup_validity/xml-events-attribs-1.xsd
+- lib/markup_validity/xml-events-attribs-2.xsd
+- lib/markup_validity/xml-events-copyright-1.xsd
+- lib/markup_validity/xml-events-copyright-2.xsd
+- lib/markup_validity/xml-handlers-1.xsd
+- lib/markup_validity/xml-handlers-2.xsd
+- lib/markup_validity/xml-script-1.xsd
+- lib/markup_validity/xml.xsd
+- spec/matcher_spec.rb
+- test/assets/invalid_entity.xhtml
+- test/assets/invalid_entity_transitional.xhtml
+- test/assets/order.xml
+- test/assets/shipment.xsd
+- test/helper.rb
+- test/test_markup_validity.rb
+has_rdoc: true
+homepage: http://github.com/tenderlove/markup_validity
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --main
+- README.rdoc
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      version: "0"
+  version: 
+requirements: []
+
+rubyforge_project: seattlerb
+rubygems_version: 1.3.5
+signing_key: 
+specification_version: 3
+summary: MarkupValidity provides test/unit and rspec helpers for checking the validity of your documents
+test_files: 
+- test/test_markup_validity.rb

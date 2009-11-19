@@ -1,5 +1,13 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
-en:
-  hello: "Hello world"
+"en":
+  activerecord:
+    errors:
+      template:
+        header:
+          one:    "{{model}} is not valid"
+          other:  "There are {{count}} errors prohibited this {{model}} from being saved"
+        # The variable :count is also available
+        body: "There were problems with the following fields:"
+      messages:
+        blank: "is required"

@@ -1,0 +1,101 @@
+= markup_validity
+
+* http://github.com/tenderlove/markup_validity
+
+== DESCRIPTION:
+
+MarkupValidity provides test/unit and rspec helpers for checking the validity
+of your documents.  Shortcuts for verifying xhtml-transitional and
+xhtml-strict documents are provided as well.  MarkupValidity will not only
+tell you when your document is invalid, but it will tell you what it *should*
+be.
+
+== FEATURES/PROBLEMS:
+
+* Make sure that markup_validity is required *after* test/unit, or mix
+  MarkupValidity::Assertions in to your test class yourself.
+* Currently AWESOME!
+
+== SYNOPSIS:
+
+  ###
+  # test/unit example
+  require 'test/unit'
+  require 'rubygems'
+  require 'markup_validity'
+
+  class ValidHTML < Test::Unit::TestCase
+    def test_i_can_has_valid_xhtml
+      assert_xhtml_transitional xhtml_document
+    end
+  end
+
+  ###
+  # rspec example
+  require 'rubygems'
+  require 'markup_validity'
+
+  describe "my XHTML document" do
+    it "can has transitional xhtml" do
+      xhtml_document.should be_xhtml_transitional
+    end
+  end
+
+  ###
+  # Rails controller test example
+  require 'test_helper'
+  require 'markup_validity'
+  
+  class AwesomeControllerTest < ActionController::TestCase
+    test "valid markup" do
+      get :new
+      assert_xhtml_transitional @response.body
+    end
+  end
+
+  ###
+  # Here is an example error report
+
+  Error on line: 7:
+  Element 'p': This element is not expected. Expected is one of ( a, br, span, bdo, object, applet, img, map, iframe, tt ).
+  
+  6:     <p>
+  7:       <p>
+  8:         Yo dawg, I heard you like p-tags
+  9:       </p>
+  10:     </p>
+  .
+  <false> is not true.
+
+== REQUIREMENTS:
+
+* depends on nokogiri
+
+== INSTALL:
+
+* gem install markup_validity
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2009 Aaron Patterson
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

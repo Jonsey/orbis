@@ -11,6 +11,18 @@ module NavigationHelpers
       admin_path
     when /the admin pages list/
       admin_pages_path
+    when /the new vacancy page/
+      new_admin_vacancy_path
+    when /the draft vacancies page/
+      admin_vacancies_path('status' => 'draft')
+    when /the vacancies awaiting approval page/
+      admin_vacancies_path('status' => 'awaiting_approval')
+    when /the live vacancies page/
+      admin_vacancies_path('status' => 'live')
+    when /the archived vacancies page/
+      admin_vacancies_path('status' => 'archived')
+    when /the edit vacancy page for "([^\"]*)"$/i
+      edit_admin_vacancy_path(Vacancy.find_by_title($1))
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

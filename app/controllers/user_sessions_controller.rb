@@ -6,10 +6,10 @@ class UserSessionsController < ApplicationController
 
   def create
     @user_session = UserSession.new(params[:user_session])
-    if @user_session.save
+    if @user_session.save!
       flash[:success] = "Welcome #{current_user.login}"
       set_lockdown_values
-      redirect_to admin_pages_path
+      redirect_to successful_login_path
     else
       render :action => :new
     end
@@ -17,6 +17,15 @@ class UserSessionsController < ApplicationController
 
 
   private
+
+  def successful_login_path
+    case current_user
+      when Client; new_admin_vacancy_path
+      when Candidate; admin_vacancies_url(:status => :live)
+      else admin_pages_path if current_user_is_admin?
+    end
+  end
+
 
   def set_lockdown_values
     if user = @user_session.user

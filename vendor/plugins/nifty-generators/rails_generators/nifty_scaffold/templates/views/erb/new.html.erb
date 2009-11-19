@@ -1,0 +1,10 @@
+<%% title "New <%= singular_name.titleize %>" %>
+<div class="create-new-<%= singular_name %>">
+  <fieldset>
+    <%= render_form %>
+
+    <%- if action? :index -%>
+    <p><%%= link_to "Back to List", <%= plural_name %>_path %></p>
+    <%- end -%>
+  </fieldset>
+</div>

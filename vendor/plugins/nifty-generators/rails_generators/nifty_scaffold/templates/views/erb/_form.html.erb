@@ -1,0 +1,9 @@
+<%% formatted_form_for @<%= singular_name %> do |f| %>
+  <%%= f.error_messages %>
+<%- for attribute in attributes -%>
+  <div class="row">
+    <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
+  </div>
+<%- end -%>
+  <p><%%= f.submit "Submit" %></p>
+<%% end %>

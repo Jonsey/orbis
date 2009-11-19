@@ -1,5 +1,22 @@
 module ApplicationHelper
 
+  def use_tinymce
+    @content_for_tinymce = ""
+    content_for :tinymce do
+      javascript_include_tag "tiny_mce/tiny_mce"
+    end
+    @content_for_tinymce_init = ""
+    content_for :tinymce_init do
+      javascript_include_tag "mce_editor"
+    end
+  end
+
+  def my_page_title(title)
+    content_for :page_title do
+      page_title(title, 'H2')
+    end
+  end
+
   def link_tree(collection)
     render_tree_from(collection, nil) do |item|
       link_to(item.name, edit_polymorphic_path([:admin, item]))
@@ -70,7 +87,7 @@ module ApplicationHelper
       arr << %(>)
       arr << link_to(text, path)
       arr << %(</li>\r\n)
-    end
+    end unless current_menu.nil?
   end
 
 end

@@ -19,7 +19,7 @@ Feature: User login
 
   Scenario: Login in as client
     Given I am logged in as a client
-    Then I should be on the client draft vacancies list
+    Then I should be on the new vacancy page
     And the main menu should contain the following links:
     | name      | link                       | class  |
     | Vacancies | admin_client_vacancies_url | active |
@@ -31,7 +31,7 @@ Feature: User login
 
   Scenario: Login in as candidate
     Given I am logged in as a candidate
-    Then I should be on the live vacancies list
+    Then I should be on the live vacancies page
     And the main menu should contain the following links:
     | name      | link                          | class  |
     | Vacancies | admin_candidate_vacancies_url | active |

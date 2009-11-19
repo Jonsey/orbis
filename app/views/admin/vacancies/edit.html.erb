@@ -1,0 +1,11 @@
+<% use_tinymce -%>
+<%= my_page_title 'Edit Vacancy' %>
+
+<% form_for [:admin, @vacancy] do |f| %>
+
+<%= render :partial => 'form', :locals => { :f => f } %>
+
+<div>
+  <%= f.submit "Update" %>
+</div>
+<% end %>
