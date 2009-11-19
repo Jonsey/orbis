@@ -5,6 +5,8 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the client signup page/
+      client_registration_path
     when /the login page/
       login_path
     when /the admin dashboard/
