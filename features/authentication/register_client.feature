@@ -16,7 +16,7 @@ Feature: Register client
     And I fill in "Password confirmation" with "password"
     And I press "Register"
     Then I should see "Account created"
-    And I should be on my client dashboard
+    And I should be on the upload my cv page
 
   Scenario: invalid registration details
     Given I am on the client signup page
