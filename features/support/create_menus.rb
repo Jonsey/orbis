@@ -10,3 +10,4 @@ new_page = Page.create!(:name => 'New', :proposed_parent_id => pages, :controlle
 vacancies = Page.create!(:name => 'Vacancies', :proposed_parent_id => root, :controller => 'admin/vacancies', :action => 'index')
 list_vacancies = Page.create!(:name => 'List', :proposed_parent_id => vacancies, :controller => 'admin/vacancies', :action => 'index')
 new_vacancy = Page.create!(:name => 'New', :proposed_parent_id => vacancies, :controller => 'admin/vacancies', :action => 'new')
+edit_vacancy = Page.create!(:name => 'Edit', :proposed_parent_id => list_vacancies, :controller => 'admin/vacancies', :action => 'edit', :parameters => 'id')
