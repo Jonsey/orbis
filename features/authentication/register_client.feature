@@ -16,7 +16,7 @@ Feature: Register client
     And I fill in "Password confirmation" with "password"
     And I press "Register"
     Then I should see "Account created"
-    And I should be on the upload my cv page
+    And I should be on the new vacancy page page
 
   Scenario: invalid registration details
     Given I am on the client signup page
