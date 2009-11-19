@@ -1,0 +1,30 @@
+<% my_page_title "New Candidate" %>
+<div class="create-new-candidate">
+  <fieldset>
+    <% formatted_form_for @candidate do |f| %>
+    <%= f.error_messages %>
+    <div class="row">
+      <%= f.text_field :login %>
+    </div>
+    <div class="row">
+      <%= f.text_field :email %>
+    </div>
+    <div class="row">
+      <%= f.text_field :password %>
+    </div>
+    <div class="row">
+      <%= f.text_field :password_confirmation %>
+    </div>
+    <div class="row">
+      <%= f.text_field :firstname %>
+    </div>
+    <div class="row">
+      <%= f.text_field :lastname %>
+    </div>
+    <div class="row">
+      <%= f.text_field :telephone %>
+    </div>
+    <p><%= f.submit "Register" %></p>
+<% end %>
+  </fieldset>
+</div>

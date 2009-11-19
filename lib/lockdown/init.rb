@@ -10,6 +10,7 @@ Lockdown::System.configure do
 
   set_permission(:signup).
     with_controller(:clients).
+    and_controller(:candidates).
     only_methods(:new, :create)
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
