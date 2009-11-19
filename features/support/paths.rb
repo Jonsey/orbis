@@ -7,6 +7,8 @@ module NavigationHelpers
       '/'
     when /the client signup page/
       client_registration_path
+    when /the candidate signup page/
+      candidate_registration_path
     when /the login page/
       login_path
     when /the admin dashboard/
