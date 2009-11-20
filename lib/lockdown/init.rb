@@ -8,6 +8,10 @@ Lockdown::System.configure do
     with_controller(:user_sessions).
     only_methods(:new, :create)
 
+  set_permission(:logout).
+    with_controller(:user_sessions).
+    only_methods(:destroy)
+
   set_permission(:signup).
     with_controller(:clients).
     and_controller(:candidates).
@@ -50,7 +54,7 @@ Lockdown::System.configure do
   # Built-in user groups
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   set_public_access :login, :signup
-  set_protected_access :view_vacancies, :my_account
+  set_protected_access :view_vacancies, :my_account, :logout
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Define user groups
