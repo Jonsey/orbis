@@ -25,12 +25,27 @@ class Admin::VacanciesController < ApplicationController
     @vacancy = Vacancy.find_by_id(params[:id])
   end
 
+  def update
+    @vacancy = Vacancy.find(params[:id])
+    @vacancy.update_attributes(params[:vacancy])
+
+    if params[:commit] == "Submit for approval"
+      @vacancy.submit_for_approval!
+      flash[:success] = "Vacancy updated and submitted for approval"
+    else
+      flash[:success] = "Vacancy updated"
+    end
+
+    redirect_to [:admin, @vacancy]
+  end
+
   def index
     @status = params[:status] ||= 'draft'
     @vacancies = Vacancy.find_by_owner_and_status(current_user.id, @status)
   end
 
   def show
+    @vacancy = Vacancy.find_by_id(params[:id])
   end
 
   def destroy

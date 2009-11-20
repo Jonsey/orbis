@@ -1,4 +1,4 @@
-@vacancies @c
+@vacancies
 Feature: Menu display when editing a vacancy
 In order to access other areas of the site
 vacancy editor will need the correct menu to be rendered
