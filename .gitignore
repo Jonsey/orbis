@@ -9,3 +9,4 @@ log/*.log
 public/cache/*
 .DS_Store
 *~
+*_flymake*
