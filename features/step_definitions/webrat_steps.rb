@@ -181,7 +181,7 @@ Then /^the "([^\"]*)" checkbox should not be checked$/ do |label|
 end
 
 Then /^I should be on (.+)$/ do |page_name|
-  URI.parse(current_url).request_uri.should == path_to(page_name)
+(URI(current_url).absolute? ? URI(current_url).request_uri : current_url).should == path_to(page_name)
 end
 
 Then /^show me the page$/ do
