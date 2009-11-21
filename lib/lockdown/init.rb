@@ -22,7 +22,7 @@ Lockdown::System.configure do
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   set_permission(:my_account).
     with_controller(:users).
-    only_methods(:show).
+    only_methods(:show, :edit).
       to_model(:user).where(:id).equals(:current_user_id)
 
 

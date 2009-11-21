@@ -18,6 +18,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find_by_id(params[:id])
+  end
+
+  def update
+    @user = User.find_by_id(params[:id])
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Account updated!"
+      redirect_to @user
+    else
+      render :action => :edit
+    end
+  end
+
+
   def show
     @user = current_user
   end
