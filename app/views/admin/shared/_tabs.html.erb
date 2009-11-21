@@ -1,12 +1,11 @@
 <div id="tabs">
   <div class="holder-tabs">
     <ul class="tabset">
-      <%= li_tab 'Drafts', admin_vacancies_path(:status => :draft) %>
-      <%= li_tab 'Awaiting approval', admin_vacancies_path(:status => :awaiting_approval) %>
-      <%= li_tab 'Live', admin_vacancies_path(:status => :live) %>
-      <%= li_tab 'Archived', admin_vacancies_path(:status => :archived) %>
+      <%= render_vacancy_tabs %>
     </ul>
+    <% unless current_user.is_a?(Candidate) -%>
     <a class="btn-del" href="#"><span>Delete selected</span></a>
+    <% end -%>
   </div><!-- / holder-tabs -->
   <%= yield :tabbed_content %>
 </div><!-- / tabs -->

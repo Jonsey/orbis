@@ -17,6 +17,8 @@ module NavigationHelpers
       admin_pages_path
     when /the new vacancy page/
       new_admin_vacancy_path
+    when /the admin vacancies page/
+      admin_vacancies_path
     when /the draft vacancies page/
       admin_vacancies_path('status' => 'draft')
     when /the vacancies awaiting approval page/

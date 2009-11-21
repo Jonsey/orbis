@@ -29,6 +29,16 @@ When /^I login as "([^\"]*)"$/ do |login|
   click_button "Login"
 end
 
+Given /^I am logged in with admin rights$/ do
+  user = Factory.create(:user)
+  Lockdown::System.make_user_administrator(user)
+
+  visit login_path
+  fill_in "Login", :with => user.login
+  fill_in "Password", :with => user.password
+  click_button "Login"
+end
+
 Given /^I am logged in as a (.+)$/ do |user_type|
   user = Factory.create(user_type.downcase.to_sym)
   user.user_groups << UserGroup.find_by_name(user_type.capitalize.pluralize)

@@ -1,5 +1,15 @@
 module Admin::VacanciesHelper
 
+  def render_vacancy_tabs
+    returning [] do |tabs|
+      tabs << %(#{li_tab 'Drafts', admin_vacancies_path(:status => :draft)}) unless current_user.is_a?(Candidate)
+      tabs << %(#{li_tab 'Awaiting approval', admin_vacancies_path(:status => :awaiting_approval)}) unless current_user.is_a?(Candidate)
+      tabs << %(#{li_tab current_user.is_a?(Candidate) ? 'Hot Vacancies' : 'Live', admin_vacancies_path(:status => :live)})
+      tabs << %(#{li_tab 'Archived', admin_vacancies_path(:status => :archived)}) unless current_user.is_a?(Candidate)
+    end
+
+  end
+
   def vacancies_table
     returning [] do |arr|
       arr << %(<table>)

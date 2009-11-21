@@ -40,8 +40,16 @@ class Admin::VacanciesController < ApplicationController
   end
 
   def index
-    @status = process_index_request
-    @vacancies = Vacancy.find_by_owner_and_status(current_user.id, @status)
+    @status = @title = process_index_request
+    @vacancies = case current_user
+                 when Client
+                   Vacancy.find_by_owner_and_status(current_user.id, @status)
+                 when Candidate
+                   @title = "Hot"
+                   Vacancy.find_all_by_status('live')
+                 else
+                   Vacancy.find_all_by_status(@status)
+                 end
   end
 
   def show

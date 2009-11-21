@@ -3,8 +3,18 @@ require 'spec_helper'
 describe Admin::VacanciesController do
 
   describe "Logged in as a client" do
+    def mock_user
+      mock_model  Client,
+                  :login => 'John',
+                  :email  => 'email@example.com',
+                  :password   => "mysecret",
+                  :password_confirmation   => "mysecret",
+                  :null_object => true
+    end
+
     before(:each) do
       login_with_groups(:clients)
+      @current_user.stub!(:default_vacancies_list).and_return('draft')
     end
 
     it "should use Admin::UsersController" do
@@ -109,6 +119,53 @@ describe Admin::VacanciesController do
     end
   end
 
+  describe "Logged in as a admin" do
+    before(:each) do
+      login_admin
+      @current_user.stub!(:default_vacancies_list).and_return('awaiting_approval')
+      @vac1 = Factory.build(:vacancy, :client_id => 1, :status => :awaiting_approval)
+      @vac2 = Factory.build(:vacancy, :client_id => 2, :status => :awaiting_approval)
+      @vac3 = Factory.create(:vacancy, :client_id => 2, :status => :draft)
 
+      Vacancy.stub!(:find_all_by_status).with('awaiting_approval').and_return([@vac1, @vac2])
+    end
 
+    describe "listing vacancies awaiting approval" do
+      it "should find all awaiting approval vacancies" do
+        Vacancy.should_receive(:find_all_by_status).with('awaiting_approval')
+        get :index, :status => 'awaiting_approval'
+      end
+    end
+  end
+
+  describe "Logged in as a candidate" do
+    def mock_user
+      mock_model  Candidate,
+                  :login => 'John',
+                  :email  => 'email@example.com',
+                  :password   => "mysecret",
+                  :password_confirmation   => "mysecret",
+                  :null_object => true
+    end
+    before(:each) do
+      login_admin
+      @current_user.stub!(:default_vacancies_list).and_return('live')
+      @vac1 = Factory.build(:vacancy, :client_id => 1, :status => :live)
+      @vac2 = Factory.build(:vacancy, :client_id => 2, :status => :live)
+      @vac3 = Factory.create(:vacancy, :client_id => 2, :status => :draft)
+
+      Vacancy.stub!(:find_all_by_status).with('live').and_return([@vac1, @vac2])
+    end
+
+    describe "listing vacancies" do
+      it "should find all live vacancies" do
+        Vacancy.should_receive(:find_all_by_status).with('live')
+        get :index
+      end
+      it "should ignore the status param and select live all the time" do
+        Vacancy.should_receive(:find_all_by_status).with('live')
+        get :index, :status => 'draft'
+      end
+    end
+  end
 end
