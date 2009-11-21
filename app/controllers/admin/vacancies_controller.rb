@@ -40,7 +40,7 @@ class Admin::VacanciesController < ApplicationController
   end
 
   def index
-    @status = params[:status] ||= 'draft'
+    @status = process_index_request
     @vacancies = Vacancy.find_by_owner_and_status(current_user.id, @status)
   end
 
@@ -54,6 +54,15 @@ class Admin::VacanciesController < ApplicationController
       redirect_to :back
     end
   end
+
+private
+
+  def process_index_request
+    default_state = current_user.default_vacancies_list
+    redirect_to admin_vacancies_path(:status => default_state) unless params[:status]
+    params[:status] ||= default_state
+  end
+
 
 
 
