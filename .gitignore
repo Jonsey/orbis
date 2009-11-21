@@ -10,3 +10,5 @@ public/cache/*
 .DS_Store
 *~
 *_flymake*
+rcov/*
+coverage.data
