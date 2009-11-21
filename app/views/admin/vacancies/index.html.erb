@@ -1,3 +1,8 @@
 <%= my_page_title @status.capitalize.gsub(/_/, ' ') + ' Vacancies' %>
 
+<% content_for :tabbed_content do -%>
 <%= vacancies_table %>
+<% end -%>
+
+<%= render :partial => '/admin/shared/tabs' %>
+

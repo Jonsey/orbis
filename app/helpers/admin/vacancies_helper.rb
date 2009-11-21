@@ -7,7 +7,7 @@ module Admin::VacanciesHelper
       arr << %(<th>#{check_box_tag('select-all')}</th>)
       arr << %(<th>Title</th>)
       arr << %(<th>Salary</th>)
-      arr << %(<th width='80px'></th>)
+      arr << %(<th width='105px'></th>)
       arr << %(</tr>)
       arr << vacancy_rows(@vacancies)
       arr << %(</table>)
@@ -22,9 +22,9 @@ private
         arr << %(<td>#{check_box_tag(row.id)}</td>)
         arr << %(<td>#{row.title}</td>)
         arr << %(<td>#{row.salary}</td>)
-        arr << %(<td>#{link_to('view', admin_vacancy_path(row.id))})
-        arr << %(  #{link_to('edit', edit_admin_vacancy_path(row.id)) if show_edit_vacancy})
-        arr << %(  #{link_to('delete', { :action => :destroy, :id => row }, :method => :delete) if show_delete_vacancy}</td>)
+        arr << %(<td>#{image_link_to('icons/ico-view.png', 'view', admin_vacancy_path(row.id))})
+        arr << %(  #{image_link_to('icons/ico-edit.png','edit', edit_admin_vacancy_path(row.id)) if show_edit_vacancy})
+        arr << %(  #{image_link_to('icons/ico-del.png','delete', { :action => :destroy, :id => row }, :method => :delete) if show_delete_vacancy}</td>)
         arr << %(</tr>)
       end
     end

@@ -80,6 +80,16 @@ module ApplicationHelper
     end
   end
 
+  def li_tab(text, path)
+    returning [] do |arr|
+      arr << %(<li)
+      arr << %( class='active') if path == controller.request.request_uri
+      arr << %(>)
+      arr << link_to(text, path, :class => 'tab')
+      arr << %(</li>\r\n)
+    end unless current_menu.nil?
+  end
+
   def li(text, path, p)
     returning [] do |arr|
       arr << %(<li)
@@ -88,6 +98,12 @@ module ApplicationHelper
       arr << link_to(text, path)
       arr << %(</li>\r\n)
     end unless current_menu.nil?
+  end
+
+  def image_link_to(image_source, title, url_options, image_options = nil, post = false)
+    image_options ||= {:class => 'image-submit'}
+    image_options.update :alt => title, :title => title
+    link_to image_tag(image_source, image_options), url_options, post ? {:method => :post} : nil
   end
 
 end
