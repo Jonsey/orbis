@@ -29,6 +29,7 @@ class UserSessionsController < ApplicationController
     case current_user
       when Client; new_admin_vacancy_path
       when Candidate; admin_vacancies_url(:status => :live)
+      when Staff; admin_vacancies_url(:status => :awaiting_approval)
       else admin_pages_path if current_user_is_admin?
     end
   end

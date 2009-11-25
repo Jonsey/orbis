@@ -29,9 +29,13 @@ class Admin::VacanciesController < ApplicationController
     @vacancy = Vacancy.find(params[:id])
     @vacancy.update_attributes(params[:vacancy])
 
-    if params[:commit] == "Submit for approval"
+    case params[:commit]
+    when "Submit for approval"
       @vacancy.submit_for_approval!
       flash[:success] = "Vacancy updated and submitted for approval"
+    when "Approve"
+      @vacancy.approve!
+      flash[:success] = "Vacancy approved"
     else
       flash[:success] = "Vacancy updated"
     end
@@ -57,8 +61,11 @@ class Admin::VacanciesController < ApplicationController
   end
 
   def destroy
-    if Vacancy.destroy(params[:id])
+    if Vacancy.delete(params[:id])
       flash[:success] = "Vacancy deleted"
+      redirect_to :back
+    else
+      flash[:error] = "There was a problem deleting the vacancy"
       redirect_to :back
     end
   end

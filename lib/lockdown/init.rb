@@ -1,6 +1,7 @@
 Lockdown::System.configure do
 
   options[:session_timeout_method] = :clear_authlogic_session
+  options[:access_denied_path] = "/unauthorised"
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Public Access
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -24,6 +25,10 @@ Lockdown::System.configure do
     with_controller(:users).
     only_methods(:show, :edit).
       to_model(:user).where(:id).equals(:current_user_id)
+
+  set_permission(:register_staff).
+    with_controller(:admin__staffs).
+    only_methods(:new, :create)
 
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,4 +66,5 @@ Lockdown::System.configure do
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   set_user_group(:clients, :create_vacancies, :list_vacancies, :edit_vacancies, :delete_vacancies)
   set_user_group(:candidates, :list_vacancies)
+  set_user_group(:staffs, :list_vacancies, :edit_vacancies, :register_staff)
 end

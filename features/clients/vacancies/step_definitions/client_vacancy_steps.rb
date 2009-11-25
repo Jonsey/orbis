@@ -24,7 +24,10 @@ Given /^the following vacancies already exist:$/ do |vacancies|
 
 end
 
+Then /^I should have (.+) vacancy with status "([^\"]*)"$/ do |count, status|
+  Vacancy.with_status(status).count.should eql(count.to_i)
+end
 
 Given /^I have one vacancy with status "([^\"]*)"$/ do |status|
-  Factory.create(:vacancy, :client_id => session[:current_user_id], :status => status)
+  Factory.create(:vacancy, :client_id => session[:current_user_id], :status => status.gsub(' ', '_'))
 end

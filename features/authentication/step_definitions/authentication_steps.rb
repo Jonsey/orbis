@@ -42,7 +42,6 @@ end
 Given /^I am logged in as a (.+)$/ do |user_type|
   user = Factory.create(user_type.downcase.to_sym)
   user.user_groups << UserGroup.find_by_name(user_type.capitalize.pluralize)
-
   visit login_path
   fill_in "Login", :with => user.login
   fill_in "Password", :with => user.password

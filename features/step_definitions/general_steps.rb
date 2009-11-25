@@ -16,3 +16,11 @@ Then /^a new (.+) notification should be sent$/ do |type|
   pending
 end
 
+Then /^I should see a link with title "([^\"]*)"$/ do |link_title|
+  response.should have_tag("a[title='#{link_title}']")
+end
+
+Then /^I should not see a link with title "([^\"]*)"$/ do |link_title|
+  response.should_not have_tag("a[title='#{link_title}']")
+end
+

@@ -5,10 +5,14 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /the unauthorised access page/
+      unauthorised_access_path
     when /the client signup page/
       client_registration_path
     when /the candidate signup page/
       candidate_registration_path
+    when /the staff registration page/
+      staff_registration_path
     when /the login page/
       login_path
     when /the admin dashboard/

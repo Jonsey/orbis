@@ -100,10 +100,11 @@ module ApplicationHelper
     end unless current_menu.nil?
   end
 
-  def image_link_to(image_source, title, url_options, image_options = nil, post = false)
+  def image_link_to(image_source, title, url_options, image_options = nil, html_options = {})
     image_options ||= {:class => 'image-submit'}
     image_options.update :alt => title, :title => title
-    link_to image_tag(image_source, image_options), url_options, post ? {:method => :post} : nil
+    html_options.merge!(:title => title)
+    link_to image_tag(image_source, image_options), url_options, html_options
   end
 
 end

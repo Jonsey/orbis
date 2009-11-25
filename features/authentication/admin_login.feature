@@ -21,24 +21,36 @@ Feature: User login
     Given I am logged in as a client
     Then I should be on the new vacancy page
     And the main menu should contain the following links:
-    | name      | link                       | class  |
-    | Vacancies | admin_client_vacancies_url | active |
-    | Account   | edit_admin_client_url      |        |
+    | name      | link                  | class  |
+    | Vacancies | admin_vacancies_url   | active |
+    | Account   | edit_admin_client_url |        |
     And the sub menu should contain the following links:
-    | name | link                            | class  |
-    | List | admin_candidate_vacancies_url   | active |
-    | New  | new_admin_candidate_vacancy_url |        |
+    | name | link                  | class  |
+    | List | admin_vacancies_url   | active |
+    | New  | new_admin_vacancy_url |        |
 
   Scenario: Login in as candidate
     Given I am logged in as a candidate
     Then I should be on the live vacancies page
     And the main menu should contain the following links:
-    | name      | link                          | class  |
-    | Vacancies | admin_candidate_vacancies_url | active |
-    | Account   | edit_admin_candidate_url      |        |
+    | name      | link                     | class  |
+    | Vacancies | admin_vacancies_url      | active |
+    | Account   | edit_admin_candidate_url |        |
     And the sub menu should contain the following links:
-    | name          | link                          | class  |
-    | Hot vacancies | admin_vacancies_url           | active |
-    | Applied for   | admin_candidate_vacancies_url |        |
+    | name | link                | class  |
+    | List | admin_vacancies_url | active |
+
+  Scenario: Login in as staff
+    Given I am logged in as a staff
+    Then I should be on the vacancies awaiting approval page
+    And the main menu should contain the following links:
+    | name       | link                 | class  |
+    | Vacancies  | admin_vacancies_url  | active |
+    | Account    | admin_staff_url      |        |
+    | Candidates | admin_candidates_url |        |
+    | Clients    | admin_clients_url    |        |
+    And the sub menu should contain the following links:
+    | name | link                | class  |
+    | List | admin_vacancies_url | active |
 
 

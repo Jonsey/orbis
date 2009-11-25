@@ -12,6 +12,16 @@ Factory.define :user do |c|
   c.email {|a| "#{a.firstname}.#{a.lastname}@example.com".downcase }
 end
 
+Factory.define :staff do |c|
+  c.login 'staff.jones'
+  c.password 'password'
+  c.password_confirmation 'password'
+  c.firstname "User"
+  c.lastname "Jones"
+  c.telephone '07010 717232'
+  c.email {|a| "#{a.firstname}.#{a.lastname}@example.com".downcase }
+end
+
 Factory.define :client, :class => Client do |c|
   c.login 'client.jones'
   c.password 'password'

@@ -24,6 +24,15 @@ module Admin::VacanciesHelper
     end
   end
 
+  def vacancy_update_status_buttons(form_builder)
+    if form_builder.object.status == 'awaiting_approval'
+      form_builder.submit "Approve"
+    else
+      form_builder.submit "Submit for approval"
+    end
+  end
+
+
 private
   def vacancy_rows(vacancies)
     returning [] do |arr|
@@ -34,13 +43,14 @@ private
         arr << %(<td>#{row.salary}</td>)
         arr << %(<td>#{image_link_to('icons/ico-view.png', 'view', admin_vacancy_path(row.id))})
         arr << %(  #{image_link_to('icons/ico-edit.png','edit', edit_admin_vacancy_path(row.id)) if show_edit_vacancy})
-        arr << %(  #{image_link_to('icons/ico-del.png','delete', { :action => :destroy, :id => row }, :method => :delete) if show_delete_vacancy}</td>)
+        arr << %(  #{image_link_to('icons/ico-del.png', 'delete', { :action => :destroy, :id => row }, nil, :method => :delete) if show_delete_vacancy}</td>)
         arr << %(</tr>)
       end
     end
   end
 
   def show_edit_vacancy
+    return true if current_user.is_a?(Staff)
     @status.to_sym == :draft
   end
 
