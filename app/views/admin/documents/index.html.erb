@@ -1,0 +1,21 @@
+<% my_page_title "Documents" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Filename</th>
+  </tr>
+  <% for document in @documents %>
+    <tr>
+      <td><%=h document.title %></td>
+      <td><%=h document.item.url %></td>
+      <td><%= link_to "Show", [:admin, document] %></td>
+      <td><%= link_to "Edit", edit_admin_document_path(document) %></td>
+      <td><%= link_to "Delete", [:admin, document], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<p><%= link_to "New Document", new_admin_document_path %></p>
+

@@ -25,10 +25,10 @@ module Admin::VacanciesHelper
   end
 
   def vacancy_update_status_buttons(form_builder)
-    if form_builder.object.status == 'awaiting_approval'
-      form_builder.submit "Approve"
-    else
-      form_builder.submit "Submit for approval"
+    case form_builder.object.status
+      when 'awaiting_approval' then  form_builder.submit "Approve"
+      when 'draft' then form_builder.submit "Submit for approval"
+      when 'live' then form_builder.submit "Archive"
     end
   end
 
@@ -50,12 +50,13 @@ private
   end
 
   def show_edit_vacancy
-    return true if current_user.is_a?(Staff)
+    return true if current_user.is_a?(Staff) || current_user_is_admin?
     @status.to_sym == :draft
   end
 
   def show_delete_vacancy
-    @status.to_sym == (:draft || :archived)
+    return true if @status.to_sym == :draft || :archived || current_user_is_admin?
+    false
   end
 
 

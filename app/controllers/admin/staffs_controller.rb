@@ -14,4 +14,18 @@ class Admin::StaffsController < ApplicationController
       render :action => 'new'
     end
   end
+
+  def edit
+    @staff = Staff.find_by_id(params[:id])
+  end
+
+  def update
+    @staff = Staff.find_by_id(params[:id])
+    if @user.update_attributes(params[:staff])
+      flash[:success] = "Account updated!"
+      redirect_to @staff
+    else
+      render :action => :edit
+    end
+  end
 end

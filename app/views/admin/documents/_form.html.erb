@@ -1,0 +1,10 @@
+<% formatted_form_for [:admin, @document], :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <div class="row">
+    <%= f.text_field :title %>
+    <%= f.file_field :item %>
+  </div>
+
+  <p><%= f.submit "Submit" %></p>
+<% end %>

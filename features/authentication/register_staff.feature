@@ -16,7 +16,7 @@ Feature: Register staff
     And I fill in "Password confirmation" with "password"
     And I press "Register"
     Then I should see "Account created"
-    And I should be on the vacancies awaiting approval page
+    And I should be at the vacancies awaiting approval page
 
   Scenario: invalid registration details
     Given I am logged in as a staff

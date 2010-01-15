@@ -7,7 +7,7 @@ Feature: Client dash board
     Given I am logged in as a client
 
     Scenario: viewing client dashboard
-      And I should see "New Vacancy"
+      And I should see "Create Vacancy"
       And I should see "Drafts"
       And I should see "Awaiting Approval"
       And I should see "Live"

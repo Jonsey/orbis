@@ -1,0 +1,10 @@
+<% my_page_title "Document" %>
+<p>
+  <strong>Name:</strong>
+  <%=h @document.title %>
+</p>
+<p>
+  <%= link_to "Edit", edit_admin_document_path(@document) %> |
+  <%= link_to "Delete", [:admin, @document], :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", admin_documents_path %>
+</p>

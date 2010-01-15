@@ -15,7 +15,7 @@ Feature: Register candidate
     And I fill in "Password confirmation" with "password"
     And I press "Register"
     Then I should see "Account created"
-    And I should be on the live vacancies page
+    And I should be at the live vacancies page
 
   Scenario:
     Given I am on the candidate signup page

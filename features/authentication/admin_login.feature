@@ -1,4 +1,4 @@
-@admin @login
+@admin @login @current
 Feature: User login
   As an admin user
   I want to be able to login
@@ -31,7 +31,7 @@ Feature: User login
 
   Scenario: Login in as candidate
     Given I am logged in as a candidate
-    Then I should be on the live vacancies page
+    Then I should be at the live vacancies page
     And the main menu should contain the following links:
     | name      | link                     | class  |
     | Vacancies | admin_vacancies_url      | active |
@@ -42,7 +42,7 @@ Feature: User login
 
   Scenario: Login in as staff
     Given I am logged in as a staff
-    Then I should be on the vacancies awaiting approval page
+    Then I should be at the vacancies awaiting approval page
     And the main menu should contain the following links:
     | name       | link                 | class  |
     | Vacancies  | admin_vacancies_url  | active |

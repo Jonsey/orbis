@@ -8,7 +8,6 @@
     <%= stylesheet_link_tag 'screen.css', :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'adminsystem.css', :media => 'screen' %>
     <!--[if IE]><%= stylesheet_link_tag 'ie.css', :media => "screen, projection" %><![endif]-->
-    <%= stylesheet_link_tag 'application.css', :media => 'screen, projection' %>
 
     <%= javascript_include_tag "prototype" %>
     <%= javascript_include_tag 'jquery' %>
@@ -19,7 +18,7 @@
     </script>
 
     <%= yield :tinymce %>
-    <%= javascript_include_tag "scriptaculous" %>
+
     <%= javascript_include_tag "effects" %>
     <%= javascript_include_tag "controls" %>
     <%= javascript_include_tag "tabs" %>

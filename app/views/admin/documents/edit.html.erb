@@ -1,0 +1,10 @@
+<% my_page_title "Edit Document" %>
+<div class="edit-document">
+  <fieldset>
+    <%= render :partial => 'form' %>
+    <p>
+      <%= link_to "Show", [:admin, @document] %> |
+      <%= link_to "View All", admin_documents_path %>
+    </p>
+  </fieldset>
+</div>

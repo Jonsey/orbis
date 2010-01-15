@@ -47,6 +47,8 @@ module ApplicationHelper
   end
 
   def nav_main
+    Page.create_pages unless Page.root
+
     pages = Page.root.children
     returning [] do |r|
       r << %(<ul>\r\n)
@@ -65,8 +67,8 @@ module ApplicationHelper
         pages.each do |p|
           r << li(p.name, path(p), p)
         end
-        r << %( </ul>\r\n)
       end
+      r << %( </ul>\r\n)
     end
   end
 

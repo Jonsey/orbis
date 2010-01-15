@@ -1,0 +1,10 @@
+<%= my_page_title "Edit personal details" %>
+<div class="edit-candidate">
+  <fieldset>
+    <% formatted_form_for [:admin, @candidate] do |f| %>
+    <%= f.error_messages %>
+    <%= render :partial => 'admin/users/user_fields', :locals => { :f => f } %>
+    <p><%= f.submit "Update" %></p>
+    <% end %>
+  </fieldset>
+</div>

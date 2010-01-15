@@ -9,9 +9,8 @@ Lockdown::System.configure do
     with_controller(:user_sessions).
     only_methods(:new, :create)
 
-  set_permission(:logout).
-    with_controller(:user_sessions).
-    only_methods(:destroy)
+  set_permission(:static).
+    with_controller(:static)
 
   set_permission(:signup).
     with_controller(:clients).
@@ -21,15 +20,28 @@ Lockdown::System.configure do
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Protected Access
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  set_permission(:my_account).
-    with_controller(:users).
+  set_permission(:logout).
+    with_controller(:user_sessions).
+    only_methods(:destroy)
+
+  set_permission(:my_client_account).
+    with_controller(:admin__clients).
     only_methods(:show, :edit).
-      to_model(:user).where(:id).equals(:current_user_id)
+    to_model(:client).where(:client_id).equals(:current_user_id)
+
+  set_permission(:my_candidate_account).
+    with_controller(:admin__candidates).
+    only_methods(:show, :edit).
+    to_model(:candidate).where(:candidate_id).equals(:current_user_id)
+
+  set_permission(:my_staff_account).
+    with_controller(:admin__staffs).
+    only_methods(:show, :edit).
+    to_model(:staff).where(:staff_id).equals(:current_user_id)
 
   set_permission(:register_staff).
     with_controller(:admin__staffs).
     only_methods(:new, :create)
-
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Restricted access
@@ -55,16 +67,25 @@ Lockdown::System.configure do
     with_controller(:admin__vacancies).
     only_methods(:destroy)
 
+  set_permission(:manage_clients).
+    with_controller(:admin__clients)
+
+  set_permission(:manage_candidates).
+    with_controller(:admin__candidates)
+
+  set_permission(:manage_documents).
+    with_controller(:admin__documents)
+
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Built-in user groups
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  set_public_access :login, :signup
-  set_protected_access :view_vacancies, :my_account, :logout
+  set_public_access :login, :signup, :static
+  set_protected_access :view_vacancies, :logout
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Define user groups
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  set_user_group(:clients, :create_vacancies, :list_vacancies, :edit_vacancies, :delete_vacancies)
-  set_user_group(:candidates, :list_vacancies)
-  set_user_group(:staffs, :list_vacancies, :edit_vacancies, :register_staff)
+  set_user_group(:clients,:my_client_account, :create_vacancies, :list_vacancies, :edit_vacancies, :delete_vacancies)
+  set_user_group(:candidates,:my_candidate_account, :list_vacancies)
+  set_user_group(:staffs, :my_staff_account, :list_vacancies, :edit_vacancies, :register_staff, :manage_documents, :manage_clients, :manage_candidates)
 end

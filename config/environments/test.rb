@@ -1,4 +1,4 @@
-# I am putting this in to get through the 
+# I am putting this in to get through the
 # See http://rails.lighthouseapp.com/projects/8994/tickets/802-eager-load-application-classes-can-block-migration
 config.cache_classes = (File.basename($0) == "rake") ? false : true
 
@@ -23,3 +23,6 @@ config.gem "rspec-rails", :lib => false, :version => ">= 1.2.9"
 
 config.gem "cucumber", :lib => false, :version => ">= 0.4.2"
 config.gem "webrat", :lib => false, :version => ">= 0.5.3"
+
+config.gem "factory_girl"
+

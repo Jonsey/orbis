@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.unauthorised_access '/unauthorised', :controller => 'static', :action => 'unauthorised'
+ # map.unauthorised_access '/unauthorised', :controller => 'static', :action => 'unauthorised'
   map.login '/login', :controller => 'user_sessions', :action => 'new'
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   map.admin '/admin', :controller => 'admin'
@@ -16,8 +16,13 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace(:admin) do |admin|
     admin.resources :pages
     admin.resources :users
+    admin.resources :clients
+    admin.resources :candidates
     admin.resources :staffs
     admin.resources :vacancies
+    admin.resources :documents
   end
+
+ # map.connect '*path', :controller => 'static'
 
 end

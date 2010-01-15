@@ -1,0 +1,13 @@
+<%= my_page_title "Edit personal details" %>
+<div class="edit-client">
+  <fieldset>
+    <% formatted_form_for [:admin, @client] do |f| %>
+    <%= f.error_messages %>
+    <%= render :partial => 'admin/users/user_fields', :locals => { :f => f } %>
+    <div class="row">
+      <%= f.text_field :company_name, :label => "Company Name" %>
+    </div>
+    <p><%= f.submit "Update" %></p>
+    <% end %>
+  </fieldset>
+</div>

@@ -36,6 +36,9 @@ class Admin::VacanciesController < ApplicationController
     when "Approve"
       @vacancy.approve!
       flash[:success] = "Vacancy approved"
+    when "Archive"
+      @vacancy.archive!
+      flash[:success] = "Vacancy archived"
     else
       flash[:success] = "Vacancy updated"
     end

@@ -24,3 +24,12 @@ Then /^I should not see a link with title "([^\"]*)"$/ do |link_title|
   response.should_not have_tag("a[title='#{link_title}']")
 end
 
+Then /^(?:|I )should be at (.+)$/ do |page_name|
+  current_path = URI.parse(current_url).select(:path, :query).compact.join('?')
+  if defined?(Spec::Rails::Matchers)
+    current_path.should == path_to(page_name)
+  else
+    assert_equal path_to(page_name), current_path
+  end
+
+end
