@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-  layout 'application'
+  layout 'frontend'
 
   NO_CACHE = [
     'static/about/website',
