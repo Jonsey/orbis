@@ -1,0 +1,11 @@
+.dropdown .bg-bottom {
+	background:none;
+	filter:progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-dropdown-b.png', sizingmethod='crop');
+}
+#nav .dropdown .holder {
+	background:none;
+	filter:progid:dximagetransform.microsoft.alphaimageloader(src='images/bg-dropdown-c.png', sizingmethod='scale');
+}
+#nav ul li{
+	behavior: expression(this.onmouseover = new Function("this.className += ' hover'"), this.onmouseout = new Function("this.className = this.className.replace(' hover','')"), this.style.behavior = null);
+}
