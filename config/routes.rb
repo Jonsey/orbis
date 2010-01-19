@@ -23,6 +23,6 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :documents
   end
 
- # map.connect '*path', :controller => 'static'
+  map.connect '*path', :controller => 'static'
 
 end

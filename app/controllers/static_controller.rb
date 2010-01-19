@@ -5,18 +5,19 @@ class StaticController < ApplicationController
     'static/about/website',
   ]
 
-#  def index
-#    if template_exists? path = 'static/' + params[:path].join('/')
-#      render_cached path
-#    elsif template_exists? path += '/index'
-#      render_cached path
-#    else
-#      raise ::ActionController::RoutingError,
-#            "Recognition failed for #{request.path.inspect}"
-#    end
-#  end
+  def index
+    if template_exists? path = 'static/' + params[:path].join('/')
+      render_cached path
+    elsif template_exists? path += '/index'
+      render_cached path
+    else
+      raise ::ActionController::RoutingError,
+            "Recognition failed for #{request.path.inspect}"
+    end
+  end
 
 private
+
   def render_cached(path)
     if NO_CACHE.include? path
       render :template => path
