@@ -1,4 +1,9 @@
 class ClientsController < ApplicationController
+  layout 'main'
+
+  def index
+
+  end
 
   def new
     @client = Client.new

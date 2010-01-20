@@ -13,7 +13,8 @@ Lockdown::System.configure do
     with_controller(:static)
 
   set_permission(:public).
-    with_controller(:home)
+    with_controller(:home).
+    and_controller(:clients).only_methods(:index)
 
 
 
