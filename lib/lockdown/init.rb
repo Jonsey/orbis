@@ -12,6 +12,11 @@ Lockdown::System.configure do
   set_permission(:static).
     with_controller(:static)
 
+  set_permission(:public).
+    with_controller(:home)
+
+
+
   set_permission(:signup).
     with_controller(:clients).
     and_controller(:candidates).
@@ -79,7 +84,7 @@ Lockdown::System.configure do
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Built-in user groups
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  set_public_access :login, :signup, :static
+  set_public_access :login, :signup, :static, :public
   set_protected_access :view_vacancies, :logout
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,5 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
 
+  # front end
+  map.home '/home', :controller => 'home', :action => 'index'
+
  # map.unauthorised_access '/unauthorised', :controller => 'static', :action => 'unauthorised'
   map.login '/login', :controller => 'user_sessions', :action => 'new'
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
@@ -8,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.candidate_registration '/candidate_registration', :controller => 'candidates', :action => 'new'
   map.staff_registration '/admin/staff_registration', :controller => 'admin/staffs', :action => 'new'
 
-  map.root :login
+  map.root :home
 
   map.resources :users, :clients, :candidates
   map.resource :user_session

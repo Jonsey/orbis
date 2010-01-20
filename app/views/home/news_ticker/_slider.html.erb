@@ -1,0 +1,7 @@
+  <div class="news-ticker">
+    <div class="slider">
+      <% hot_vacancies.each do |vacancy| %>
+      <div class="slide"><%= link_to "#{vacancy.title} - #{vacancy.salary}, #{vacancy.location}", root_path %></div>
+      <% end %>
+    </div>
+  </div>
