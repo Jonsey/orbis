@@ -39,11 +39,22 @@ module ApplicationHelper
   end
 
   def render_nav_main
-    nav_main if current_user
+#    nav_main if current_user
+    if current_user
+      controller_menu([
+                       { :label => "Users", :controller => "admin/users"},
+                       { :label => "Staff", :controller => "admin/staffs"},
+                       { :label => "Clients", :controller => "admin/clients"},
+                       { :label => "Candidates", :controller => "admin/candidates"},
+                       { :label => "Vacancies", :controller => "admin/vacancies"},
+                       { :label => "Documents", :controller => "admin/documents"}])
+    end
+
   end
 
   def render_nav_sub
-    nav_sub
+   # nav_sub
+    action_menu if controller.controller_name != "user_sessions"
   end
 
   def nav_main

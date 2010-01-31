@@ -39,6 +39,11 @@ class Vacancy < ActiveRecord::Base
     ug.user_ids |= [self.client_id]
   end
 
+  def to_s
+    title
+  end
+
+
   private
 
   named_scope :belonging_to, lambda { |owner_id|

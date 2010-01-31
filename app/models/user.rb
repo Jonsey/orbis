@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
   def default_vacancies_list
     'awaiting_approval'
   end
+
+  def to_s
+    "#{firstname} #{lastname} (#{login})"
+  end
+
 end
 
 
