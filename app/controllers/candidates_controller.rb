@@ -1,4 +1,10 @@
 class CandidatesController < ApplicationController
+  layout 'main'
+
+  def index
+
+  end
+
   def new
     @candidate = Candidate.new
   end
