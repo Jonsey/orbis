@@ -17,9 +17,6 @@
 
                <%= f.error_messages %>
                <div class="row">
-                 <%= f.text_field :login, :class => "txt" %>
-               </div>
-               <div class="row">
                  <%= f.text_field :firstname, :class => "txt" %>
                </div>
                <div class="row">
@@ -28,8 +25,7 @@
                <div class="row">
                  <%= f.text_field :telephone, :class => "txt" %>
                </div>
-               <p><%= f.submit "Register" %></p>
-
+               <%= link_to("<span><strong>Create account</strong></span>", { :action => :new}, { :method => :post, :class => "btn03"}) %>
         </fieldset>
       </div>
 
