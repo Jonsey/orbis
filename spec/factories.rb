@@ -3,7 +3,6 @@ Factory.define :user_group do |cd|
 end
 
 Factory.define :user do |c|
-  c.login 'user.jones'
   c.password 'password'
   c.password_confirmation 'password'
   c.firstname "User"
@@ -13,7 +12,6 @@ Factory.define :user do |c|
 end
 
 Factory.define :staff do |c|
-  c.login 'staff.jones'
   c.password 'password'
   c.password_confirmation 'password'
   c.firstname "User"
@@ -23,7 +21,6 @@ Factory.define :staff do |c|
 end
 
 Factory.define :client, :class => Client do |c|
-  c.login 'client.jones'
   c.password 'password'
   c.password_confirmation 'password'
   c.firstname "Client"
@@ -34,7 +31,6 @@ Factory.define :client, :class => Client do |c|
 end
 
 Factory.define :candidate, :class => Candidate do |c|
-  c.login 'candidate.jones'
   c.password 'password'
   c.password_confirmation 'password'
   c.firstname "Candidate"

@@ -1,7 +1,8 @@
 <% use_tinymce -%>
 <%= my_page_title 'Edit Vacancy' %>
-
-<% form_for [:admin, @vacancy] do |f| %>
+<div class="create-new-user">
+  <fieldset>
+<% formatted_form_for [:admin, @vacancy] do |f| %>
 
 <%= render :partial => 'form', :locals => { :f => f } %>
 
@@ -10,3 +11,5 @@
   <%= vacancy_update_status_buttons(f) %>
 </div>
 <% end %>
+ </fieldset>
+</div>

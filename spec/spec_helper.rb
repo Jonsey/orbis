@@ -15,7 +15,6 @@ module Lockdown
 
     def mock_user
       mock_model  User,
-                  :login => 'John',
                   :email  => 'email@example.com',
                   :password   => "mysecret",
                   :password_confirmation   => "mysecret",

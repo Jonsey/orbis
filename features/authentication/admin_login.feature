@@ -5,8 +5,8 @@ Feature: User login
   So that I can carry out admin functions
 
   Scenario: Login in as admin
-    Given an exisiting admin user with login "admin"
-    When I login as "admin"
+    Given an exisiting admin user with email "admin@example.com"
+    When I login as "admin@example.com"
     Then I should be on the admin pages list
     And the main menu should contain the following links:
     | name  | link            | class  |

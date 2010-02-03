@@ -1,33 +1,51 @@
-<% my_page_title "New Client Registration" %>
-<div class="create-new-client">
-  <fieldset>
-    <% formatted_form_for @client do |f| %>
-    <%= f.error_messages %>
-    <div class="row">
-      <%= f.text_field :login %>
+<% my_page_title "Client Registration" %>
+<div class="wrap">
+  <div class="heading">
+    <h1>Create a client account</h1>
+  </div>
+</div>
+<div class="account">
+  <div class="title">
+    <h2>CLIENT ACCOUNT</h2>
+    <p>Manage your vacancies online and 24 hr access to our resources portal.</p>
+  </div>
+  <div class="register-form">
+    <div class="holder">
+      <% formatted_form_for @client do |f| %>
+      <div class="form-holder">
+        <fieldset>
+          <%= f.text_field :company_name, :label => "Company name:", :class => "txt" %>
+          <%= f.text_field :firstname, :label => "First name:", :class => "txt" %>
+          <%= f.text_field :lastname, :label => "Last name:", :class => "txt" %>
+          <%= f.text_field :telephone, :label => "Telephone:", :class => "txt" %>
+        </fieldset>
+      </div>
+      <div class="col2">
+        <div class="form-holder">
+          <fieldset>
+            <%= f.text_field :email, :label => "Email:", :class => "txt" %>
+            <%= f.password_field :password, :label => "Confirm password:", :class => "txt" %>
+            <%= f.password_field :password_confirmation, :label => "Confirm password:", :class => "txt" %>
+            <%= f.submit "Create Account" %>
+          </fieldset>
+        </div>
+      </div>
+      <% end %>
     </div>
-    <div class="row">
-      <%= f.text_field :password %>
+  </div>
+</div>
+<div class="wrap">
+  <div class="articles">
+    <div class="title">
+      <h2>Account holder benefits</h2>
     </div>
-    <div class="row">
-      <%= f.text_field :password_confirmation %>
+    <div class="article">
+      <h3>Submit your vacancies online</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     </div>
-    <div class="row">
-      <%= f.text_field :email %>
+    <div class="article">
+      <h3>Browse our online resources portal</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     </div>
-    <div class="row">
-      <%= f.text_field :firstname %>
-    </div>
-    <div class="row">
-      <%= f.text_field :lastname %>
-    </div>
-    <div class="row">
-      <%= f.text_field :telephone %>
-    </div>
-    <div class="row">
-      <%= f.text_field :company_name %>
-    </div>
-    <p><%= f.submit "Register" %></p>
-    <% end %>
-  </fieldset>
+  </div>
 </div>

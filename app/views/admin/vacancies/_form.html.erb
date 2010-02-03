@@ -1,29 +1,16 @@
 <%= f.error_messages %>
-<div>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="row">
+  <%= f.text_field :title, :class => "text", :wrapper_class => "cell" %>
+  <%= f.text_field :role, :class => "text", :wrapper_class => "cell" %>
 </div>
-<div>
-  <%= f.label :role %>
-  <%= f.text_field :role %>
+<div class="row">
+  <%= f.text_field :salary, :class => "text", :wrapper_class => "cell" %>
+  <%= f.text_field :location, :class => "text", :wrapper_class => "cell" %>
 </div>
-<div>
-  <%= f.label :salary %>
-  <%= f.text_field :salary %>
+<div class="row">
+  <%= f.text_field :duration, :class => "text", :wrapper_class => "cell" %>
 </div>
-<div>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-</div>
-<div>
-  <%= f.label :duration %>
-  <%= f.text_field :duration %>
-</div>
-<div>
-  <%= f.label :key_skills %>
-  <%= f.text_area :key_skills %>
-</div>
-<div>
-  <%= f.label :role_description %>
-  <%= f.text_area :role_description %>
+<div class="row">
+  <%= f.text_area :key_skills, :wrapper_class => "cell" %>
+  <%= f.text_area :role_description, :wrapper_class => "cell" %>
 </div>

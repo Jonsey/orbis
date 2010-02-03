@@ -7,6 +7,7 @@ class CandidatesController < ApplicationController
 
   def new
     @candidate = Candidate.new
+    @candidate.build_cv
   end
 
   def create

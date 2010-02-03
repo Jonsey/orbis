@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Client do
   before(:each) do
     @valid_attributes = {
-      :login => 'damian.jones',
       :password => 'password',
       :password_confirmation => 'password',
       :firstname => 'Damian',

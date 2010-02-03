@@ -5,15 +5,15 @@ Feature: Ammend vacancy details
 
   Background:
     Given the following clients already exist:
-    | login   | email             | password | usergroup |
-    | myself  | client@admin.com  | password | Clients   |
+    | email            | password | usergroup |
+    | client@admin.com | password | Clients   |
 
     And the following vacancies already exist:
-    | title     | role | salary | location | duration | key_skills | role_description | client |
-    | vacancy 1 | role | salary | location | duration | key skills | Role Description | myself |
+    | title     | role | salary | location | duration | key_skills | role_description | client           |
+    | vacancy 1 | role | salary | location | duration | key skills | Role Description | client@admin.com |
 
     Scenario:  Client editing draft vacancy
-      When I login as "myself"
+      When I login as "client@admin.com"
       And I am on the draft vacancies page
       When I follow "edit"
       And I fill in "title" with "new title"
@@ -23,7 +23,7 @@ Feature: Ammend vacancy details
       And I should see "new title"
 
     Scenario:  Client submitting edited draft vacancy
-      When I login as "myself"
+      When I login as "client@admin.com"
       And I am on the draft vacancies page
       When I follow "edit"
       And I fill in "title" with "new title"

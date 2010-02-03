@@ -1,6 +1,5 @@
-Given /^an exisiting admin user with login "([^\"]*)"$/ do |login|
-  usr = User.create!(:login => login,
-                     :email => 'email@example.com',
+Given /^an exisiting admin user with email "([^\"]*)"$/ do |email|
+  usr = User.create!(:email => email,
                      :password => 'password',
                      :password_confirmation => 'password')
   Lockdown::System.make_user_administrator(usr)
@@ -8,8 +7,7 @@ end
 
 Given /^the following clients already exist:$/ do |table|
   table.hashes.each do |user|
-    usr = Client.create!(:login => user[:login],
-                         :firstname => 'Damian',
+    usr = Client.create!(:firstname => 'Damian',
                          :lastname => 'Jones',
                          :telephone => '07010 717232',
                          :email => user[:email],
@@ -22,9 +20,9 @@ Given /^the following clients already exist:$/ do |table|
   end
 end
 
-When /^I login as "([^\"]*)"$/ do |login|
+When /^I login as "([^\"]*)"$/ do |email|
   visit login_path
-  fill_in "Login", :with => login
+  fill_in "Email", :with => email
   fill_in "Password", :with => "password"
   click_button "Login"
 end
@@ -34,7 +32,7 @@ Given /^I am logged in with admin rights$/ do
   Lockdown::System.make_user_administrator(user)
 
   visit login_path
-  fill_in "Login", :with => user.login
+  fill_in "Email", :with => user.email
   fill_in "Password", :with => user.password
   click_button "Login"
 end
@@ -43,7 +41,7 @@ Given /^I am logged in as a (.+)$/ do |user_type|
   user = Factory.create(user_type.downcase.to_sym)
   user.user_groups << UserGroup.find_by_name(user_type.capitalize.pluralize)
   visit login_path
-  fill_in "Login", :with => user.login
+  fill_in "Email", :with => user.email
   fill_in "Password", :with => user.password
   click_button "Login"
 end

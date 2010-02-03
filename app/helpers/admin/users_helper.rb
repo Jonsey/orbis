@@ -1,28 +1,26 @@
-module Admin::ClientsHelper
-  def clients_table
+module Admin::UsersHelper
+  def users_table
     returning [] do |arr|
       arr << %(<table class="tbl-standard">)
       arr << %(<tr>)
       arr << %(<th>#{check_box_tag('select-all')}</th>)
-      arr << %(<th>Company name</th>)
       arr << %(<th>First name</th>)
       arr << %(<th>Last name</th>)
       arr << %(<th>Email</th>)
       arr << %(<th>Telephone</th>)
       arr << %(<th width='105px'></th>)
       arr << %(</tr>)
-      arr << client_rows(@clients)
+      arr << user_rows(@users)
       arr << %(</table>)
     end
   end
 
 private
-  def client_rows(users)
+  def user_rows(users)
     returning [] do |arr|
       users.each_with_index do |row, row_index|
         arr << %(<tr class="#{row_index % 2 == 0 ? 'even': 'odd'}">)
         arr << %(<td>#{check_box_tag(row.id)}</td>)
-        arr << %(<td>#{row.company_name}</td>)
         arr << %(<td>#{row.firstname}</td>)
         arr << %(<td>#{row.lastname}</td>)
         arr << %(<td>#{row.email}</td>)

@@ -14,33 +14,24 @@
       <% formatted_form_for @candidate do |f| %>
       <div class="form-holder">
         <fieldset>
+          <%= f.error_messages %>
+          <%= f.text_field :firstname, :class => "txt", :label => "First name:" %>
+          <%= f.text_field :lastname, :class => "txt", :label => "Last name:" %>
+          <%= f.text_field :telephone, :class => "txt", :label => "Telephone:" %>
+          <% f.fields_for :cv do |cv| %>
+            <%= cv.file_field :item, :label => "Your CV:", :size => nil %>
+          <% end %>
 
-               <%= f.error_messages %>
-               <div class="row">
-                 <%= f.text_field :firstname, :class => "txt" %>
-               </div>
-               <div class="row">
-                 <%= f.text_field :lastname, :class => "txt" %>
-               </div>
-               <div class="row">
-                 <%= f.text_field :telephone, :class => "txt" %>
-               </div>
-               <%= link_to("<span><strong>Create account</strong></span>", { :action => :new}, { :method => :post, :class => "btn03"}) %>
+          <%= f.submit "Create Account" %>
         </fieldset>
       </div>
 
       <div class="col2">
         <div class="form-holder">
           <fieldset>
-            <div class="row">
-                 <%= f.text_field :email, :class => "txt" %>
-               </div>
-               <div class="row">
-                 <%= f.text_field :password, :class => "txt" %>
-               </div>
-               <div class="row">
-                 <%= f.text_field :password_confirmation, :class => "txt" %>
-               </div>
+            <%= f.text_field :email, :class => "txt", :label => "Email:" %>
+            <%= f.password_field :password, :class => "txt", :label => "Password:" %>
+            <%= f.password_field :password_confirmation, :class => "txt", :label => "Confirm password:" %>
           </fieldset>
         </div>
       </div>

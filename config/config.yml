@@ -1,11 +1,11 @@
 development: &local
-    site_name: Starter app
+    site_name: Orbis Resourcing
     site_domain: "localhost:3000"
-    site_title: Starter app title
-    site_tag: Starter app tag
-    admin_email: admin@starterapp.com
-    accounts_email: accounts@starterapp.com
-    info_email: info@starterapp.com
+    site_title: Orbis Resourcing
+    site_tag:  Orbis resourcing tag
+    admin_email: admin@example.com
+    accounts_email: accounts@example.com
+    info_email: info@example.com
     dev_email: damianajones@yahoo.co.uk
 
 test:
@@ -18,5 +18,5 @@ cucumber:
 
 production:
   <<: *local
-  site_domain: www.starterapp.com
+  site_domain: www.orbisresourcing.com
 

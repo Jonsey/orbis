@@ -19,7 +19,7 @@ Given /^the following vacancies already exist:$/ do |vacancies|
                      :duration         => v[:duration],
                      :key_skills       => v[:key_skills],
                      :role_description => v[:role_description],
-                     :client_id        => Client.find_by_login(v[:client]).id )
+                     :client_id        => Client.find_by_email(v[:client]).id )
   end
 
 end

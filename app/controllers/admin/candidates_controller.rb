@@ -1,5 +1,6 @@
 class Admin::CandidatesController < ApplicationController
   def index
+    @candidates = Candidate.all
   end
 
   def edit

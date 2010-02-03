@@ -12,7 +12,7 @@ module Admin::VacanciesHelper
 
   def vacancies_table
     returning [] do |arr|
-      arr << %(<table>)
+      arr << %(<table class="tbl-standard">)
       arr << %(<tr>)
       arr << %(<th>#{check_box_tag('select-all')}</th>)
       arr << %(<th>Title</th>)

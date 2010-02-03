@@ -17,7 +17,7 @@ module ActionView
         define_method(name) do |field, *args|
           options = args.last.is_a?(Hash) ? args.pop : {}
           label = label(field, options[:label], :class => options[:label_class])
-          @template.content_tag(:div, label + super, :class => 'cell')  #wrap in a cell
+          @template.content_tag(:div, label + super, :class => options[:wrapper_class] ||= 'row')  #wrap in a cell
         end
       end
     end
