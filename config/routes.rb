@@ -3,6 +3,17 @@ ActionController::Routing::Routes.draw do |map|
   # front end
   map.home '/home', :controller => 'home', :action => 'index'
 
+  map.with_options :controller => 'contact' do |contact|
+    contact.contact '/contact',
+    :action => 'index',
+    :conditions => { :method => :get }
+
+    contact.contact '/contact',
+    :action => 'create',
+    :conditions => { :method => :post }
+  end
+
+
  # map.unauthorised_access '/unauthorised', :controller => 'static', :action => 'unauthorised'
   map.login '/login', :controller => 'user_sessions', :action => 'new'
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'

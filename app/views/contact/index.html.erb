@@ -1,0 +1,47 @@
+<div class="wrap">
+  <h1>Contact Orbis Resourcing</h1>
+</div>
+<div class="wrap">
+  <div id="main">
+    <div class="enquiry-form">
+      <div class="holder">
+        <div class="form-holder">
+          <% formatted_form_for :contact, :url => contact_path do |f| %>
+            <fieldset>
+              <%= f.text_field :company_name, :class => "txt", :label => "Company name:" %>
+              <%= f.text_field :firstname, :class => "txt", :label => "First name:" %>
+              <%= f.text_field :lastname, :class => "txt", :label => "Last name:" %>
+              <%= f.text_field :telephone, :class => "txt", :label => "Telephone:" %>
+              <%= f.text_field :email, :class => "txt", :label => "Email:" %>
+              <%= f.text_area :enquiry, :cols => 10, :rows => 10, :class => "txt", :label => "Enquiry:" %>
+
+              <%= f.submit "Send enquiry" %>
+            </fieldset>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-side">
+    <h3>Telephone number</h3>
+    <p class="tel">01491 874 111</p>
+
+    <h4>Dialing from abroad?</h4>
+    <p>UK: +44 (0)1491 874 111</p>
+
+    <h4>Fax</h4>
+    <p>+44 (0)1491 874 443</p>
+
+    <h4>Have an aversion to web forms?</h4>
+    <p>Email: info@orbis-resourcing.com</p>
+
+    <h4>Registered office</h4>
+    <p>Orbis Resourcing Ltd<br />
+    Orbis House<br />
+    Goring-on-Thames<br />
+    Berkshire<br />
+    RG8 0AD</p>
+    <br />
+    <p><a href="#">Click here for a map</a></p>
+  </div>
+</div>
