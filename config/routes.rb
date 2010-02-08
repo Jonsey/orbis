@@ -16,6 +16,8 @@ ActionController::Routing::Routes.draw do |map|
 
  # map.unauthorised_access '/unauthorised', :controller => 'static', :action => 'unauthorised'
   map.login '/login', :controller => 'user_sessions', :action => 'new'
+  map.client_login '/client-login', :controller => 'user_sessions', :action => 'new', :user_type => 'client'
+  map.candidate_login '/candidate-login', :controller => 'user_sessions', :action => 'new', :user_type => 'candidate'
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   map.admin '/admin', :controller => 'admin'
   map.client_registration '/client_registration', :controller => 'clients', :action => 'new'

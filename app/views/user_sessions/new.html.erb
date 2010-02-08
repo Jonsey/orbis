@@ -1,21 +1,4 @@
 <%= page_title 'Login' %>
 
-<fieldset>
-<% form_for @user_session, :url => user_session_path do |f| %>
-  <%= f.error_messages %>
+<%= render :partial => 'form' %>
 
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-
-  <div class='buttons clearfix'>
-    <%= f.submit 'Login' %>
-  </div>
-<% end %>
-</fieldset>

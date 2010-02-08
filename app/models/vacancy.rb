@@ -2,12 +2,9 @@ class Vacancy < ActiveRecord::Base
   include AASM
 
   validates_presence_of \
-  :title,
   :role,
   :salary,
   :location,
-  :duration,
-  :key_skills,
   :role_description
 
   aasm_column :status
@@ -40,7 +37,7 @@ class Vacancy < ActiveRecord::Base
   end
 
   def to_s
-    title
+    role
   end
 
 

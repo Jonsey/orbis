@@ -1,0 +1,10 @@
+<fieldset>
+<% formatted_form_for @user_session, :url => user_session_path do |f| %>
+  <%= f.error_messages %>
+    <%= f.text_field :email, :class => "txt", :label => "Email address:" %>
+    <%= f.password_field :password, :class => "txt", :label => "Password:" %>
+  <div class='buttons clearfix'>
+    <%= f.submit 'Login' %>
+  </div>
+<% end %>
+</fieldset>
