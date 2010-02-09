@@ -1,6 +1,7 @@
 <%= f.error_messages %>
 <div class="row">
   <%= f.text_field :role, :class => "text", :wrapper_class => "cell" %>
+  <%= f.select :category_id, Category.all.collect{|p| [ p.name, p.id ] }, { :include_blank => true, :wrapper_class => "cell"} %>
 </div>
 <div class="row">
   <%= f.text_field :salary, :class => "text", :wrapper_class => "cell" %>

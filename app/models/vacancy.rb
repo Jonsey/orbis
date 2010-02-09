@@ -1,6 +1,8 @@
 class Vacancy < ActiveRecord::Base
   include AASM
 
+  belongs_to :category
+
   validates_presence_of \
   :role,
   :salary,

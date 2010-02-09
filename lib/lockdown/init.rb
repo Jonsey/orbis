@@ -84,6 +84,9 @@ Lockdown::System.configure do
   set_permission(:manage_documents).
     with_controller(:admin__documents)
 
+  set_permission(:manage_categories).
+    with_controller(:admin__categories)
+
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Built-in user groups
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,6 +96,7 @@ Lockdown::System.configure do
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Define user groups
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  set_user_group(:admin, :manage_categories)
   set_user_group(:clients,:my_client_account, :create_vacancies, :list_vacancies, :edit_vacancies, :delete_vacancies)
   set_user_group(:candidates,:my_candidate_account, :list_vacancies)
   set_user_group(:staffs, :my_staff_account, :list_vacancies, :edit_vacancies, :register_staff, :manage_documents, :manage_clients, :manage_candidates)

@@ -1,4 +1,4 @@
-@vacancies @current
+@vacancies
 Feature: Submit vacancy for approval
   In order to have my vacancy approved for the live site
   As an authorised client

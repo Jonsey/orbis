@@ -1,4 +1,4 @@
-@vacancies @c
+@vacancies
 Feature: Ammend vacancy details
   In order to ammend or correct vacancy details
   a vacancy editor should be able to update a vacancy
@@ -16,18 +16,18 @@ Feature: Ammend vacancy details
       When I login as "client@admin.com"
       And I am on the draft vacancies page
       When I follow "edit"
-      And I fill in "title" with "new title"
+      And I fill in "role" with "new role"
       And I press "Update"
       Then I should see "Vacancy updated"
-      And I should be on the show vacancy page for "new title"
-      And I should see "new title"
+      And I should be on the show vacancy page for "new role"
+      And I should see "new role"
 
     Scenario:  Client submitting edited draft vacancy
       When I login as "client@admin.com"
       And I am on the draft vacancies page
       When I follow "edit"
-      And I fill in "title" with "new title"
+      And I fill in "role" with "new role"
       And I press "Submit for approval"
       Then I should see "Vacancy updated and submitted for approval"
-      And I should be on the show vacancy page for "new title"
-      And I should see "new title"
+      And I should be on the show vacancy page for "new role"
+      And I should see "new role"

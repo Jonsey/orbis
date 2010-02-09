@@ -36,6 +36,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :candidates
     admin.resources :staffs
     admin.resources :vacancies
+    admin.resources :categories
     admin.resources :documents
   end
 
