@@ -45,7 +45,7 @@ Factory.define :category, :class => Category do |c|
 end
 
 
-Factory.define :vacancy do |v|
+Factory.define :vacancy, :class => Vacancy, :default_strategy => :create do |v|
   v.role 'Senior Ruby developer'
   v.category_id Factory.build(:category)
   v.salary '50000'

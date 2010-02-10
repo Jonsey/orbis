@@ -14,7 +14,7 @@ Feature: Submit vacancy for approval
     And I press "Submit for approval"
     Then I should see "Vacancy submitted for approval"
     And the vacancy should have the status of "awaiting_approval"
-    And a new vacancy notification should be sent
+    And a new vacancy email should be delivered to "vacancies@orbisweb.com"
     When I go to the vacancies awaiting approval page
     Then I should have 1 rows of vacancies
 

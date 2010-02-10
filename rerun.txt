@@ -1,1 +1,0 @@
-features/clients/vacancies/edit_vacancy_menu_display.feature:15 features/clients/vacancies/list_draft_vacancies.feature:36
