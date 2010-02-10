@@ -39,13 +39,17 @@ Factory.define :candidate, :class => Candidate do |c|
   c.email {|a| "#{a.firstname}.#{a.lastname}@example.com".downcase }
 end
 
+Factory.define :category, :class => Category do |c|
+  c.parent_id nil
+  c.name "Technology"
+end
+
+
 Factory.define :vacancy do |v|
-  v.title 'Senior Ruby developer in space'
   v.role 'Senior Ruby developer'
+  v.category_id Factory.build(:category)
   v.salary '50000'
   v.location 'Space'
-  v.duration '6 Months'
-  v.key_skills 'Lorem ipsum dolor sit amet.'
   v.role_description 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
   v.client_id Factory.build(:client)
   v.status 'draft'

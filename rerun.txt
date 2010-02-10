@@ -1,1 +1,1 @@
-features/clients/vacancies/create_new_vacancy.feature:10 features/clients/vacancies/edit_vacancy.feature:15 features/clients/vacancies/edit_vacancy_menu_display.feature:15 features/clients/vacancies/list_draft_vacancies.feature:19 features/clients/vacancies/submit_vacancy.feature:10:28
+features/clients/vacancies/edit_vacancy_menu_display.feature:15 features/clients/vacancies/list_draft_vacancies.feature:36

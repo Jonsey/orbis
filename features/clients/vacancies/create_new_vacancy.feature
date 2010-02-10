@@ -8,7 +8,8 @@ Feature: Create new vacancy
     Given I am logged in as a client
 
   Scenario:  Fill out all the fields
-    Given I am on the new vacancy page
-    And I fill out all the fields for a vacancy
-    And I press "Create"
+    Given the default categories
+    When I go to the new vacancy page
+     And I fill out all the fields for a vacancy
+     And I press "Create"
     Then I should see "Vacancy saved to drafts"

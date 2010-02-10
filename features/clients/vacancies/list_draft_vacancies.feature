@@ -12,9 +12,9 @@ Feature: List draft vacancies
      | another@admin.com | password | Clients   |
 
     And the following vacancies already exist:
-    | title     | role | salary | location | duration | key_skills | role_description | client           |
-    | vacancy 1 | role | salary | location | duration | key skills | Role Description | client@admin.com |
-    | vacancy 2 | role | salary | location | duration | key skills | Role Description | other@admin.com  |
+    | role      | salary | location | role_description | client           | category   |
+    | vacancy 1 | salary | location | Role Description | client@admin.com | Technology |
+    | vacancy 2 | salary | location | Role Description | other@admin.com  | Technology |
 
   Scenario:  Client with vacancy 1 in draft
     Given I login as "client@admin.com"

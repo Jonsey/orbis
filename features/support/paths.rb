@@ -32,9 +32,9 @@ module NavigationHelpers
     when /the archived vacancies page/
       admin_vacancies_path('status' => 'archived')
     when /the edit vacancy page for "([^\"]*)"$/i
-      edit_admin_vacancy_path(Vacancy.find_by_title($1))
+      edit_admin_vacancy_path(Vacancy.find_by_role($1))
     when /the show vacancy page for "([^\"]*)"$/i
-      admin_vacancy_path(Vacancy.find_by_title($1))
+      admin_vacancy_path(Vacancy.find_by_role($1))
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"

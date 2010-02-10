@@ -11,7 +11,7 @@ end
 
 Given /^the following vacancies already exist:$/ do |vacancies|
   vacancies.hashes.each do |v|
-    Vacancy.create!(:category         => v[:category],
+    Vacancy.create!(:category         => Category.find_by_name(v[:category]),
                     :role             => v[:role],
                     :salary           => v[:salary],
                     :location         => v[:location],
@@ -27,4 +27,9 @@ end
 
 Given /^I have one vacancy with status "([^\"]*)"$/ do |status|
   Factory.create(:vacancy, :client_id => session[:current_user_id], :status => status.gsub(' ', '_'))
+end
+
+Given /^the default categories$/ do
+  Category.create!(:name => "Technology")
+  Category.create!(:name => "Accountancy & Finance")
 end

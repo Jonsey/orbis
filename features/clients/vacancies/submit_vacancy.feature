@@ -6,6 +6,7 @@ Feature: Submit vacancy for approval
 
   Background:
     Given I am logged in as a client
+      And the default categories
 
   Scenario: Vacancy has all required fields
     Given I am on the new vacancy page
