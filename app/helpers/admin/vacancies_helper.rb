@@ -45,7 +45,7 @@ private
         arr << %(<td>#{row.location}</td>)
         arr << %(<td>#{row.salary}</td>)
         arr << %(<td>#{row.category.to_s}</td>)
-        arr << %(<td>#{image_link_to('icons/ico-view.png', 'view', admin_vacancy_path(row.id))})
+        arr << %(<td>#{image_link_to('icons/ico-view.png', 'preview', vacancy_path(row.id),{ }, :popup => true)})
         arr << %(  #{image_link_to('icons/ico-edit.png','edit', edit_admin_vacancy_path(row.id)) if show_edit_vacancy})
         arr << %(  #{image_link_to('icons/ico-del.png', 'delete', { :action => :destroy, :id => row }, nil, :method => :delete) if show_delete_vacancy}</td>)
         arr << %(</tr>)
