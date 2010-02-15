@@ -1,4 +1,9 @@
 class Admin::StaffsController < ApplicationController
+
+  def index
+    @staffs = Staff.all
+  end
+
   def new
     @staff = Staff.new
   end
