@@ -16,7 +16,8 @@ Lockdown::System.configure do
     with_controller(:home).
     and_controller(:clients).only_methods(:index).
     and_controller(:candidates).only_methods(:index).
-    and_controller(:contact)
+    and_controller(:contact).
+    and_controller(:vacancies).only_methods(:index, :show)
 
 
 

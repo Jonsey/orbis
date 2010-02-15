@@ -121,4 +121,16 @@ module ApplicationHelper
     link_to image_tag(image_source, image_options), url_options, html_options
   end
 
+  def breadcrumb
+   # return if !@show_breadcrumb
+    returning [] do |arr|
+      arr << %(<ul class="breadcrumbs">)
+      @breadcrumb.each do |crumb|
+        arr << %(<li>crumb</li>)
+      end
+      arr << %(</ul>)
+    end
+  end
+
+
 end

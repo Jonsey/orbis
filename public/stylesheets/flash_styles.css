@@ -21,3 +21,5 @@
   color: #666;
   background: yellow url(/images/icons/error.gif) no-repeat 5px center;
 }
+
+.fieldWithErrors {color:red}

@@ -26,7 +26,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.root :home
 
-  map.resources :users, :clients, :candidates
+  map.resources :users, :clients, :candidates, :vacancies
   map.resource :user_session
 
   map.namespace(:admin) do |admin|

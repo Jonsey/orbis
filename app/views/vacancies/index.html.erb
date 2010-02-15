@@ -1,0 +1,54 @@
+<div class="wrap">
+  <div class="heading">
+    <h1>Live vacancies</h1>
+  </div>
+</div>
+<div class="twocolumn">
+  <div class="holder">
+    <div class="frame">
+      <div class="col">
+        <div class="col-heading">
+          <h2>TECHNOLOGY</h2>
+          <div class="pager">
+            <span>Page:</span>
+            <%= will_paginate @technology_vacancies, :param_name => "pt", :renderer => PaginationListLinkRenderer %>
+          </div>
+        </div>
+        <ul class="list">
+          <% @technology_vacancies.each do |vacancy| %>
+          <li><%= link_to "#{vacancy.role} - #{vacancy.location}", vacancy %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="col-heading">
+          <h2>ACCOUNTANCY &amp; FINANCE</h2>
+          <div class="pager">
+            <span>Page:</span>
+            <%= will_paginate @finance_vacancies, :param_name => "pa", :renderer => PaginationListLinkRenderer %>
+          </div>
+        </div>
+        <ul class="list">
+          <% @finance_vacancies.each do |vacancy| %>
+          <li><%= link_to "#{vacancy.role} - #{vacancy.location}", vacancy %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="articles">
+    <div class="title">
+      <h2>Create an account and get first in line...</h2>
+    </div>
+    <div class="article">
+      <h3>Submit your CV online</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="article">
+      <h3>Browse our online resources portal</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+  </div>
+</div>

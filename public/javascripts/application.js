@@ -1,7 +1,3 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
-// public/javascripts/application.js
-
 jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
@@ -20,4 +16,7 @@ jQuery.fn.clickWithLiveAjax = function(event) {
 $j(document).ready(function() {
     $j('a ajax').livequery('click', jQuery.fn.clickWithLiveAjax);
 })
+
+
+
 

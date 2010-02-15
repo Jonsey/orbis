@@ -12,6 +12,7 @@
   <div class="register-form">
     <div class="holder">
       <% formatted_form_for @client do |f| %>
+      <%= f.error_messages %>
       <div class="form-holder">
         <fieldset>
           <%= f.text_field :company_name, :label => "Company name:", :class => "txt" %>

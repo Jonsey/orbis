@@ -51,5 +51,7 @@ class Vacancy < ActiveRecord::Base
   named_scope :with_status, lambda { |state|
     { :conditions => { :status => state } }
   }
+  named_scope :finance_vacancies, :conditions => { :category_id => Category.find_by_name("Accounting & Finance").id }
+  named_scope :technology_vacancies, :conditions => { :category_id => Category.find_by_name("Technology").id }
 
 end

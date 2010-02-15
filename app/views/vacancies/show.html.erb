@@ -1,0 +1,34 @@
+<div class="wrap">
+  <div class="heading">
+    <a href="/vacancies" class="back">Back to all vacancies</a>
+    <h1>Job vacancy</h1>
+  </div>
+</div>
+<div class="wrap">
+  <div class="vacancy">
+    <dl class="props">
+      <dt>Role:</dt>
+      <dd><%= @vacancy.role %></dd>
+      <dt>Salary:</dt>
+      <dd><%= @vacancy.salary %></dd>
+      <dt>Location:</dt>
+      <dd><%= @vacancy.location %></dd>
+    </dl>
+    <div class="apply-box">
+      <p>
+        <% if current_user %>
+        <strong>Hi Finn, </strong>
+        <% end %>
+      </p>
+      <p>Click the button below to apply for this job online.</p>
+      <a href="#" class="btn04">Apply for this role </a>
+      <p>Alternatively call 0845 079 88 99</p>
+    </div>
+    <div class="text">
+      <div class="text-holder">
+        <p><%= @vacancy.role_description %></p>
+      </div>
+      <p>James Nash: <a href="mailto:&#106;&#097;&#110;&#064;&#111;&#114;&#098;&#105;&#115;&#045;&#114;&#101;&#115;&#111;&#117;&#114;&#099;&#105;&#110;&#103;&#046;&#099;&#111;&#109;">&#106;&#097;&#110;&#064;&#111;&#114;&#098;&#105;&#115;&#045;&#114;&#101;&#115;&#111;&#117;&#114;&#099;&#105;&#110;&#103;&#046;&#099;&#111;&#109;</a></p>
+    </div>
+  </div>
+</div>
