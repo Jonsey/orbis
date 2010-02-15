@@ -17,7 +17,7 @@
     <div class="apply-box">
       <p>
         <% if current_user %>
-        <strong>Hi Finn, </strong>
+        <strong>Hi <%= current_user.firstname.camelize %>, </strong>
         <% end %>
       </p>
       <p>Click the button below to apply for this job online.</p>
