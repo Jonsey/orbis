@@ -39,7 +39,7 @@ module ApplicationHelper
   end
 
   def render_nav_main
-#    nav_main if current_user
+    #    nav_main if current_user
     if current_user
       controller_menu([
                        { :label => "Users", :controller => "admin/users"},
@@ -54,7 +54,7 @@ module ApplicationHelper
   end
 
   def render_nav_sub
-   # nav_sub
+    # nav_sub
     action_menu if controller.controller_name != "user_sessions"
   end
 
@@ -67,7 +67,7 @@ module ApplicationHelper
       pages.each do |p|
         r << li(p.name, path(p), p)
       end
-    r << %( </ul>\r\n)
+      r << %( </ul>\r\n)
     end
   end
 
@@ -122,15 +122,42 @@ module ApplicationHelper
   end
 
   def breadcrumb
-   # return if !@show_breadcrumb
     returning [] do |arr|
       arr << %(<ul class="breadcrumbs">)
-      @breadcrumb.each do |crumb|
-        arr << %(<li>crumb</li>)
+      case controller.controller_name
+      when 'clients'
+        arr << %(<li>#{link_to "Client Portal", clients_path}</li>)
+        case controller.action_name
+        when 'index' then arr << %(<li>Working with you</li>)
+        when 'new' then arr << %(<li>Create a client account</li>)
+        end
+      when 'candidates'
+        arr << %(<li>#{link_to "Candidate Portal", candidates_path}</li>)
+        case controller.action_name
+        when 'index' then arr << %(<li>Sourcing the job that suits you best</li>)
+        when 'new' then arr << %(<li>Create a candidate account</li>)
+        end
+      when 'vacancies'
+        arr << %(<li>#{link_to "Candidate Portal", candidates_path}</li>)
+        case controller.action_name
+        when 'index' then arr << %(<li>Live vacancies</li>)
+        when 'show'
+          arr << %(<li>#{link_to "Live vacancies", vacancies_path}</li>)
+          arr << %(<li>#{@vacancy.role}, #{@vacancy.location}</li>)
+        end
+      when 'user_sessions'
+        case params[:user_type]
+        when 'client'
+          arr << %(<li>#{link_to "Client Portal", clients_path}</li>)
+          arr << %(<li>Login to your client account</li>)
+        when 'candidate'
+          arr << %(<li>#{link_to "Candidate Portal", candidates_path}</li>)
+          arr << %(<li>Login to your candidate account</li>)
+        end
       end
       arr << %(</ul>)
     end
   end
 
-
 end
+
