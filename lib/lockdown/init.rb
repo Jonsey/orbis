@@ -7,6 +7,8 @@ Lockdown::System.configure do
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   set_permission(:login).
     with_controller(:user_sessions).
+    and_controller(:client_sessions).
+    and_controller(:candidate_sessions).
     only_methods(:new, :create)
 
   set_permission(:static).

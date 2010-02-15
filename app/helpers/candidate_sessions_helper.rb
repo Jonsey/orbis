@@ -1,0 +1,2 @@
+module CandidateSessionsHelper
+end

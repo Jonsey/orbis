@@ -1,16 +1,8 @@
 class UserSessionsController < ApplicationController
   layout 'main'
 
-
   def new
     @user_session = UserSession.new
-    case params[:user_type]
-    when 'client'
-      render 'clients/login'
-    when 'candidate'
-      render 'candidates/login'
-    end
-
   end
 
   def create

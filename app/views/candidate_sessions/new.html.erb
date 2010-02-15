@@ -1,0 +1,37 @@
+<div class="wrap">
+  <div class="heading">
+    <h1>Login to your candidate account</h1>
+  </div>
+</div>
+<div class="account">
+  <div class="title">
+    <h2>CANDIDATE ACCOUNT</h2>
+    <p>Manage your vacancies online and 24 hr access to our resources portal.</p>
+  </div>
+  <div class="login-form">
+    <div class="holder">
+      <div class="form-holder">
+        <%= render :partial => 'user_sessions/form', :locals => { :theurl => candidate_session_path } %>
+      </div>
+      <div class="text">
+        <p>If you haven’t already registered with us click the button below to create a free account in seconds.</p>
+        <a href="candidates/new" class="btn03"><span><strong>Create candidate account</strong></span></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="articles">
+    <div class="title">
+      <h2>Account holder benefits</h2>
+    </div>
+    <div class="article">
+      <h3>Submit your vacancies online</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="article">
+      <h3>Browse our online resources portal</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+  </div>
+</div>
