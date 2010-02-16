@@ -7,6 +7,11 @@
   <%= f.text_field :salary, :class => "text", :wrapper_class => "cell" %>
   <%= f.text_field :location, :class => "text", :wrapper_class => "cell" %>
 </div>
+<% unless @vacancy.status == "draft" %>
+<div class="row">
+  <%= f.select :staff_id, Staff.all.collect{|p| [ p.to_s, p.id ] }, { :include_blank => true, :wrapper_class => "cell"}, :label => "Staff contact" %>
+</div>
+<% end %>
 <div class="row">
   <%= f.text_area :role_description, :wrapper_class => "cell" %>
 </div>

@@ -27,23 +27,27 @@ class Admin::VacanciesController < ApplicationController
 
   def update
     @vacancy = Vacancy.find(params[:id])
-    @vacancy.update_attributes(params[:vacancy])
 
-    case params[:commit]
-    when "Submit for approval"
-      @vacancy.submit_for_approval!
-      flash[:success] = "Vacancy updated and submitted for approval"
-    when "Approve"
-      @vacancy.approve!
-      flash[:success] = "Vacancy approved"
-    when "Archive"
-      @vacancy.archive!
-      flash[:success] = "Vacancy archived"
+    if @vacancy.update_attributes(params[:vacancy])
+
+      flash[:success] =  case params[:commit]
+                         when "Submit for approval"
+                           @vacancy.submit_for_approval!
+                           "Vacancy updated and submitted for approval"
+                         when "Approve"
+                           @vacancy.approve!
+                           "Vacancy approved"
+                         when "Archive"
+                           @vacancy.archive!
+                           "Vacancy archived"
+                         else
+                           "Vacancy updated"
+                         end
+
+      redirect_to [:admin, @vacancy]
     else
-      flash[:success] = "Vacancy updated"
+      render :action => :edit
     end
-
-    redirect_to [:admin, @vacancy]
   end
 
   def index
@@ -73,7 +77,7 @@ class Admin::VacanciesController < ApplicationController
     end
   end
 
-private
+  private
 
   def process_index_request
     default_state = current_user.default_vacancies_list

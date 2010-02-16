@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    "#{firstname} #{lastname}"
+    "#{firstname} #{lastname}".camelize
   end
 
 end

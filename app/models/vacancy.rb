@@ -2,12 +2,15 @@ class Vacancy < ActiveRecord::Base
   include AASM
 
   belongs_to :category
+  belongs_to :staff
 
   validates_presence_of \
   :role,
   :salary,
   :location,
   :role_description
+
+  validates_presence_of :staff_id, :unless => :is_draft?
 
   aasm_column :status
   aasm_initial_state :draft
@@ -53,5 +56,10 @@ class Vacancy < ActiveRecord::Base
   }
   named_scope :finance_vacancies, :conditions => { :category_id => Category.find_by_name("Accounting & Finance").id }
   named_scope :technology_vacancies, :conditions => { :category_id => Category.find_by_name("Technology").id }
+
+  def is_draft?
+    @status == "draft"
+  end
+
 
 end
