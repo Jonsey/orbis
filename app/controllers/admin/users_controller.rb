@@ -11,7 +11,7 @@ class Admin::UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Account updated!"
-      # redirect_to @user
+      redirect_to @user
     else
       render :action => :edit
     end
