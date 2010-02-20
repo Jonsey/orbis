@@ -8,9 +8,7 @@ Feature: Client dash board
 
     Scenario: viewing client dashboard
       And I should see "Create Vacancy"
-      And I should see "Drafts"
-      And I should see "Awaiting Approval"
-      And I should see "Live"
-      And I should see "Archived"
-      And I should see "My Account"
+      And I should see "Vacancies"
+      And I should see "Documents"
+
 

@@ -6,7 +6,7 @@ class RemoveFieldsFromVacancies < ActiveRecord::Migration
   end
 
   def self.down
-    add_column :vacancies, :title, :null => false
+    add_column :vacancies, :title, :string, :null => false
     add_column :vacancies, :duration, :string
     add_column :vacancies, :key_skills, :string
   end

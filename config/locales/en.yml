@@ -7,7 +7,6 @@
         header:
           one:    "{{model}} is not valid"
           other:  "There are {{count}} errors prohibiting this {{model}} from being created."
-        # The variable :count is also available
         body: "There were problems with the following fields:"
       messages:
         blank: "is required"

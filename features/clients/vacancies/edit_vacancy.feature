@@ -9,8 +9,8 @@ Feature: Ammend vacancy details
     | client@admin.com | password | Clients   |
 
     And the following vacancies already exist:
-    | title     | role | salary | location | duration | key_skills | role_description | client           |
-    | vacancy 1 | role | salary | location | duration | key skills | Role Description | client@admin.com |
+    | role      | salary | location | role_description | client           |
+    | vacancy 1 | salary | location | Role Description | client@admin.com |
 
     Scenario:  Client editing draft vacancy
       When I login as "client@admin.com"

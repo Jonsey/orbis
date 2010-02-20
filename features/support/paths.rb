@@ -3,6 +3,8 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /^#{capture_model}(?:'s)? page$/
+      path_to_pickle $1
     when /the home\s?page/
       '/'
     when /the unauthorised access page/
@@ -15,6 +17,8 @@ module NavigationHelpers
       staff_registration_path
     when /the login page/
       login_path
+    when /the candidate login page/
+      candidate_login_path
     when /the admin dashboard/
       admin_path
     when /the admin pages list/

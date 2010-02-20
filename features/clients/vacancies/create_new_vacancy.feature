@@ -1,4 +1,4 @@
-@vacancies
+@vacancies @new
 Feature: Create new vacancy
   In order to advertise vacancies on the web site
   As a client

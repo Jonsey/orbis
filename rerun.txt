@@ -1,0 +1,1 @@
+features/authentication/admin_login.feature:7:39 features/authentication/register_candidate.feature:19 features/candidates/apply_online.feature:10:18 features/clients/vacancies/list_draft_vacancies.feature:36

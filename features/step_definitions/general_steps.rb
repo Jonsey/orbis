@@ -33,3 +33,12 @@ Then /^(?:|I )should be at (.+)$/ do |page_name|
   end
 
 end
+
+When /^I try to go to (.+)$/ do |page_name|
+  begin
+    visit path_to(page_name)
+  rescue Exception
+    visit Lockdown::System.fetch(:access_denied_path)
+  end
+end
+

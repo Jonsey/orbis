@@ -47,7 +47,7 @@ private
         arr << %(<td>#{row.salary}</td>)
         arr << %(<td>#{row.category.to_s}</td>)
         arr << %(<td>#{row.try(:staff)}</td>)
-        arr << %(<td>#{image_link_to('icons/ico-view.png', 'preview', vacancy_path(row.id),{ }, :popup => true)})
+        arr << %(<td>#{image_link_to('icons/ico-view.png', 'preview', vacancy_path(row.id),{ }, :popup => [ 'Preview' , 'height=764,width=973,resizable=yes,scrollbars=yes'])})
         arr << %(  #{image_link_to('icons/ico-edit.png','edit', edit_admin_vacancy_path(row.id)) if show_edit_vacancy})
         arr << %(  #{image_link_to('icons/ico-del.png', 'delete', { :action => :destroy, :id => row }, nil, :method => :delete) if show_delete_vacancy}</td>)
         arr << %(</tr>)
@@ -56,12 +56,12 @@ private
   end
 
   def show_edit_vacancy
-    return true if current_user.is_a?(Staff) || current_user_is_admin?
-    @status.to_sym == :draft
+    return false if current_user.is_a?(Client) && (@status.to_sym == :awaiting_approval)
+    true
   end
 
   def show_delete_vacancy
-    return true if @status.to_sym == :draft || :archived || current_user_is_admin?
+    return true if @status.to_sym == :draft || :archived || current_user_is_admin? || session[:access_rights].include?("admin/vacancies/destroy")
     false
   end
 

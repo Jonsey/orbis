@@ -10,7 +10,8 @@ class Admin::VacanciesController < ApplicationController
 
     if @vacancy.save
       if params[:commit] == "Submit for approval"
-        @vacancy.submit_for_approval!
+        @vacancy.submit_for_approval
+        @vacancy.save(false)
         flash[:success] = "Vacancy submitted for approval"
       else
         flash[:success] = "Vacancy saved to drafts"
@@ -32,7 +33,8 @@ class Admin::VacanciesController < ApplicationController
 
       flash[:success] =  case params[:commit]
                          when "Submit for approval"
-                           @vacancy.submit_for_approval!
+                           @vacancy.submit_for_approval
+                           @vacancy.save(false)
                            "Vacancy updated and submitted for approval"
                          when "Approve"
                            @vacancy.approve!

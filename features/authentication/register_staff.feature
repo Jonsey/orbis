@@ -21,5 +21,11 @@ Feature: Register staff
     Given I am logged in as a staff
     And I am on the staff registration page
     When I press "Register"
-    And I should see "errors prohibited this staff from being saved"
+    And I should see "There were problems with the following fields:"
+
+ Scenario: Logged in as client
+    Given I am logged in as a client
+    When I try to go to the staff registration page
+    Then I should see "You do not have permission to view this page!"
+
 

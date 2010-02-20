@@ -3,6 +3,7 @@ class Vacancy < ActiveRecord::Base
 
   belongs_to :category
   belongs_to :staff
+  belongs_to :client
 
   validates_presence_of \
   :role,
@@ -10,7 +11,7 @@ class Vacancy < ActiveRecord::Base
   :location,
   :role_description
 
-  validates_presence_of :staff_id, :unless => :is_draft?
+  validates_presence_of :staff_id, :unless => Proc.new { |v| v.status == "draft" }
 
   aasm_column :status
   aasm_initial_state :draft
@@ -21,7 +22,7 @@ class Vacancy < ActiveRecord::Base
   aasm_state :archived
 
   aasm_event :submit_for_approval do
-    transitions :to => :awaiting_approval, :from => :draft
+    transitions :to => :awaiting_approval, :from => [:draft]
   end
 
   aasm_event :approve do
@@ -37,7 +38,7 @@ class Vacancy < ActiveRecord::Base
   end
 
   def editor_ids
-    ug = UserGroup.find_by_name(:administrators)
+    ug = UserGroup.find_by_name("Staffs")
     ug.user_ids |= [self.client_id]
   end
 
@@ -54,11 +55,12 @@ class Vacancy < ActiveRecord::Base
   named_scope :with_status, lambda { |state|
     { :conditions => { :status => state } }
   }
-  named_scope :finance_vacancies, :conditions => { :category_id => Category.find_by_name("Accounting & Finance").id }
-  named_scope :technology_vacancies, :conditions => { :category_id => Category.find_by_name("Technology").id }
+  named_scope :with_category, lambda { |cat|
+    { :conditions => { :category_id => Category.find_by_name(cat).id } }
+  }
 
   def is_draft?
-    @status == "draft"
+    status == "draft"
   end
 
 

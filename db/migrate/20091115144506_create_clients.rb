@@ -9,11 +9,11 @@ class CreateClients < ActiveRecord::Migration
   end
 
   def self.down
+    remove_index :users, :company_name
+
     remove_column :users, :firstname
     remove_column :users, :lastname
     remove_column :users, :telephone
     remove_column :users, :company_name
-
-    remove_index :users, :company_name
   end
 end

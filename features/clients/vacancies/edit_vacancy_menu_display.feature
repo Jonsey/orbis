@@ -19,7 +19,7 @@ Scenario: Client editing vacancy
   Then the main menu should contain the following links:
   | name      | link                       | class  |
   | Vacancies | admin_client_vacancies_url | active |
-  | Account   | edit_admin_client_url      |        |
+  | Documents | admin_documents_url        |        |
   And the sub menu should contain the following links:
   | name | link                            | class  |
   | List | admin_candidate_vacancies_url   | active |

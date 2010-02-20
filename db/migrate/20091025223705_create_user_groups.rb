@@ -17,7 +17,7 @@ class CreateUserGroups < ActiveRecord::Migration
   end
 
   def self.down
-                drop_table :user_groups_users
+    drop_table :user_groups_users
     drop_table :user_groups
   end
 end

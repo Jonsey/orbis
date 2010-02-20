@@ -20,4 +20,4 @@ Feature: Register client
   Scenario: Invalid registration details
     Given I am on the client signup page
     When I press "Create account"
-    And I should see "Error message"
+    And I should see "There were problems with the following fields:"

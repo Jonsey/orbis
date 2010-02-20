@@ -33,4 +33,4 @@ Feature: Register candidate
   Scenario:
     Given I am on the candidate signup page
     When I press "Create Account"
-    And I should see "Please fill in all the required fields."
+    And I should see "There were problems with the following fields:"

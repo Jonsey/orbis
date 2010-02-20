@@ -35,5 +35,5 @@ Feature: List draft vacancies
 
   Scenario: Try to edit someone elses vacancy
     Given I login as "client@admin.com"
-    And I go to the edit vacancy page for "vacancy 2"
+    And I try to go to the edit vacancy page for "vacancy 2"
     Then I should be on the home page

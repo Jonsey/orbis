@@ -1,4 +1,4 @@
-@vacancies
+@vacancies @submit_vacancy
 Feature: Submit vacancy for approval
   In order to have my vacancy approved for the live site
   As an authorised client
@@ -14,7 +14,7 @@ Feature: Submit vacancy for approval
     And I press "Submit for approval"
     Then I should see "Vacancy submitted for approval"
     And the vacancy should have the status of "awaiting_approval"
-    And a new vacancy email should be delivered to "vacancies@orbisweb.com"
+    And a new vacancy notification should be delivered to "vacancies@orbisweb.com"
     When I go to the vacancies awaiting approval page
     Then I should have 1 rows of vacancies
 
@@ -33,8 +33,8 @@ Feature: Submit vacancy for approval
     Then I should see "Vacancy submitted for approval"
     When I go to the vacancies awaiting approval page
     Then I should not see a link with title "edit"
-    And I should see a link with title "view"
-    When I follow "view"
+    And I should see a link with title "preview"
+    When I follow "preview"
     Then I should not see "Submit for approval"
     And I should not see "Update"
 

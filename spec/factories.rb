@@ -8,16 +8,16 @@ Factory.define :user do |c|
   c.firstname "User"
   c.lastname "Jones"
   c.telephone '07010 717232'
-  c.email {|a| "#{a.firstname}.#{a.lastname}@example.com".downcase }
+  c.sequence(:email) {|n| "user#{n}@example.com" }
 end
 
-Factory.define :staff do |c|
+Factory.define :staff, :class => Staff do |c|
   c.password 'password'
   c.password_confirmation 'password'
-  c.firstname "User"
+  c.firstname "Staff"
   c.lastname "Jones"
   c.telephone '07010 717232'
-  c.email {|a| "#{a.firstname}.#{a.lastname}@example.com".downcase }
+  c.sequence(:email) {|n| "staff#{n}@example.com" }
 end
 
 Factory.define :client, :class => Client do |c|
@@ -26,7 +26,7 @@ Factory.define :client, :class => Client do |c|
   c.firstname "Client"
   c.lastname "Jones"
   c.telephone '07010 717232'
-  c.email {|a| "#{a.firstname}.#{a.lastname}@example.com".downcase }
+  c.sequence(:email) {|n| "client#{n}@example.com" }
   c.company_name 'Space tech'
 end
 
@@ -36,7 +36,7 @@ Factory.define :candidate, :class => Candidate do |c|
   c.firstname "Candidate"
   c.lastname "Jones"
   c.telephone '07010 717232'
-  c.email {|a| "#{a.firstname}.#{a.lastname}@example.com".downcase }
+  c.sequence(:email) {|n| "candidate#{n}@example.com" }
 end
 
 Factory.define :category, :class => Category do |c|
@@ -45,13 +45,14 @@ Factory.define :category, :class => Category do |c|
 end
 
 
-Factory.define :vacancy, :class => Vacancy, :default_strategy => :create do |v|
+Factory.define :vacancy, :class => Vacancy do |v|
   v.role 'Senior Ruby developer'
-  v.category_id Factory.build(:category)
+  v.association :category
   v.salary '50000'
   v.location 'Space'
   v.role_description 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-  v.client_id Factory.build(:client)
+  v.association :client
+  v.association :staff
   v.status 'draft'
 end
 

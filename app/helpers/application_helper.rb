@@ -101,7 +101,7 @@ module ApplicationHelper
       arr << %(>)
       arr << link_to(text, path, :class => 'tab')
       arr << %(</li>\r\n)
-    end unless current_menu.nil?
+    end # unless current_menu.nil?
   end
 
   def li(text, path, p)
@@ -111,7 +111,7 @@ module ApplicationHelper
       arr << %(>)
       arr << link_to(text, path)
       arr << %(</li>\r\n)
-    end unless current_menu.nil?
+    end # unless current_menu.nil?
   end
 
   def image_link_to(image_source, title, url_options, image_options = nil, html_options = {})

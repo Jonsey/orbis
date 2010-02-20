@@ -1,7 +1,6 @@
 class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
-      t.string    :login,               :null => false
       t.string    :email,               :null => false
       t.string    :crypted_password,    :null => false
       t.string    :password_salt,       :null => false
@@ -21,12 +20,10 @@ class CreateUsers < ActiveRecord::Migration
     end
 
     usr = User.create \
-              :login => 'admin',
               :email => 'damianajones@yahoo.co.uk',
               :password => 'orgone642',
               :password_confirmation => 'orgone642'
 
-    add_index :users, :login
     add_index :users, :persistence_token
     add_index :users, :last_request_at
     add_index :users, :perishable_token

@@ -6,9 +6,11 @@ Feature: Approve vacancy
 
   Scenario: Logged in as staff member
   Given I am logged in as a staff
-  And I have one vacancy with status "awaiting approval"
+    And a vacancy exists with status: "awaiting_approval"
+  Then a vacancy should exist with status: "awaiting_approval"
   When I go to the vacancies awaiting approval page
-  And I follow "edit"
-  And I press "Approve"
+  Then show me the page
+    And I follow "edit"
+    And I press "Approve"
   Then I should see "Vacancy approved"
-  And I should have 1 vacancy with status "Live"
+    And a vacancy should exist with status: "Live"

@@ -28,7 +28,9 @@
       <div class="text-holder">
         <p><%= @vacancy.role_description %></p>
       </div>
+      <% unless @vacancy.staff.nil? %>
       <p><%= @vacancy.staff.to_s %>: <%= mail_to @vacancy.staff.email, @vacancy.staff.email, :encode => "hex" %></p>
+      <% end %>
     </div>
   </div>
 </div>
