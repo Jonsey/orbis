@@ -2,6 +2,7 @@ class VacanciesController < ApplicationController
   layout 'main'
 
   def show
+    session[:return_to_vacancy] = request.request_uri
     @vacancy = Vacancy.find(params[:id])
   end
 
