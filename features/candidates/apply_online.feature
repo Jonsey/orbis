@@ -11,9 +11,9 @@ Feature: apply online
  Scenario: Candidate is logged in
     And I am logged in as a candidate
    When I go to the vacancy's page
-    And I follow "Apply for this role"
-   Then I should see "Staff have been notified of your application, you can view your current applications from the control panel"
-    And 1 application should exist with candidate: the candidate, vacancy: the vacancy
+    And I press "Apply for this role"
+   Then I should see "Staff have been notified of your application. You can view your current applications from the control panel"
+    And an application should exist with candidate: the candidate, vacancy: the vacancy
     And an email "New vacancy application" should be delivered to the "staff@example.com"
 
 
@@ -26,3 +26,7 @@ Feature: apply online
     And I fill in "Password" with "password"
     And I press "Login"
    Then I should be on the vacancy's page
+   When I press "Apply for this role"
+   Then I should see "Staff have been notified of your application. You can view your current applications from the control panel"
+    And an application should exist with candidate: the candidate, vacancy: the vacancy
+    And an email "New vacancy application" should be delivered to the "staff@example.com"

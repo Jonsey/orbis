@@ -97,6 +97,10 @@ Lockdown::System.configure do
     with_controller(:admin__documents).
     only_methods(:show, :index)
 
+  set_permission(:apply_for_vacancies).
+    with_controller(:vacancies).
+    only_methods(:apply)
+
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Built-in user groups
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -110,6 +114,6 @@ Lockdown::System.configure do
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   set_user_group(:administrators, :manage_categories)
   set_user_group(:clients, :my_client_account, :create_vacancies,:list_vacancies, :edit_vacancies, :delete_vacancies, :view_documents)
-  set_user_group(:candidates, :my_candidate_account, :list_vacancies)
+  set_user_group(:candidates, :my_candidate_account, :list_vacancies, :apply_for_vacancies)
   set_user_group(:staffs, :my_staff_account, :list_vacancies, :edit_vacancies,:register_staff, :manage_staff, :manage_documents, :manage_clients, :manage_candidates)
 end

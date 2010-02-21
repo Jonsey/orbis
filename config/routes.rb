@@ -3,6 +3,10 @@ ActionController::Routing::Routes.draw do |map|
   # front end
   map.home '/home', :controller => 'home', :action => 'index'
 
+  map.connect 'vacancy/:id', :controller => 'vacancies', :action => 'apply',
+              :conditions => { :method => :put }
+
+
   map.with_options :controller => 'contact' do |contact|
     contact.contact '/contact',
     :action => 'index',

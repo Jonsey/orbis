@@ -21,7 +21,13 @@
         <% end %>
       </p>
       <p>Click the button below to apply for this job online.</p>
+      <% form_for @vacancy, :url => { :action => "apply" } do |f| %>
+      <% if current_user %>
+      <%= f.submit "Apply for this role" %>
+      <% else %>
       <a href="/candidate-login" class="btn04">Apply for this role </a>
+      <% end %>
+      <% end %>
       <p>Alternatively call 0845 079 88 99</p>
     </div>
     <div class="text">

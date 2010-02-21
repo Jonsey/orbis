@@ -4,6 +4,7 @@ class Vacancy < ActiveRecord::Base
   belongs_to :category
   belongs_to :staff
   belongs_to :client
+  has_and_belongs_to_many :candidates, :join_table => :applications
 
   validates_presence_of \
   :role,
