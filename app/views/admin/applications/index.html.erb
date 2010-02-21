@@ -1,0 +1,9 @@
+<% @vacancies.each do |v| %>
+<% unless v.candidates.nil? %>
+<b>Vacancy: <%= v.to_s %></b><br/><br/>
+<b>Candidate applications:</b><br/>
+<% v.candidates.each do |c| %>
+<%= c.to_s %><br/>
+<% end %>
+<% end %>
+<%end %>

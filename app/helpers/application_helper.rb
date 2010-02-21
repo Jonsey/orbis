@@ -47,6 +47,7 @@ module ApplicationHelper
                        { :label => "Clients", :controller => "admin/clients"},
                        { :label => "Candidates", :controller => "admin/candidates"},
                        { :label => "Vacancies", :controller => "admin/vacancies"},
+                       { :label => "Applications", :controller => "admin/applications"},
                        { :label => "Categories", :controller => "admin/categories"},
                        { :label => "Documents", :controller => "admin/documents"}])
     end

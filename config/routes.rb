@@ -42,6 +42,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :vacancies
     admin.resources :categories
     admin.resources :documents
+    admin.resources :applications
   end
 
   map.connect '*path', :controller => 'static'
