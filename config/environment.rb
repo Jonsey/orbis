@@ -26,3 +26,8 @@ Rails::Initializer.run do |config|
 end
 
 require 'formatted_form_for'
+
+#ActiveSupport::Inflector.inflections do |inflect|
+# inflect.irregular 'staff', 'staff'
+#end
+

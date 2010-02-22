@@ -30,13 +30,13 @@ module AdminMenu
         r << %(<li)
         r << %( class='active') if is_current_action?("index")
         r << %(>)
-        r << (link_to "List", index_path )
+        r << (link_to "List #{model_name.pluralize}", index_path )
         r << "</li>\r\n"
 
         r << %(<li)
         r << %( class='active') if is_current_action?("new")
         r << %(>)
-        r << (link_to "New", new_path)
+        r << (link_to "New #{model_name}", new_path)
         r << "</li>\r\n"
 
         if is_current_action?("edit")
@@ -86,8 +86,12 @@ module AdminMenu
       "Displaying: " + item.to_s
     end
 
+    def model_name
+      item_instance_name.split('_')[1]
+    end
+
     def item
-      eval("@#{item_instance_name.split('_')[1]}")
+      eval("@#{model_name}")
     end
 
     def item_instance_name

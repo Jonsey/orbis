@@ -8,9 +8,15 @@ class VacanciesController < ApplicationController
 
   def apply
     @vacancy = Vacancy.find(params[:id])
-    @vacancy.candidates << current_user unless @vacancy.candidates.include?(current_user)
-    if @vacancy.save
-      flash[:notice] = "Staff have been notified of your application. You can view your current applications from the <a href='/admin/applications'>control panel</a>"
+    if current_user.is_a?(Candidate)
+      @vacancy.candidates << current_user unless @vacancy.candidates.include?(current_user)
+      if @vacancy.save
+        session[:return_to_vacancy] = nil
+        flash[:notice] = "Staff have been notified of your application. You can view your current applications from the <a href='/admin/applications'>control panel</a>"
+
+      end
+    else
+      flash[:error] = "You must be logged in as a Candidate to apply for vacancies."
     end
     redirect_to @vacancy
   end

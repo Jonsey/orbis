@@ -1,6 +1,10 @@
 <%= my_page_title @page_title.capitalize.gsub(/_/, ' ') + ' Vacancies' %>
 
 <% content_for :tabbed_content do -%>
+<div class="pager">
+  <span>Page:</span>
+  <%= will_paginate @vacancies, :param_name => "pa", :renderer => PaginationListLinkRenderer %>
+</div>
 <%= vacancies_table %>
 <% end -%>
 

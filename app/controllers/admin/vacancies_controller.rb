@@ -62,7 +62,7 @@ class Admin::VacanciesController < ApplicationController
                    Vacancy.find_all_by_status('live')
                  else
                    Vacancy.find_all_by_status(@status)
-                 end
+                 end.paginate :per_page => 1, :page => params[:pt], :order => 'created_at DESC'
   end
 
   def show

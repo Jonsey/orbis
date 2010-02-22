@@ -7,9 +7,10 @@ coverage
 tmp/*
 log/*.log
 public/cache/*
-public/system/items/**
+public/system/**
 .DS_Store
 *~
 *_flymake*
 rcov/*
 coverage.data
+rerun.txt
