@@ -1,8 +1,1 @@
-#!/bin/sh
-
-#/var/www/vhosts/ruralandweb.com/subdomains/orbis/current/script/process/spawner \
-  mongrel \
-  --environment=production \
-  --instances=3 \
-  --address=127.0.0.1 \
-  --port=4000
+/usr/bin/mongrel_rails cluster::start -C /var/www/vhosts/ruralandweb.com/subdomains/orbis/current/config/mongrel_cluster.yml
