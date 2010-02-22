@@ -11,11 +11,11 @@ require 'tasks/rails'
 
 # vlad the deployer
 
-begin
-  require 'rubygems'
-  require 'vlad'
-  Vlad.load :scm => :git
-rescue LoadError => e
-  puts "Unable to load Vlad #{e}."
-end
+#begin
+#  require 'rubygems'
+#  require 'vlad'
+#  Vlad.load :scm => :git
+#rescue LoadError => e
+#  puts "Unable to load Vlad #{e}."
+#end
 
