@@ -1,3 +1,4 @@
+cwd: /var/www/vhosts/ruralandweb.com.subdomains/orbis/current
 log_file: log/mongrel.log
 port: "4000"
 environment: production
