@@ -22,9 +22,9 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: orbis_production
+  database: orbis_prod
   pool: 5
-  username: web_user
+  username: orbis
   password: orgone642
   host: localhost
 
