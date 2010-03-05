@@ -19,10 +19,10 @@ class CreateUsers < ActiveRecord::Migration
       t.timestamps
     end
 
-    usr = User.create \
-              :email => 'damianajones@yahoo.co.uk',
-              :password => 'orgone642',
-              :password_confirmation => 'orgone642'
+   # usr = User.create \
+    #          :email => 'damianajones@yahoo.co.uk',
+    #          :password => 'orgone642',
+   #           :password_confirmation => 'orgone642'
 
     add_index :users, :persistence_token
     add_index :users, :last_request_at
