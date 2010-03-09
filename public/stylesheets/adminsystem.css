@@ -76,6 +76,11 @@ table.tbl-standard td { padding:10px 0 15px 10px; }
 
 * html #create-new-user .breadcrumb { margin-left:-4px; }
 
+.row { width:100%; overflow:hidden; padding:0 0 15px; margin:6px 0 0; }
+.cell { width:150px; padding:0 20px 0 0; float:left; }
+label { display:block; padding:0 0 5px; }
+.text { margin:0; padding:2px 5px; width:134px; font:12px/14px Arial, Tahoma, sans-serif; }
+
 #create-new-user .breadcrumb li { padding:9px 0 9px 24px; margin:1px 0 0; background:#e8e8e8; }
 #create-new-user .breadcrumb li.active { background:#d1d1d1 url(../images/bread-active.gif) no-repeat 0 50%; }
 .create-new-user { margin:0; padding:17px; border:none; overflow:hidden; height:1%; color:#666; border:1px solid #e8e8e8; border-right:none; background:#fff url(../images/border.gif) repeat-y 100% 0; }
