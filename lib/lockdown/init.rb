@@ -108,7 +108,7 @@ Lockdown::System.configure do
   # Built-in user groups
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   set_public_access :login, :signup, :static, :public
-  set_protected_access  :view_vacancies,:logout
+  set_protected_access  :view_vacancies, :logout
 #,  :edit_vacancies,  :delete_vacancies,  :create_vacancies,  :list_vacancies,  :manage_clients,  :manage_candidates,  :manage_documents,  :manage_categories,  :my_client_account,  :my_candidate_account,  :my_staff_account,  :register_staff, :apply_for_vacancies
 
 
@@ -118,5 +118,5 @@ Lockdown::System.configure do
   set_user_group(:administrators, :manage_categories)
   set_user_group(:clients, :my_client_account, :create_vacancies,:list_vacancies, :edit_vacancies, :delete_vacancies, :view_documents, :apply_for_vacancies)
   set_user_group(:candidates, :my_candidate_account, :list_vacancies, :apply_for_vacancies, :manage_applications)
-  set_user_group(:staffs, :my_staff_account, :list_vacancies, :edit_vacancies,:register_staff, :manage_staff, :manage_documents, :manage_clients, :manage_candidates, :apply_for_vacancies, :manage_applications)
+  set_user_group(:staffs, :my_staff_account, :list_vacancies, :edit_vacancies, :register_staff, :manage_staff, :manage_documents, :manage_clients, :manage_candidates, :apply_for_vacancies, :manage_applications)
 end
