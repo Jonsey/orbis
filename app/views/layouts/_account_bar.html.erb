@@ -3,7 +3,8 @@
       <% unless current_user %>
       <li><%= link_to 'Login', login_path %></li>
       <% else %>
-      <li><a><%= current_user.to_s %></a></li>
+      <li><a href="#"><%= current_user.class.name.humanize %>:</a>
+      <a><%= current_user.to_s %></a></li>
       <li><%= link_to("My Account", edit_polymorphic_path([:admin, current_user])) %></li>
       <li><%= link_to 'Logout', logout_path %></li>
       <% end %>
