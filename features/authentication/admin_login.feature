@@ -7,7 +7,7 @@ Feature: User login
   Scenario: Login in as admin
     Given an exisiting admin user with email "admin@example.com"
     When I login as "admin@example.com"
-    Then I should be on the admin pages list
+    Then I should be on the admin vacancies page
     And the main menu should contain the following links:
     | name         | link                  | class  |
     | Vacancies    | admin_vacancies_url   | active |
@@ -20,9 +20,9 @@ Feature: User login
     | Applications | admin_aplications_url |        |
 
     And the sub menu should contain the following links:
-    | name | link                  | class  |
-    | List | admin_vacancies_url   | active |
-    | New  | new_admin_vacancy_url |        |
+    | name           | link                  | class  |
+    | List vacancies | admin_vacancies_url   | active |
+    | New vacancy    | new_admin_vacancy_url |        |
 
   Scenario: Login in as client
     Given I am logged in as a client
@@ -32,9 +32,9 @@ Feature: User login
     | Vacancies | admin_vacancies_url | active |
     | Documents | admin_documents_url |        |
     And the sub menu should contain the following links:
-    | name | link                  | class  |
-    | List | admin_vacancies_url   | active |
-    | New  | new_admin_vacancy_url |        |
+    | name           | link                  | class  |
+    | List vacancies | admin_vacancies_url   | active |
+    | New vacancy    | new_admin_vacancy_url |        |
 
   Scenario: Login in as candidate
     Given I am logged in as a candidate
@@ -44,8 +44,8 @@ Feature: User login
     | Vacancies    | admin_vacancies_url    | active |
     | Applications | admin_applications_url |        |
     And the sub menu should contain the following links:
-    | name | link                | class  |
-    | List | admin_vacancies_url | active |
+    | name           | link                | class  |
+    | List vacancies | admin_vacancies_url | active |
 
   Scenario: Login in as staff
     Given I am logged in as a staff
@@ -57,7 +57,7 @@ Feature: User login
     | Clients    | admin_clients_url    |        |
     | Staff      | admin_staffs_url     |        |
     And the sub menu should contain the following links:
-    | name | link                | class  |
-    | List | admin_vacancies_url | active |
+    | name           | link                | class  |
+    | List vacancies | admin_vacancies_url | active |
 
 

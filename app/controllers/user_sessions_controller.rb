@@ -32,7 +32,7 @@ class UserSessionsController < ApplicationController
       when Client; new_admin_vacancy_path
       when Candidate; admin_vacancies_path(:status => :live)
       when Staff; admin_vacancies_path(:status => :awaiting_approval)
-      else admin_pages_path if current_user_is_admin?
+      else admin_vacancies_path if current_user_is_admin?
     end
   end
 

@@ -21,8 +21,8 @@ Scenario: Client editing vacancy
   | Vacancies | admin_client_vacancies_url | active |
   | Documents | admin_documents_url        |        |
   And the sub menu should contain the following links:
-  | name | link                            | class  |
-  | List | admin_candidate_vacancies_url   | active |
-  | New  | new_admin_candidate_vacancy_url |        |
+  | name           | link                            | class  |
+  | List vacancies | admin_candidate_vacancies_url   | active |
+  | New vacancy    | new_admin_candidate_vacancy_url |        |
 
 
