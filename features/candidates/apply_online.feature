@@ -13,8 +13,9 @@ Feature: apply online
    When I go to the vacancy's page
     And I press "Apply for this role"
    Then I should see "Staff have been notified of your application. You can view your current applications from the control panel"
-    And an application should exist with candidate: the candidate, vacancy: the vacancy
     And an email "New vacancy application" should be delivered to the "staff@example.com"
+   When I go to the admin applications page
+    Then I should see "New vacancy"
 
 
  Scenario: Candidate is not logged in
