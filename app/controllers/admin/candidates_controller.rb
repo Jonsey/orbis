@@ -11,7 +11,7 @@ class Admin::CandidatesController < ApplicationController
     @candidate = Candidate.find_by_id(params[:id])
     if @candidate.update_attributes(params[:candidate])
       flash[:success] = "Account updated!"
-      redirect_to @candidate
+      redirect_to admin_candidates_url
     else
       render :action => :edit
     end

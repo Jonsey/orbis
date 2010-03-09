@@ -11,7 +11,7 @@ class Admin::ClientsController < ApplicationController
     @client = Client.find_by_id(params[:id])
     if @client.update_attributes(params[:client])
       flash[:success] = "Account updated!"
-      redirect_to @client
+      redirect_to admin_clients_url
     else
       render :action => :edit
     end

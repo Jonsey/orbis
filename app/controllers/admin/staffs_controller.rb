@@ -26,9 +26,9 @@ class Admin::StaffsController < ApplicationController
 
   def update
     @staff = Staff.find_by_id(params[:id])
-    if @user.update_attributes(params[:staff])
+    if @staff.update_attributes(params[:staff])
       flash[:success] = "Account updated!"
-      redirect_to @staff
+      redirect_to admin_staffs_url
     else
       render :action => :edit
     end

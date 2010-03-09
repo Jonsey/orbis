@@ -25,8 +25,8 @@ private
         arr << %(<td>#{row.lastname}</td>)
         arr << %(<td>#{row.email}</td>)
         arr << %(<td>#{row.telephone}</td>)
-        arr << %(<td>#{image_link_to('icons/ico-view.png', 'view', admin_user_path(row.id))})
-        arr << %(  #{image_link_to('icons/ico-edit.png','edit', edit_admin_user_path(row.id))})
+        arr << %(<td>#{image_link_to('icons/ico-view.png', 'view', admin_staff_path(row.id))})
+        arr << %(  #{image_link_to('icons/ico-edit.png','edit', edit_admin_staff_path(row.id))})
         arr << %(  #{image_link_to('icons/ico-del.png', 'delete', { :action => :destroy, :id => row }, nil, :method => :delete)}</td>)
         arr << %(</tr>)
       end
