@@ -4,7 +4,7 @@
       <%= render_vacancy_tabs %>
     </ul>
     <% unless current_user.is_a?(Candidate) -%>
-    <a class="btn-del" href="#"><span>A button to use</span></a>
+    <a class="btn-del" href="#"><span><%= @status == "live" ? "Archive selected" : "Delete selected" %></span></a>
     <% end -%>
   </div><!-- / holder-tabs -->
   <%= yield :tabbed_content %>
