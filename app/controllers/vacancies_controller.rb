@@ -22,8 +22,8 @@ class VacanciesController < ApplicationController
   end
 
   def index
-    @technology_vacancies = Vacancy.with_category("Technology").paginate :per_page => 5, :page => params[:pt], :order => 'created_at DESC'
-    @finance_vacancies = Vacancy.with_category("Accountancy & Finance").paginate :per_page => 5, :page => params[:pa], :order => 'created_at DESC'
+    @technology_vacancies = Vacancy.with_category("Technology").with_status("Live").paginate :per_page => 5, :page => params[:pt], :order => 'created_at DESC'
+    @finance_vacancies = Vacancy.with_category("Accountancy & Finance").with_status("Live").paginate :per_page => 5, :page => params[:pa], :order => 'created_at DESC'
   end
 
 end

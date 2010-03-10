@@ -1,6 +1,6 @@
 module HomeHelper
   def hot_vacancies
-    Vacancy.all
+    Vacancy.with_status("live")
   end
 
 end
