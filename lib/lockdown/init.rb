@@ -109,8 +109,6 @@ Lockdown::System.configure do
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   set_public_access :login, :signup, :static, :public
   set_protected_access  :view_vacancies, :logout
-#, :edit_vacancies,  :delete_vacancies,  :create_vacancies,  :list_vacancies,  :manage_clients,  :manage_candidates,  :manage_documents,  :manage_categories,  :my_client_account,  :my_candidate_account,  :my_staff_account,  :register_staff, :apply_for_vacancies
-
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Define user groups
