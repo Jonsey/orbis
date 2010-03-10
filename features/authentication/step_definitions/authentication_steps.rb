@@ -45,3 +45,7 @@ Given /^I am logged in as a (.+)$/ do |user_type|
   fill_in "Password", :with => user.password
   click_button "Login"
 end
+
+When /^I logout$/ do
+  visit logout_path
+end

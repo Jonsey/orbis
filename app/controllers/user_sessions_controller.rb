@@ -19,6 +19,7 @@ class UserSessionsController < ApplicationController
   def destroy
     current_user_session.destroy
     reset_lockdown_session
+    session[:return_to_vacancy] = nil
     flash[:notice] = "You have been logged out!"
     redirect_to root_path
   end

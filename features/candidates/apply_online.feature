@@ -31,3 +31,17 @@ Feature: apply online
    Then I should see "Staff have been notified of your application. You can view your current applications from the control panel"
     And an application should exist with candidate: the candidate, vacancy: the vacancy
     And an email "New vacancy application" should be delivered to the "staff@example.com"
+
+  Scenario: log in after applying for a role
+   Given a candidate exists with email: "candidate@example.com"
+     And I am on the vacancy's page
+   When I follow "Apply for this role"
+   Then I should be on the candidate login page
+   When I fill in "Email" with "candidate@example.com"
+    And I fill in "Password" with "password"
+    And I press "Login"
+   Then I should be on the vacancy's page
+   When I press "Apply for this role"
+     And I logout
+   When I log in as staff
+     Then I should be on the admin vacancies page
