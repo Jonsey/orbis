@@ -7,6 +7,12 @@ module NavigationHelpers
       path_to_pickle $1
     when /the home\s?page/
       '/'
+    when /my candidate account page/
+      edit_admin_candidate_path(controller.session[:current_user_id])
+    when /my staff account page/
+      edit_admin_staff_path(controller.session[:current_user_id])
+    when /my client account page/
+      edit_admin_client_path(controller.session[:current_user_id])
     when /the unauthorised access page/
       unauthorised_access_path
     when /the client signup page/

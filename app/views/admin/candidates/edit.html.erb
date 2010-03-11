@@ -1,9 +1,12 @@
 <%= my_page_title "Edit personal details" %>
 <div class="edit-candidate">
   <fieldset>
-    <% formatted_form_for [:admin, @candidate] do |f| %>
+    <% formatted_form_for [:admin, @candidate], :html => { :multipart => true } do |f| %>
     <%= f.error_messages %>
     <%= render :partial => 'admin/users/user_fields', :locals => { :f => f } %>
+    <% f.fields_for :cv do |cv| %>
+      <%= cv.file_field :item, :label => "Your CV:", :size => nil %>
+    <% end %>
     <p><%= f.submit "Update" %></p>
     <% end %>
   </fieldset>

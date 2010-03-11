@@ -37,12 +37,12 @@ Lockdown::System.configure do
 
   set_permission(:my_client_account).
     with_controller(:admin__clients).
-    only_methods(:show, :edit).
+    only_methods(:show, :edit, :update).
     to_model(:client).where(:client_id).equals(:current_user_id)
 
   set_permission(:my_candidate_account).
     with_controller(:admin__candidates).
-    only_methods(:show, :edit).
+    only_methods(:show, :edit, :update).
     to_model(:candidate).where(:candidate_id).equals(:current_user_id)
 
   set_permission(:my_staff_account).
