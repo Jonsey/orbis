@@ -22,4 +22,11 @@ class Admin::CandidatesController < ApplicationController
     end
   end
 
+  def destroy
+    @candidate = Candidate.find(params[:id])
+    @candidate.destroy
+    flash[:notice] = "Candidate account was removed."
+    redirect_to admin_candidates_url
+  end
+
 end

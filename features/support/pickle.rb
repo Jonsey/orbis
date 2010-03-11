@@ -21,7 +21,7 @@ require 'pickle/world'
 #
  Pickle.configure do |config|
   # config.adapters = [:machinist]
-   config.map 'I', 'myself', 'me', 'my', :to =>  'user: me@example.com'
+   config.map 'I', 'myself', 'me', 'my', :to =>  'user:"me"'
  end
 require 'pickle/path/world'
 require 'pickle/email/world'

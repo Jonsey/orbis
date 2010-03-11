@@ -37,4 +37,17 @@ class Admin::StaffsController < ApplicationController
       render :action => :edit
     end
   end
+
+  def destroy
+    @staff = Staff.find(params[:id])
+    if @staff.has_vacancies_awaiting_approval?
+      flash[:error] = "This staff member has vacancies awaiting approval.  Please re-assign the vacancies before deleting this account."
+    elsif @staff.has_live_vacancies?
+      flash[:error] =  "This staff member has live vacancies. Please re-assign or archive the vacancies before deleting this account."
+    else
+      @staff.destroy
+      flash[:notice] = "Staff account was removed."
+    end
+    redirect_to admin_staffs_url
+  end
 end

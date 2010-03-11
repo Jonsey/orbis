@@ -7,4 +7,14 @@ class Client < User
     'draft'
   end
 
+  def has_live_vacancies?
+    !live_vacancies.empty?
+  end
+
+  def live_vacancies
+    vacancies.with_status("live")
+  end
+
+  default_scope :order => "company_name, lastname, firstname"
+
 end

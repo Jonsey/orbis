@@ -3,7 +3,7 @@ class Admin::ClientsController < ApplicationController
     @clients = Client.all
   end
 
- def new
+  def new
     @client = Client.new
   end
 
@@ -35,5 +35,16 @@ class Admin::ClientsController < ApplicationController
     else
       render :action => :edit
     end
+  end
+
+  def destroy
+    @client = Client.find(params[:id])
+    if @client.has_live_vacancies?
+      flash[:error] = "This client has live vacancies.  Please archive the vacancies before deleting this account."
+    else
+      @client.destroy
+      flash[:notice] = "Client account was removed."
+    end
+    redirect_to admin_clients_url
   end
 end
