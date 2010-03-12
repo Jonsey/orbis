@@ -10,6 +10,7 @@ Feature: Create new vacancy
   Scenario:  Fill out all the fields
     Given the default categories
     When I go to the new vacancy page
-     And I fill out all the fields for a vacancy
+    Then I should not see "Client:"
+    When I fill out all the fields for a vacancy
      And I press "Create"
     Then I should see "Vacancy saved to drafts"

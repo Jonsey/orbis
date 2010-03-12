@@ -6,7 +6,7 @@ class Admin::VacanciesController < ApplicationController
 
   def create
     @vacancy = Vacancy.new(params[:vacancy])
-    @vacancy.client_id = current_user.id
+    @vacancy.client_id = current_user.id unless params[:vacancy][:client_id]
 
     if @vacancy.save
       if params[:commit] == "Submit for approval"

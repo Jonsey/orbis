@@ -1,4 +1,9 @@
 <%= f.error_messages %>
+<% if (current_user.is_a?(Staff) || current_user_is_admin?) %>
+<div class="row">
+  <%= f.select :client_id, Client.all.collect{|p| [ p.to_s, p.id ] }, { :include_blank => true, :wrapper_class => "cell"} %>
+</div>
+<% end %>
 <div class="row">
   <%= f.text_field :role, :class => "text", :wrapper_class => "cell" %>
   <%= f.select :category_id, Category.all.collect{|p| [ p.name, p.id ] }, { :include_blank => true, :wrapper_class => "cell"} %>

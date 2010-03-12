@@ -2,7 +2,6 @@ class Staff < User
   has_many :vacancies
 
   def has_vacancies_awaiting_approval?
-    debugger
     !vacancies_awaiting_approval.empty?
   end
 

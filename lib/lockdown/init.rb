@@ -116,5 +116,5 @@ Lockdown::System.configure do
   set_user_group(:administrators, :manage_categories)
   set_user_group(:clients, :my_client_account, :create_vacancies,:list_vacancies, :edit_vacancies, :delete_vacancies, :view_documents, :apply_for_vacancies)
   set_user_group(:candidates, :my_candidate_account, :list_vacancies, :apply_for_vacancies, :manage_applications)
-  set_user_group(:staffs, :my_staff_account, :list_vacancies, :edit_vacancies, :register_staff, :manage_staff, :manage_documents, :manage_clients, :manage_candidates, :apply_for_vacancies, :manage_applications)
+  set_user_group(:staffs, :my_staff_account, :list_vacancies, :create_vacancies, :edit_vacancies, :register_staff, :manage_staff, :manage_documents, :manage_clients, :manage_candidates, :apply_for_vacancies, :manage_applications)
 end
