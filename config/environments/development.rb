@@ -16,9 +16,13 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.delivery_method = :smtp
+config.action_mailer.default_url_options = { :host => "localhost" }
+config.action_mailer.default_content_type = "text/html"
+
 config.action_mailer.smtp_settings = {
-  :address        => 'mail.naimadwebsystems.com',
-  :port           => 25,
+  :address        => '91.186.30.27',
+  :port           => 26,
   :domain         => 'naimadwebsystems.com',
-  :user_name => 'nws'
+  :user_name      => 'nws',
+  :password       => 'orgone642'
 }

@@ -3,9 +3,9 @@ development: &local
     site_domain: "localhost:3000"
     site_title: Orbis Resourcing
     site_tag:  Orbis resourcing tag
-    admin_email: admin@example.com
-    accounts_email: accounts@example.com
-    info_email: info@example.com
+    admin_email: damianajones@yahoo.co.uk
+    accounts_email: damianajones@yahoo.co.uk
+    info_email: damianajones@yahoo.co.uk
     dev_email: damianajones@yahoo.co.uk
 
 test:

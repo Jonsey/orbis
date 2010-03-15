@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
     'awaiting_approval'
   end
 
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    Notification.deliver_password_reset_instructions(self)
+  end
+
   def to_s
     "#{firstname} #{lastname}".camelize
   end
