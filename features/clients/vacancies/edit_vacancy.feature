@@ -3,18 +3,11 @@ Feature: Ammend vacancy details
   In order to ammend or correct vacancy details
   a vacancy editor should be able to update a vacancy
 
-  Background:
-    Given the following clients already exist:
-    | email            | password | usergroup |
-    | client@admin.com | password | Clients   |
-
-    And the following vacancies already exist:
-    | role      | salary | location | role_description | client           |
-    | vacancy 1 | salary | location | Role Description | client@admin.com |
-
     Scenario:  Client editing draft vacancy
+     Given a client exists with email: "client@admin.com", password: "password"
+      And a vacancy exists with client: the client
       When I login as "client@admin.com"
-      And I am on the draft vacancies page
+      And I go to the draft vacancies page
       When I follow "edit"
       And I fill in "role" with "new role"
       And I press "Update"
@@ -23,8 +16,10 @@ Feature: Ammend vacancy details
       And I should see "new role"
 
     Scenario:  Client submitting edited draft vacancy
+     Given a client exists with email: "client@admin.com", password: "password"
+      And a vacancy exists with client: the client
       When I login as "client@admin.com"
-      And I am on the draft vacancies page
+      And I go to the draft vacancies page
       When I follow "edit"
       And I fill in "role" with "new role"
       And I press "Submit for approval"

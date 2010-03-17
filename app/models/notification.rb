@@ -22,13 +22,22 @@ class Notification < ActionMailer::Base
     body          :edit_password_reset_url => edit_password_reset_url(user.perishable_token)
   end
 
-  def new_vacancy(params)
+  def new_vacancy(vacancy)
     subject "Vacancy submission"
 
     recipients  configatron.new_vacancy_email
     from        configatron.admin_email
     sent_on     Time.now.utc
-    body        :vacancy => params
+    body        :vacancy => vacancy
+  end
+
+  def approved_vacancy(vacancy)
+    subject "Your vacancy has been approved"
+
+    recipients  vacancy.client.email
+    from        vacancy.staff.email
+    sent_on     Time.now.utc
+    body        :vacancy => vacancy
   end
 
   def candidate_welcome(candidate)

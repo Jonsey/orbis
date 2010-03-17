@@ -1,0 +1,10 @@
+The following vacancy has been approved by <%= @vacancy.staff.to_s %> and is now live on the Orbis Resourcing site.<br/><br/>
+
+Title: <%= @vacancy.role %><br/>
+Category: <%= @vacancy.category.name %><br/>
+Salary: <%= @vacancy.role %><br/>
+Location: <%= @vacancy.role %><br/>
+Description: <%= @vacancy.role %><br/>
+
+use the following link to view your vacancy on the site<br/>
+Live path: <%= link_to_open "View vacancy", vacancy_url(@vacancy) %>
