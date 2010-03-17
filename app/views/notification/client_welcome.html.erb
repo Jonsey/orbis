@@ -1,0 +1,8 @@
+Welcome <%= @client.firstname %>,
+
+Your client account with Orbis Resourcing has been created with the following details:
+
+Login: <%= @client.email %>
+password: <%= @client.password %>
+
+<%= link_to_open "Login", client_login_url %>

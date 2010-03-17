@@ -23,6 +23,15 @@ config.action_view.cache_template_loading            = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.default_url_options = { :host => "www.orbis-resourcing.com" }
+config.action_mailer.default_content_type = "text/html"
 
+config.action_mailer.smtp_settings = {
+  :address        => '91.186.30.27',
+  :port           => 26,
+  :domain         => 'naimadwebsystems.com',
+  :user_name      => 'nws',
+  :password       => 'orgone642'
 # Enable threaded mode
 # config.threadsafe!

@@ -16,6 +16,7 @@ class CandidatesController < ApplicationController
     if @candidate.save
       add_lockdown_session_values
       flash[:notice] = "Account created."
+      Notification.deliver_candidate_welcome(@candidate)
       redirect_to admin_vacancies_url(:status => 'live')
     else
       render :action => 'new'

@@ -9,5 +9,5 @@ Feature: Reset my password when I have forgotten it
    When I go to the new password_reset page
      And I fill in "Email:" with "user@example.com"
      And I press "Reset my password"
-   Then a "password_reset" notification should be delivered to "user@example.com"
+   Then 1 email should be delivered to "user@example.com"
      And I should see "Instructions to reset your password have been emailed to you. Please check your email."

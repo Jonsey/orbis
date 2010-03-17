@@ -1,4 +1,4 @@
-@authentication
+@authentication @client_reg
 Feature: Register client
   As a potential client
   I want to be able to sign up for an account
@@ -9,12 +9,13 @@ Feature: Register client
     When I fill in "First name" with "Damian"
     And I fill in "Last name" with "Jones"
     And I fill in "Company name" with "2sCompliment"
-    And I fill in "Email" with "damianajones@yahoo.co.uk"
+    And I fill in "Email" with "client@example.com"
     And I fill in "Telephone" with "01707 230230"
     And I fill in "Password" with "password"
     And I fill in "Confirm password" with "password"
     And I press "Create account"
     Then I should see "Account created"
+    And 1 email should be delivered to "client@example.com"
     And I should be on the new vacancy page page
 
   Scenario: Invalid registration details

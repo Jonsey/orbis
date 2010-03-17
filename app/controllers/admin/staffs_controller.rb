@@ -14,6 +14,7 @@ class Admin::StaffsController < ApplicationController
     if @staff.save
       add_lockdown_session_values
       flash[:notice] = "Account created.."
+      Notification.deliver_staff_welcome(@staff)
       redirect_to admin_vacancies_path
     else
       render :action => 'new'

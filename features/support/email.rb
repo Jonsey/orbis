@@ -6,7 +6,8 @@ module EmailHelpers
   
     # add your own name => email address mappings here
   
-    when /^#{capture_model}$/
+ 
+   when /^#{capture_model}$/
       model($1).email
   
     when /^"(.*)"$/

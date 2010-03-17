@@ -23,7 +23,36 @@ class Notification < ActionMailer::Base
   end
 
   def new_vacancy(params)
+    subject "Vacancy submission"
 
+    recipients  configatron.new_vacancy_email
+    from        configatron.admin_email
+    sent_on     Time.now.utc
+    body        :vacancy => params
+  end
+
+  def candidate_welcome(candidate)
+    subject      "Welcome to Orbis Resourcing"
+    recipients   candidate.email
+    from         configatron.admin_email
+    sent_on      Time.now.utc
+    body         :candidate => candidate
+  end
+
+  def client_welcome(client)
+    subject      "Welcome to Orbis Resourcing"
+    recipients   client.email
+    from         configatron.admin_email
+    sent_on      Time.now.utc
+    body         :client => client
+  end
+
+  def staff_welcome(staff)
+    subject      "Welcome to Orbis Resourcing"
+    recipients   staff.email
+    from         configatron.admin_email
+    sent_on      Time.now.utc
+    body         :staff => staff
   end
 
 

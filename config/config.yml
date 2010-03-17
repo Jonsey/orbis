@@ -1,22 +1,25 @@
 development: &local
-    site_name: Orbis Resourcing
-    site_domain: "localhost:3000"
-    site_title: Orbis Resourcing
-    site_tag:  Orbis resourcing tag
-    admin_email: damianajones@yahoo.co.uk
-    accounts_email: damianajones@yahoo.co.uk
-    info_email: damianajones@yahoo.co.uk
-    dev_email: damianajones@yahoo.co.uk
+  site_name: Orbis Resourcing
+  site_domain: "localhost:3000"
+  site_title: Orbis Resourcing
+  site_tag:  Orbis resourcing tag
+  admin_email: damianajones@yahoo.co.uk
+  new_vacancy_email: damianajones@yahoo.co.uk
+  dev_email: damianajones@yahoo.co.uk
 
-test:
+test: &test
   <<: *local
   site_domain: "localhost:3000"
+  admin_email: admin@orbis-resourcing.com
+  new_vacancy_email: vacancies@orbis-resourcing.com
+  dev_email: damianajones@yahoo.co.uk
 
 cucumber:
-  <<: *local
+  <<: *test
   site_domain: "localhost:3000"
+
 
 production:
   <<: *local
-  site_domain: www.orbisresourcing.com
+  site_domain: www.orbis-resourcing.com
 

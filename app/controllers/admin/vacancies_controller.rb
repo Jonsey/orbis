@@ -13,6 +13,7 @@ class Admin::VacanciesController < ApplicationController
         @vacancy.submit_for_approval
         @vacancy.save(false)
         flash[:success] = "Vacancy submitted for approval"
+        Notification.deliver_new_vacancy(params)
       else
         flash[:success] = "Vacancy saved to drafts"
       end
@@ -35,6 +36,7 @@ class Admin::VacanciesController < ApplicationController
                          when "Submit for approval"
                            @vacancy.submit_for_approval
                            @vacancy.save(false)
+                           Notification.deliver_new_vacancy(params)
                            "Vacancy updated and submitted for approval"
                          when "Approve"
                            @vacancy.approve!

@@ -9,12 +9,12 @@ Feature: Submit vacancy for approval
       And the default categories
 
   Scenario: Vacancy has all required fields
-    Given I am on the new vacancy page
+    Given I am on the new vacancy page4
     When I fill out all the fields for a vacancy
     And I press "Submit for approval"
     Then I should see "Vacancy submitted for approval"
     And the vacancy should have the status of "awaiting_approval"
-    And a new vacancy notification should be delivered to "vacancies@orbisweb.com"
+    And 1 email should be delivered to "vacancies@orbis-resourcing.com"
     When I go to the vacancies awaiting approval page
     Then I should have 1 rows of vacancies
 
