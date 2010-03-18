@@ -1,3 +1,10 @@
+<% if @current_user.is_a?(Candidate) %>
+<% @vacancies.each do |v| %>
+  <%= vacancies_table %>
+<% end %>
+
+<% else %>
+
 <% @vacancies.each do |v| %>
 <% unless v.candidates.nil? %>
     <b>Vacancy:</b> <%= v.to_s %><br/>
@@ -27,4 +34,5 @@
     <% end %>
 </table>
   <% end %>
-<%end %><br/><br/>
+<% end %><br/><br/>
+<% end %>
