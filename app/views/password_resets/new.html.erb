@@ -1,11 +1,38 @@
-<h1>Forgot Password</h1>
-
-Fill out the form below and instructions to reset your password will be emailed to you:<br />
-<br />
-
-<% form_tag password_resets_path do %>
-  <label for="email">Email:</label><br />
-  <%= text_field_tag "email" %><br />
-  <br />
-  <%= submit_tag "Reset my password" %>
-<% end %>
+<div class="wrap">
+  <div class="heading">
+    <h1>Forgotten your password</h1>
+  </div>
+</div>
+<div class="account">
+  <div class="title">
+    <h2>Reset password</h2>
+    <p>Fill out the form below and instructions to reset your password will be emailed to you.</p>
+  </div>
+  <div class="login-form">
+    <div class="holder">
+      <div class="form-holder">
+        <% form_tag password_resets_path do %>
+        <label for="email">Email:</label><br />
+        <%= text_field_tag "email" %><br />
+        <br />
+        <%= submit_tag "Reset my password" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wrap">
+  <div class="articles">
+    <div class="title">
+      <h2>Account holder benefits</h2>
+    </div>
+    <div class="article">
+      <h3>Submit your vacancies online</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="article">
+      <h3>Browse our online resources portal</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+  </div>
+</div>
