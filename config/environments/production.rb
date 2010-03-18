@@ -32,6 +32,6 @@ config.action_mailer.smtp_settings = {
   :port           => 26,
   :domain         => 'naimadwebsystems.com',
   :user_name      => 'nws',
-  :password       => 'orgone642'
+  :password       => 'orgone642'}
 # Enable threaded mode
 # config.threadsafe!
