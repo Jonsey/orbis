@@ -47,8 +47,8 @@ private
         arr << %(<td>#{row.location}</td>)
         arr << %(<td>#{row.salary}</td>)
         arr << %(<td>#{row.category.to_s}</td>)
-        arr << %(<td>#{mail_to row.try(:staff).email, row.try(:staff)}</td>) unless @status == "draft"
-        arr << %(<td>#{mail_to row.try(:client).email, row.try(:client) }</td>) if current_user.is_a?(Staff) || current_user_is_admin?
+        arr << %(<td>#{mail_to row.try(:staff).try(:email), row.try(:staff)}</td>) unless @status == "draft"
+        arr << %(<td>#{mail_to row.try(:client).try(:email), row.try(:client) }</td>) if current_user.is_a?(Staff) || current_user_is_admin?
         arr << %(<td>#{image_link_to('icons/ico-view.png', 'preview', vacancy_path(row.id),{ }, :popup => [ 'Preview' , 'height=764,width=973,resizable=yes,scrollbars=yes'])})
         arr << %(  #{image_link_to('icons/ico-edit.png','edit', edit_admin_vacancy_path(row.id)) if show_edit_vacancy})
         arr << %(  #{image_link_to('icons/ico-del.png', 'delete', { :action => :destroy, :id => row }, nil, :method => :delete) if show_delete_vacancy}</td>)
