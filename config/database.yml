@@ -5,7 +5,7 @@ development:
   database: orbis_development
   pool: 5
   username: root
-  password:
+  password: m4cbook
   host: localhost
 
 test: &TEST
@@ -15,7 +15,7 @@ test: &TEST
   database: orbis_test
   pool: 5
   username: root
-  password:
+  password: m4cbook
   host: localhost
 
 production:
