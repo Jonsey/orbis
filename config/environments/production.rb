@@ -28,10 +28,10 @@ config.action_mailer.default_url_options = { :host => "www.orbis-resourcing.com"
 config.action_mailer.default_content_type = "text/html"
 
 config.action_mailer.smtp_settings = {
-  :address        => '91.186.30.27',
-  :port           => 26,
-  :domain         => 'naimadwebsystems.com',
-  :user_name      => 'nws',
-  :password       => 'orgone642'}
+  :address        => 's21636.gridserver.com',
+  :port           => 587,
+  :domain         => 'stage.orbis-resourcing.com',
+  :user_name      => 'webrelay@orbis-resourcing.com',
+  :password       => 'orbisr3sourcing'}
 # Enable threaded mode
 # config.threadsafe!

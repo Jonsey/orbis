@@ -22,4 +22,6 @@ cucumber:
 production:
   <<: *local
   site_domain: www.orbis-resourcing.com
-
+  admin_email: finn@surestate.net
+  new_vacancy_email: finn@surestate.net
+  dev_email: finn@surestate.net
