@@ -30,6 +30,7 @@ config.action_mailer.default_content_type = "text/html"
 config.action_mailer.smtp_settings = {
   :address        => 's21636.gridserver.com',
   :port           => 587,
+  :authentication => :login,
   :domain         => 'stage.orbis-resourcing.com',
   :user_name      => 'webrelay@orbis-resourcing.com',
   :password       => 'orbisr3sourcing'}
