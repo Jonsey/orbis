@@ -7,11 +7,11 @@
 <div class="account">
   <div class="title">
     <h2>CANDIDATE ACCOUNT</h2>
-    <p>Manage your vacancies online and 24 hr access to our resources portal.</p>
+    <p>Upload your CV and apply for jobs online.</p>
   </div>
   <div class="register-form">
     <div class="holder">
-      <% formatted_form_for @candidate, :html => { :multipart => true } do |f| %>
+      <% formatted_form_for @candidate do |f| %>
       <div class="form-holder">
         <fieldset>
           <%= f.error_messages %>
