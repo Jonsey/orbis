@@ -1,4 +1,5 @@
 config/deploy.rb
+config/database.yml
 db/*.sqlite3
 doc/api
 doc/app
