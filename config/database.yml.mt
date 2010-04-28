@@ -21,12 +21,11 @@ test: &TEST
 production:
   adapter: mysql
   encoding: utf8
-  reconnect: false
-  database: orbis_prod
-  pool: 5
-  username: orbis
-  password: orgone642
-  host: localhost
+  database: db21636_orbis_prod
+  username: db21636_orbis
+  password: Orgone654
+  host: internal-db.s21636.gridserver.com
+
 
 cucumber:
   <<: *TEST
