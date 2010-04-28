@@ -26,3 +26,5 @@ config.action_mailer.smtp_settings = {
   :user_name      => 'nws',
   :password       => 'orgone642'
 }
+
+
