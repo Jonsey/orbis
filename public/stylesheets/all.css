@@ -108,7 +108,7 @@ body 						{ margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica
 .promo-area .text .btn02 		{ background:url(../images/btn02.gif) no-repeat; width:168px; height:53px; float:left; margin:0 44px 0 -2px; display:inline; color:#fff; font-size:12px; padding:6px 0 0 15px; font-weight:bold; position:relative; }
 .promo-area .text .btn02:hover 	{ background:url(../images/btn02.gif) no-repeat 0 100%; text-decoration:none; }
 .promo-area .text .btn02 span 	{ display:block; font-size:16px; }
-.promo-area p					{ margin:0; font-size:22px; color:#3d3d3d; line-height:28px; }
+.promo-area p					{ margin:0; font-size:20px; color:#3d3d3d; line-height:28px; }
 
 /* job-ticker-area */
 #job-ticker-area 				{ overflow: hidden; background:#fff; border:1px solid #e7e7e7; border-top:0; font-size:12px; padding:13px 17px 14px; margin:0 0 31px; height:1%; }
@@ -242,10 +242,14 @@ body 						{ margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica
 .aside .img-holder img 			{ display:block; }
 .aside h4 						{ font-size:18px; color:#d57139; margin:0 0 11px; }
 .aside .promo-text 				{ margin:0 0 2px; }
-
+.aside .promo-text strong { }
 /* Careers page */
 .highlight-box					{ border:1px solid #ccc; padding:10px 20px; background-color:#f3f3f3; }
 
+.careers ul  { margin:9px 0 18px 0; padding:0; list-style:none; }
+
+.careers ul li { background:url(../images/bullet-list.gif) no-repeat 0 6px; padding:0 0 10px 19px; color:#666;}
+.careers span { font-weight:bold; color:#fc8945; }
 
 
 /* 7 Contact
