@@ -21,7 +21,10 @@ function initCufon() {
 	Cufon.replace('.links h2', { fontFamily: 'GothamLight', hover: false });
 	Cufon.replace('.articles h2', { fontFamily: 'Gotham', hover: false });
 	Cufon.replace('.aside h4', { fontFamily: 'Gotham', hover: false });
-	Cufon.replace('#main h3', { fontFamily: 'Gotham', hover: false });
+	Cufon.replace('.account h4', { fontFamily: 'GothamMedium', hover: false });
+	Cufon.replace('#main h3', { fontFamily: 'GothamMedium', hover: false });
+	
+	Cufon.replace('.col h2', { fontFamily: 'GothamMedium', hover: false });
 }
 
 // slideshow init

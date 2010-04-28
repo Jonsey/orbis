@@ -33,7 +33,7 @@ form, fieldset				{ margin:0; padding:0; border:none; }
 body 						{ margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif; background:#f3f3f3; }
 #wrapper 					{ width:950px; margin:0 auto; position:relative; padding:166px 0 0; }
 #header 					{ position:absolute; top:0; left:0; width:100%; height:144px; }
-.logo 						{ margin:29px 0 21px 2px; background:url(../images/logo.gif) no-repeat; width:331px; height:56px; text-indent:-9999px; overflow:hidden; float:left; }
+.logo 						{ margin:29px 0 21px 2px; background:url(../images/logo.gif) no-repeat; width:333px; height:56px; text-indent:-9999px; overflow:hidden; float:left; }
 .logo a 					{ display:block; height:100%; }
 .header-text 				{ font-size:12px; line-height:18px; overflow:hidden; text-align:right; padding:36px 0 0; }
 .header-text p 				{ margin:0; }
@@ -219,14 +219,15 @@ body 						{ margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica
 ----------------------------------------------- */
 
 #main 							{ overflow:hidden; float:left; width:500px; padding:0 0 33px; }
+
 #main p							{ margin:0 0 18px 0; padding:0; }
 .promo-text 					{ padding:0 0 9px; }
 .promo-text p 					{ color:#666; margin:0 0 18px 0; line-height:18px; font-size:12px; }
 
 /* links */
-.links 							{ width:544px; margin:0 -90px 40px 0; overflow:hidden; padding:18px 0 0 2px; }
+.links 							{ width:544px; margin:0 0 40px 0; overflow:hidden; padding:18px 0 0 2px; float:left; }
 .links .col 					{ float:left; width:225px; padding:0 47px 0 0; }
-.links h2 						{ font-size:14px; margin:0 0 10px; }
+.links h2 						{ font-size:14px; margin:0 0 10px; color:#333; }
 .links ul 						{ margin:0; padding:0; list-style:none; font-size:12px; line-height:18px; }
 .links ul li 					{ overflow:hidden; background:url(../images/bullet02.gif) no-repeat 0 5px; padding:0 20px; vertical-align:top; }
 * html .links ul li				{ overflow:visible; height:1%; }
@@ -238,9 +239,11 @@ body 						{ margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica
 
 /* aside */
 .aside 							{ float:right; width:364px; padding:0 0 33px; }
+
+
 .aside .img-holder 				{ border:1px solid #cecece; margin:6px 0 22px; }
 .aside .img-holder img 			{ display:block; }
-.aside h4 						{ font-size:18px; color:#d57139; margin:0 0 11px; }
+.aside h4 						{ font-size:18px; color:#333; margin:0 0 11px; }
 .aside .promo-text 				{ margin:0 0 2px; }
 .aside .promo-text strong { }
 /* Careers page */
@@ -276,6 +279,14 @@ body 						{ margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica
 .contact-side p							{ margin:0; }
 
 
+
+/* 8 Client Page
+----------------------------------------------- */
+#main-full 		{ width:890px; padding:0 0 33px; }
+#persuader { margin:9px 0 0 0 ; }
+.account							{ float:right; width:320px; padding:0 0 33px; }
+.account h4 						{ font-size:14px; color:#333; margin:18px 0 9px; }
+.aside .promo-text 				{ margin:0 0 2px; }
 
 
 /* 8  Footer
