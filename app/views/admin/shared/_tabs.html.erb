@@ -1,12 +1,16 @@
 <div id="tabs">
+  <% form_tag @status == "live" ? archive_multiple_admin_vacancies_path : delete_multiple_admin_vacancies_path do %>
   <div class="holder-tabs">
     <ul class="tabset">
       <%= render_vacancy_tabs %>
     </ul>
     <% unless current_user.is_a?(Candidate) -%>
-    <a class="btn-del" href="#"><span><%= @status == "live" ? "Archive selected" : "Delete selected" %></span></a>
+    <%= submit_tag @status == "live" ? "Archive selected" : "Delete selected", :class => "btn-del" %>
     <% end -%>
   </div><!-- / holder-tabs -->
   <%= yield :tabbed_content %>
+  <% end %>
 </div><!-- / tabs -->
+
+
 

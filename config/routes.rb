@@ -39,7 +39,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :clients
     admin.resources :candidates
     admin.resources :staffs
-    admin.resources :vacancies
+    admin.resources :vacancies, :collection => {:delete_multiple => :post, :archive_multiple => :post }
     admin.resources :categories
     admin.resources :documents
     admin.resources :applications

@@ -13,6 +13,7 @@
     <%= javascript_include_tag 'jquery' %>
     <%= javascript_include_tag 'jquery.livequery' %>
 
+
     <script type="text/javascript">
       var $j = jQuery.noConflict();
     </script>
@@ -25,6 +26,7 @@
     <%= yield :tinymce_init %>
 
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'select_all' %>
   </head>
 
   <body>

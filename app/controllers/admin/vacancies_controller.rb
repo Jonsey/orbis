@@ -82,6 +82,25 @@ class Admin::VacanciesController < ApplicationController
     end
   end
 
+  def delete_multiple
+    if Vacancy.delete(params[:vacancy_ids])
+      flash[:success] = "Vacancies deleted"
+      redirect_to :back
+    else
+      flash[:error] = "There was a problem deleting the vacancies"
+      redirect_to :back
+    end
+  end
+
+ def archive_multiple
+   @vacancies = Vacancy.find(params[:vacancy_ids])
+   @vacancies.each do |vacancy|
+     vacancy.archive!
+   end
+   flash[:success] = "Vacancies archived"
+   redirect_to :back
+  end
+
   private
 
   def process_index_request
