@@ -1,0 +1,8 @@
+<%= my_page_title "Client details" %>
+<div class="show-client">
+  <fieldset>
+   <div class="row"> Name: <%=@client.to_s%></div>
+  <div class="row"> Email: <%=mail_to @client.try(:email)%></div>
+  <div class="row"> Telephone: <%=@client.try(:telephone)%></div>
+ </fieldset>
+</div>

@@ -25,6 +25,10 @@ class Admin::StaffsController < ApplicationController
     @staff = Staff.find_by_id(params[:id])
   end
 
+ def show
+    @staff = Staff.find_by_id(params[:id])
+  end
+
   def update
     @staff = Staff.find_by_id(params[:id])
     if @staff.update_attributes(params[:staff])

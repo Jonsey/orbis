@@ -5,7 +5,12 @@ class Admin::CandidatesController < ApplicationController
 
   def edit
     @candidate = Candidate.find_by_id(params[:id])
-    @candidate.build_cv
+   # @candidate.build_cv
+  end
+
+  def show
+    @candidate = Candidate.find_by_id(params[:id])
+   # @candidate.build_cv
   end
 
   def update
