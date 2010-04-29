@@ -61,7 +61,7 @@ table.tbl-standard td { padding:10px 0 15px 10px; }
 
 .holder-tabs 		{ width:100%; overflow:hidden; background:url(../images/border.gif) repeat-x 0 100%; }
 
-.btn-del, .btn-create { float:left; overflow:hidden; color:#666; line-height:14px; background:url(../images/btn-del.gif) no-repeat; padding:0 0 0 31px; }
+input.btn-del, .btn-del, .btn-create { float:left; overflow:hidden; color:#666; line-height:14px; background:url(../images/btn-del.gif) no-repeat; padding:0 0 0 31px; }
 .btn-del span, .btn-create span { float:left; padding:9px 10px 8px 0; cursor:pointer; background:url(../images/btn-del.gif) no-repeat 100% 100%; }
 .btn-del:hover, .btn-create:hover { text-decoration:underline; color:#666; }
 .btn-create 		{ background:url(../images/btn-create.gif) no-repeat; }
