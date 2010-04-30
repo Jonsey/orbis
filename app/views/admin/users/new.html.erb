@@ -1,0 +1,17 @@
+<%= my_page_title "Create admin account" %>
+
+
+<% formatted_form_for [:admin, @user] do |f| %>
+<%= f.error_messages %>
+
+<%= render :partial => "user_fields", :locals => { :f => f } %>
+    <div class="row">
+      <%= f.password_field :password %>
+    </div>
+    <div class="row">
+      <%= f.password_field :password_confirmation %>
+    </div>
+<div>
+  <%= f.submit "Create" %>
+</div>
+<% end %>

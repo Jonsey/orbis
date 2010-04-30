@@ -3,6 +3,22 @@ class Admin::UsersController < ApplicationController
     @users = User.all
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(params[:user])
+    @user.user_groups << UserGroup.find_by_name('Administrators')
+    if @user.save
+      add_lockdown_session_values
+      flash[:notice] = "Account created.."
+      redirect_to admin_users_path
+    else
+      render :action => 'new'
+    end
+  end
+
   def edit
     @user = User.find_by_id(params[:id])
   end
