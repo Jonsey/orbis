@@ -11,7 +11,8 @@ class Vacancy < ActiveRecord::Base
   :salary,
   :location,
   :role_description,
-  :category
+  :category,
+  :client_id
 
   validates_presence_of :staff_id, :unless => Proc.new { |v| v.status == "draft" }
 
