@@ -11,4 +11,8 @@ class Candidate < User
     'live'
   end
 
+  def to_s
+    "#{firstname} #{lastname}"
+  end
+
 end
