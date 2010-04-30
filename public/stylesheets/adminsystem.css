@@ -61,7 +61,7 @@ table.tbl-standard td { padding:10px 0 15px 10px; }
 
 .holder-tabs 		{ width:100%; overflow:hidden; background:url(../images/border.gif) repeat-x 0 100%; }
 
-.btn-del, .btn-create { float:left; overflow:hidden; color:#666; line-height:14px; background:url(../images/btn-del.gif) no-repeat; padding:0 0 0 31px; }
+input.btn-del, .btn-del, .btn-create { float:left; overflow:hidden; color:#666; line-height:14px; background:url(../images/btn-del.gif) no-repeat; padding:0 0 0 31px; }
 .btn-del span, .btn-create span { float:left; padding:9px 10px 8px 0; cursor:pointer; background:url(../images/btn-del.gif) no-repeat 100% 100%; }
 .btn-del:hover, .btn-create:hover { text-decoration:underline; color:#666; }
 .btn-create 		{ background:url(../images/btn-create.gif) no-repeat; }
@@ -75,11 +75,6 @@ table.tbl-standard td { padding:10px 0 15px 10px; }
 #create-new-user .breadcrumb { margin:0 0 0 -1px; padding:10px 0 0; list-style:none; width:186px; float:right; color:#333; font-weight:bold; position:relative; }
 
 * html #create-new-user .breadcrumb { margin-left:-4px; }
-
-.row { width:100%; overflow:hidden; padding:0 0 15px; margin:6px 0 0; }
-.cell { width:150px; padding:0 20px 0 0; float:left; }
-label { display:block; padding:0 0 5px; }
-.text { margin:0; padding:2px 5px; width:134px; font:12px/14px Arial, Tahoma, sans-serif; }
 
 #create-new-user .breadcrumb li { padding:9px 0 9px 24px; margin:1px 0 0; background:#e8e8e8; }
 #create-new-user .breadcrumb li.active { background:#d1d1d1 url(../images/bread-active.gif) no-repeat 0 50%; }
