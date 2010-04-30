@@ -1,0 +1,30 @@
+<%= my_page_title "Create a Candidate Account" %>
+<div class="edit-client">
+  <fieldset>
+    <% formatted_form_for [:admin, @candidate] do |f| %>
+    <%= f.error_messages %>
+   <div class="row">
+      <%= f.text_field :email %>
+    </div>
+    <div class="row">
+      <%= f.password_field :password %>
+    </div>
+    <div class="row">
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <div class="row">
+      <%= f.text_field :firstname %>
+    </div>
+    <div class="row">
+      <%= f.text_field :lastname %>
+    </div>
+    <div class="row">
+      <%= f.text_field :telephone %>
+    </div>
+    <% f.fields_for :cv do |cv| %>
+    <%= cv.file_field :item, :label => "Your CV:", :size => nil %>
+    <% end %>
+    <p><%= f.submit "Register" %></p>
+    <% end %>
+  </fieldset>
+</div>

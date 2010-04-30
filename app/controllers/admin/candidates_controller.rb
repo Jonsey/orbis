@@ -3,6 +3,23 @@ class Admin::CandidatesController < ApplicationController
     @candidates = Candidate.all
   end
 
+  def new
+    @candidate = Candidate.new
+    @candidate.build_cv
+  end
+
+  def create
+    @candidate = Candidate.new(params[:candidate])
+    @candidate.user_groups << UserGroup.find_by_name('Candidates')
+    if @candidate.save
+      add_lockdown_session_values
+      flash[:notice] = "Account created.."
+      redirect_to admin_candidates_path
+    else
+      render :action => 'new'
+    end
+  end
+
   def edit
     @candidate = Candidate.find_by_id(params[:id])
    # @candidate.build_cv
