@@ -25,9 +25,15 @@ private
         arr << %(<td>#{row.telephone}</td>)
         arr << %(<td>#{image_link_to('icons/ico-view.png', 'view', admin_user_path(row.id))})
         arr << %(  #{image_link_to('icons/ico-edit.png','edit', edit_admin_user_path(row.id))})
-        arr << %(  #{image_link_to('icons/ico-del.png', 'delete', { :action => :destroy, :id => row }, nil, :method => :delete)}</td>)
+        arr << %(  #{image_link_to('icons/ico-del.png', 'delete', { :action => :destroy, :id => row }, nil, :method => :delete)}</td>) if display_delete?(row)
         arr << %(</tr>)
       end
     end
   end
+
+def display_delete?(user)
+  return (!user.kind_of?(Client) && !user.kind_of?(Candidate) && !user.kind_of?(Staff))
+end
+
+
 end
