@@ -49,6 +49,10 @@ class Vacancy < ActiveRecord::Base
     role
   end
 
+  def to_param
+    "#{id}-#{role.gsub(/[^a-z0-9]+/i, '-')}-#{location.gsub(/[^a-z0-9]+/i, '-')}"
+  end
+
 
   private
 
@@ -65,6 +69,8 @@ class Vacancy < ActiveRecord::Base
   def is_draft?
     status == "draft"
   end
+
+
 
 
 end
