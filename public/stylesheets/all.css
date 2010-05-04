@@ -64,7 +64,7 @@ body { margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica, Aria
 .logo a { display:block; height:100%; }
 .header-text { font-size:12px; line-height:18px; overflow:hidden; text-align:right; padding:36px 0 0; }
 .header-text p { margin:0; }
-.header-text p span { padding:0 15px 0 0; }
+.header-text p span { padding:0 4px 0 0; }
 /* content */
 #content { width:100%; overflow:hidden; }
 /* breadcrumbs */
@@ -238,7 +238,7 @@ body { margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica, Aria
 .promo-text { padding:0 0 9px; }
 .promo-text p { color:#666; margin:0 0 18px 0; line-height:18px; font-size:12px; }
 /* links */
-.links { width:544px; margin:0 0 40px 0; overflow:hidden; padding:18px 0 0 2px; float:left; }
+.links { width:544px; margin:0 0 40px 0; overflow:hidden; padding:0 0 0 2px; float:left; }
 .links .col { float:left; width:225px; padding:0 47px 0 0; }
 .links h2 { font-size:14px; margin:0 0 10px; color:#333; }
 .links ul { margin:0; padding:0; list-style:none; font-size:12px; line-height:18px; }
@@ -288,9 +288,9 @@ body { margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica, Aria
 ----------------------------------------------- */
 
 #main-full { width:890px; padding:0 0 33px; }
-#persuader { margin:9px 0 0 0; }
+#persuader { margin:9px 0 0 0; overflow:hidden; }
 .create-account { float:right; width:320px; padding:0 0 33px; }
-.create-account h4 { font-size:14px; color:#333; margin:18px 0 9px; }
+.create-account h4 { font-size:14px; color:#333; margin:0 0 9px; }
 .aside .promo-text { margin:0 0 2px; }
 
 
