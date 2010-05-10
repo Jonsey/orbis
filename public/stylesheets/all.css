@@ -318,3 +318,4 @@ body { margin:0; color:#363636; font:14px/20px "Helvetica Neue", Helvetica, Aria
 .slideshow .slideset { position: relative; height: 180px; }
 .slideshow .slideset .text { position: absolute; display: none; top: 0; left: 0; }
 .slideshow .slideset div.active { display: block; z-index: 1; }
+
