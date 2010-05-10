@@ -1,5 +1,52 @@
 <% my_page_title "Documents" %>
 
+<% if current_user.kind_of?(Candidate) %>
+        <ul class="accordion">
+          <li><a href="/system/resources/How_to_write_a_CV.pdf" target=_blank">How to write an effective CV</a></li>
+          <li><a href="/system/resources/How_to_write_Cover_Letters.pdf" target=_blank">How to write cover letters</a></li>
+          <li><a href="/system/resources/Interview_tips_for_candidates.pdf" target="_blank">Interview tips</a></li>
+
+          <li>Relocation guides
+                                                                                <ul>
+                                                                                        <li><a href="/system/resources/movingtips.pdf" target="_blank">Top 10 moving tips</a></li>
+                                                                                        <li><a href="/system/resources/Things_to_consider_before_relocating.pdf" target="_blank">Things to consider about relocating</a></li>
+
+                                                                                </ul>
+                                                                                </li>
+          <li>Maps &amp; Journey Planners
+
+<ul class="slide">
+                                                                                                        <li><a href="http://maps.google.co.uk/" target="_blank">Google Maps</a></li>
+
+<li><a href="http://www.nationalrail.co.uk/system/galleries/download/print_maps/uk.pdf" target="_blank">UK Rail Map</a></li>
+
+<li><a href="http://www.nationalrail.co.uk/system/galleries/download/print_maps/LondonAndSouthEast.pdf" target="_blank">South East Train Maps</a></li>
+
+<li><a href="http://journeyplanner.tfl.gov.uk/user/XSLT_TRIP_REQUEST2?language=en" target="_blank">Journey Planners: National Rail</a></li>
+
+<li><a href="http://journeyplanner.tfl.gov.uk/user/XSLT_TRIP_REQUEST2?language=en" target="_blank">London Journey Planner</a></li>
+
+<li><a href="http://www.thetrainline.com/buytickets/?" target="_blank">The Trainline</a></li>
+
+<li><a href="http://www.theaa.com/route-planner/index.jsp" target="_blank">The AA.com journey planner</a></li>
+
+<li><a href="http://www.bbc.co.uk/travelnews/" target="_blank">BBC Roadwatch</a></li>
+
+<li><a href="http://www.nearesthotels.co.uk/" target="_blank">Staying away from home? NearestHotels.co.uk</a></li>
+
+<li><a href="http://www.hoteldirect.co.uk/" target="_blank">Hoteldirect.co.uk</a></li>
+</ul></li>
+
+
+          <li><a href="http://www.listentotaxman.com" target="_blank">UK Tax Calculator</a></li>
+          <li><a href="http://www.adviceguide.org.uk/index/life/employment" target="_blank">Employment legislation advice</a></li>
+                                                                                <li><a href="/system/resources/timesheet_v4.pdf" target="_blank">Timesheet</a></li>
+        </ul>
+      <p class="clear"><br />
+      Please note that Orbis Resourcing Limited is not responsible for the content of external internet sites.</p>
+
+
+<% else %>
 <table>
   <tr>
     <th>Document Title</th>
@@ -17,4 +64,5 @@
 
 
 <p><%= link_to "New Document", new_admin_document_path %></p>
+<% end %>
 
