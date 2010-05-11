@@ -1,5 +1,7 @@
-Message sent by <%= @message[:firstname]%> <%= @message[:lastname] %> of <%= @message[:company_name] %>
-Telephone: <%= @message[:telephone] %>
+<strong>Message sent by:</strong><br />
+<%= @message[:firstname]%> <%= @message[:lastname] %><br />
+Company: <%= @message[:company_name] %><br />
+Telephone: <%= @message[:telephone] %><br /><br />
 
-Message:
+<strong>Message:</strong><br />
 <%= @message[:enquiry] %>
