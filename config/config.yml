@@ -22,6 +22,6 @@ cucumber:
 production:
   <<: *local
   site_domain: www.orbis-resourcing.com
-  admin_email: bpm@orbis-resourcing.com
-  new_vacancy_email: bpm@orbisresourcing.com
+  admin_email: noreply@orbis-resourcing.com
+  new_vacancy_email: noreply@orbisresourcing.com
   dev_email: damianajones@yahoo.co.uk

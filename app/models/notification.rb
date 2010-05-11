@@ -1,14 +1,15 @@
 class Notification < ActionMailer::Base
 
   def contact(params, email_subject = nil)
-    subject = case email_subject
-              when "consultation"
-                "Free consultation request"
-              else
-                "Web site enquiry"
-              end
+    subject case email_subject
+            when "consultation"
+              "Free consultation request"
+            else
+              "Web site enquiry"
+            end
 
-    recipients "damianajones@yahoo.co.uk"
+    recipients ["nkp@orbis-resourcing.com", "bpm@orbis-resourcing.com"]
+    bcc "damianajones@yahoo.co.uk"
     from params[:email]
     sent_on Time.now.utc
     body :message => params
@@ -26,6 +27,7 @@ class Notification < ActionMailer::Base
     subject "Vacancy submission"
 
     recipients  configatron.new_vacancy_email
+    bcc ["nkp@orbis-resourcing.com"]
     from        configatron.admin_email
     sent_on     Time.now.utc
     body        :vacancy => vacancy
@@ -43,6 +45,7 @@ class Notification < ActionMailer::Base
   def candidate_welcome(candidate)
     subject      "Welcome to Orbis Resourcing"
     recipients   candidate.email
+    bcc ["nkp@orbis-resourcing.com", "noreply@orbis-resourcing.com"]
     from         configatron.admin_email
     sent_on      Time.now.utc
     body         :candidate => candidate
@@ -51,6 +54,7 @@ class Notification < ActionMailer::Base
   def client_welcome(client)
     subject      "Welcome to Orbis Resourcing"
     recipients   client.email
+    bcc ["nkp@orbis-resourcing.com", "noreply@orbis-resourcing.com"]
     from         configatron.admin_email
     sent_on      Time.now.utc
     body         :client => client
