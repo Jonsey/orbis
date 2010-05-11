@@ -1,8 +1,10 @@
-Welcome <%= @candidate.firstname %>,
+<div>
+Welcome <%= @candidate.firstname %>,<br /><br />
 
-Your candidate account with Orbis Resourcing has been created with the following details:
+Your candidate account with Orbis Resourcing has been created with the following details:<br /><br />
 
-Login: <%= @candidate.email %>
-password: <%= @candidate.password %>
+Login: <%= @candidate.email %><br />
+password: <%= @candidate.password %><br /><br />
 
 <%= link_to_open "Login", candidate_login_url %>
+</div>

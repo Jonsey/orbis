@@ -1,12 +1,13 @@
+<div>
+A vacancy has been submitted for approval by  <%= @vacancy.client.to_s %> of <%= @vacancy.client.company_name %>.<br /><br />
 
-A vacancy has been submitted for approval by  <%= @vacancy.client.to_s %> of <%= @vacancy.client.company_name %>.
-
-Vacancy details:
+<strong>Vacancy details:</strong><br /><br />
 
 Title: <%= @vacancy.role %><br/>
 Category: <%= @vacancy.category.name %><br/>
 Salary: <%= @vacancy.role %><br/>
 Location: <%= @vacancy.role %><br/>
-Description: <%= @vacancy.role %><br/>
+Description: <%= @vacancy.role %><br/><br />
 
 You can edit and approve this vacancy at <%= link_to_open @vacancy.role, edit_admin_vacancy_url(@vacancy) %>
+</div>
