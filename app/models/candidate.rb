@@ -1,5 +1,6 @@
 class Candidate < User
   has_one :cv
+  attr_accessible :firstname, :lastname, :telephone, :cv
   # has_many :vacancies
   has_and_belongs_to_many :vacancies, :join_table => :applications
 
