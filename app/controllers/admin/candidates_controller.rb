@@ -22,7 +22,7 @@ class Admin::CandidatesController < ApplicationController
 
   def edit
     @candidate = Candidate.find_by_id(params[:id])
-   # @candidate.build_cv
+    @candidate.build_cv unless @candidate.cv
   end
 
   def show
