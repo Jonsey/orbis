@@ -6,7 +6,7 @@ Feature: Manage live vacancies
 
   Scenario: Edit a live vacancy as a staff member
     Given I am logged in as a staff
-      And I have a vacancy with status: "live"
+      And a vacancy exists with status: "live"
       Then a vacancy should exist with status: "live"
     When I go to the live vacancies page
       And I follow "edit"
@@ -28,7 +28,7 @@ Feature: Manage live vacancies
 
   Scenario: Archive a live vacancy as a staff member
     Given I am logged in as a staff
-      And I have a vacancy with status: "live"
+      And a vacancy exists with status: "live"
     When I go to the live vacancies page
       And I follow "edit"
       And I press "Archive"
