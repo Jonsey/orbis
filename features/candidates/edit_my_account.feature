@@ -23,4 +23,4 @@ Feature: Edit my account
     When I go to my client account page
       And I fill in "First name" with "New name"
       And I press "Update"
-    Then I should see "Editing: New name"
+    Then I should see "Editing: (Space tech) New name Jones"
