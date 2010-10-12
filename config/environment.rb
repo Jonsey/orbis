@@ -8,7 +8,7 @@ Rails::Initializer.run do |config|
   config.gem 'configatron'
   config.gem "authlogic"
   config.gem "lockdown"
- # config.gem "markup_validity"
+  config.gem "sanitize"
   config.gem "tidy_table"
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
   config.gem 'paperclip', :source => 'http://gemcutter.org'
@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
 end
 
 require 'formatted_form_for'
+require 'sanitize'
 
 #ActiveSupport::Inflector.inflections do |inflect|
 # inflect.irregular 'staff', 'staff'

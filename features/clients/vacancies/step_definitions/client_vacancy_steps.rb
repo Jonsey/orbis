@@ -11,7 +11,7 @@ end
 
 Given /^the following vacancies already exist:$/ do |vacancies|
   vacancies.hashes.each do |v|
-    Vacancy.create!(:category         => Category.find_by_name(v[:category]),
+    Vacancy.create!(:category         => Category.create!(:name => v[:category]),
                     :role             => v[:role],
                     :salary           => v[:salary],
                     :location         => v[:location],
