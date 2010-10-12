@@ -1,9 +1,9 @@
 <%= my_page_title "Candidate details" %>
 <div class="show-candidate">
   <fieldset>
-   <div class="row"> Name: <%=@candidate.to_s%></div>
+   <div class="row"> Name: <%= Sanitize.clean(@candidate.to_s)%></div>
   <div class="row"> Email: <%=mail_to @candidate.try(:email)%></div>
-  <div class="row"> Telephone: <%=@candidate.try(:telephone)%></div>
+  <div class="row"> Telephone: <%= Sanitize.clean(@candidate.try(:telephone))%></div>
  <div class="row"> <%=link_to "download cv", @candidate.try(:cv).try(:item).try(:url)%></div>
   </fieldset>
 </div>

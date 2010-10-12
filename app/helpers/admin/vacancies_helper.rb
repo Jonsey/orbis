@@ -43,10 +43,10 @@ private
       vacancies.each_with_index do |row, row_index|
         arr << %(<tr class="#{row_index % 2 == 0 ? 'even': 'odd'}">\r\n)
         arr << %(<td>#{check_box_tag("vacancy_ids[]", row.id, false, :id => "vacancy_#{row.id}", :class => 'checkall')}</td>\r\n)
-        arr << %(<td>#{row.role}</td>\r\n)
-        arr << %(<td>#{row.location}</td>\r\n)
-        arr << %(<td>#{row.salary}</td>\r\n)
-        arr << %(<td>#{row.category.to_s}</td>\r\n)
+        arr << %(<td>#{h row.role}</td>\r\n)
+        arr << %(<td>#{h row.location}</td>\r\n)
+        arr << %(<td>#{h row.salary}</td>\r\n)
+        arr << %(<td>#{h row.category.to_s}</td>\r\n)
         arr << %(<td>#{mail_to row.try(:staff).try(:email), row.try(:staff)}</td>\r\n) unless @status == "draft"
         arr << %(<td>#{mail_to row.try(:client).try(:email), row.try(:client) }</td>\r\n) if current_user.is_a?(Staff) || current_user_is_admin?
         arr << %(<td>#{image_link_to('icons/ico-view.png', 'preview', vacancy_path(row.id),{ }, :popup => [ 'Preview' , 'height=764,width=973,resizable=yes,scrollbars=yes'])})

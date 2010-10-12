@@ -8,16 +8,16 @@
   <div class="vacancy">
     <dl class="props">
       <dt>Role:</dt>
-      <dd><%= @vacancy.role %></dd>
+      <dd><%= Sanitize.clean(@vacancy.role) %></dd>
       <dt>Salary:</dt>
-      <dd><%= @vacancy.salary %></dd>
+      <dd><%= Sanitize.clean(@vacancy.salary) %></dd>
       <dt>Location:</dt>
-      <dd><%= @vacancy.location %></dd>
+      <dd><%= Sanitize.clean(@vacancy.location) %></dd>
     </dl>
     <div class="apply-box">
       <p>
         <% if current_user %>
-        <strong>Hi <%= current_user.firstname.camelize %>, </strong>
+        <strong>Hi <%= Sanitize.clean(current_user.firstname.camelize) %>, </strong>
         <% end %>
       </p>
       <p>Click the button below to apply for this job online.</p>

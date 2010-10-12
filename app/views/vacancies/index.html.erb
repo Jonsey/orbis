@@ -16,7 +16,7 @@
         </div>
         <ul class="list">
           <% @technology_vacancies.each do |vacancy| %>
-          <li><%= link_to "#{vacancy.role} - #{vacancy.location}", vacancy %></li>
+          <li><%= link_to "#{Sanitize.clean(vacancy.role)} - #{Sanitize.clean(vacancy.location)}", vacancy %></li>
           <% end %>
         </ul>
       </div>
@@ -30,7 +30,7 @@
         </div>
         <ul class="list">
           <% @finance_vacancies.each do |vacancy| %>
-          <li><%= link_to "#{vacancy.role} - #{vacancy.location}", vacancy %></li>
+          <li><%= link_to "#{Sanitize.clean(vacancy.role)} - #{Sanitize.clean(vacancy.location)}", vacancy %></li>
           <% end %>
         </ul>
       </div>

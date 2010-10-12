@@ -4,7 +4,7 @@ class Client < User
   validates_presence_of :firstname, :lastname, :telephone, :company_name
 
   def to_s
-    "(#{company_name.camelize}) #{firstname} #{lastname}"
+    Sanitize.clean("(#{company_name.camelize}) #{firstname} #{lastname}")
   end
 
   def default_vacancies_list

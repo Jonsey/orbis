@@ -46,7 +46,7 @@ class Vacancy < ActiveRecord::Base
   end
 
   def to_s
-    role
+    Sanitize.clean(role)
   end
 
   def to_param
