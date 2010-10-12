@@ -1,5 +1,6 @@
 class Client < User
   has_many :vacancies
+  attr_accessible :firstname, :lastname, :telephone, :company_name
 
   validates_presence_of :firstname, :lastname, :telephone, :company_name
 

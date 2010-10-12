@@ -1,5 +1,6 @@
 class Staff < User
   has_many :vacancies
+  attr_accessible :firstname, :lastname, :telephone
 
   def has_vacancies_awaiting_approval?
     !vacancies_awaiting_approval.empty?
