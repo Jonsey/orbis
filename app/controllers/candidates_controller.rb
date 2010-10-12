@@ -1,8 +1,10 @@
 class CandidatesController < ApplicationController
   layout 'main'
 
-  def index
 
+  def index
+    @page_title = 'Accounting and Finance Jobs and IT Recruitment Agency Orbis Resourcing in the UK - Candidates'
+    @meta = 'Orbis Resourcing are an accounting, finance jobs and IT recruitment agency based in the UK. As a candidate seeking permanent and/or contract positions, Orbis will provide you with a wide variety of rewarding and challenging opportunities.'
   end
 
   def new

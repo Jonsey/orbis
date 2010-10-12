@@ -3,7 +3,8 @@ class ClientsController < ApplicationController
 
 
   def index
-
+    @page_title = 'Recruitment Agency Orbis Resourcing Clients – Working With You'
+    @meta = 'Orbis Resourcing are a recruitment agency who specialise in sourcing jobs in the technology and financial business sectors. As a client of Orbis Resourcing you will receive many benefits from our training and job sourcing services.'
   end
 
   def new

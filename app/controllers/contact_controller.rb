@@ -3,6 +3,8 @@ class ContactController < ApplicationController
 
   def index
     # render index.html.erb
+    @page_title = 'Contact Information for Orbis Resourcing based in the UK'
+    @meta = 'Here you will find information to contact Orbis Resourcing for all your UK based finance and IT job sourcing requirements.'
   end
 
   def create
