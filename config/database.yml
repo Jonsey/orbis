@@ -27,9 +27,6 @@ production:
   username: orbis
   password: orgone642
   host: localhost
-  pid_file: shared/pids/mongrel.pid
-  log_file: shared/log/mongrel.log
-
 
 cucumber:
   <<: *TEST
