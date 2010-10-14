@@ -1,8 +1,8 @@
 <%= my_page_title "Staff details" %>
 <div class="show-staff">
   <fieldset>
-   <div class="row"> Name: <%= Sanitize.clean(@staff.to_s)%></div>
+   <div class="row"> Name: <%=h @staff.to_s%></div>
   <div class="row"> Email: <%=mail_to @staff.try(:email)%></div>
-  <div class="row"> Telephone: <%= Sanitize.clean(@staff.try(:telephone))%></div>
+  <div class="row"> Telephone: <%=h @staff.try(:telephone)%></div>
  </fieldset>
 </div>

@@ -1,14 +1,14 @@
 <div>
-  Role:<%= Sanitize.clean(@vacancy.role) %>
+  Role:<%=h @vacancy.role %>
 </div>
 <div>
-  Category:<%= Sanitize.clean(@vacancy.category.to_s) %>
+  Category:<%=h @vacancy.category.to_s %>
 </div>
 <div>
-  Salary:<%= Sanitize.clean(@vacancy.salary) %>
+  Salary:<%=h @vacancy.salary %>
 </div>
 <div>
-  Location:<%= Sanitize.clean(@vacancy.location) %>
+  Location:<%=h @vacancy.location %>
 </div>
 <div>
   Role description:<%= @vacancy.role_description %>

@@ -13,7 +13,7 @@ class Candidate < User
   end
 
   def to_s
-    Sanitize.clean("#{firstname} #{lastname}")
+    "#{firstname} #{lastname}"
   end
 
 end

@@ -22,7 +22,7 @@
 <%= link_to c.to_s, admin_candidate_path(c) %>
 </td>
     <td>
-    <%= Sanitize.clean(c.telephone) %>
+    <%=h c.telephone %>
 </td>
     <td>
     <%= mail_to c.email %>

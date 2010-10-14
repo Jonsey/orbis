@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    Sanitize.clean("#{firstname} #{lastname}".camelize)
+    "#{firstname} #{lastname}".camelize
   end
 
 end

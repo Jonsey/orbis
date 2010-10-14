@@ -1,8 +1,8 @@
 <%= my_page_title "Client details" %>
 <div class="show-client">
   <fieldset>
-   <div class="row"> Name: <%=Sanitize.clean(@client.to_s)%></div>
+   <div class="row"> Name: <%=h @client.to_s%></div>
   <div class="row"> Email: <%=mail_to @client.try(:email)%></div>
-  <div class="row"> Telephone: <%=Sanitize.clean(@client.try(:telephone))%></div>
+  <div class="row"> Telephone: <%=h @client.try(:telephone)%></div>
  </fieldset>
 </div>

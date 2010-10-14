@@ -6,7 +6,7 @@ Rails::Initializer.run do |config|
   config.load_paths += %W( #{RAILS_ROOT}/app/builders )
 
   config.gem 'configatron'
-  config.gem "sanitize", :version => "1.2.1"
+  #config.gem "sanitize", :version => "1.2.1"
   config.gem "authlogic"
   config.gem "lockdown"
   config.gem "tidy_table"
@@ -25,7 +25,7 @@ Rails::Initializer.run do |config|
 end
 
 require 'formatted_form_for'
-require 'sanitize'
+#require 'sanitize'
 
 #ActiveSupport::Inflector.inflections do |inflect|
 # inflect.irregular 'staff', 'staff'

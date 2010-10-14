@@ -8,16 +8,16 @@
   <div class="vacancy">
     <dl class="props">
       <dt>Role:</dt>
-      <dd><%= Sanitize.clean(@vacancy.role) %></dd>
+      <dd><%=h @vacancy.role %></dd>
       <dt>Salary:</dt>
-      <dd><%= Sanitize.clean(@vacancy.salary) %></dd>
+      <dd><%=h @vacancy.salary %></dd>
       <dt>Location:</dt>
-      <dd><%= Sanitize.clean(@vacancy.location) %></dd>
+      <dd><%=h @vacancy.location %></dd>
     </dl>
     <div class="apply-box">
       <p>
         <% if current_user %>
-        <strong>Hi <%= Sanitize.clean(current_user.firstname.camelize) %>, </strong>
+        <strong>Hi <%=h current_user.firstname.camelize %>, </strong>
         <% end %>
       </p>
       <p>Click the button below to apply for this job online.</p>
@@ -32,7 +32,7 @@
     </div>
     <div class="text">
       <div class="text-holder">
-        <p><%= Sanitaize.clean(@vacancy.role_description, :elements => ['b','p', 'h1', 'h2', 'h3', 'h4']) %></p>
+        <p><%= @vacancy.role_description %></p>
       </div>
       <% unless @vacancy.staff.nil? %>
       <p><%= @vacancy.staff.to_s %>: <%= mail_to @vacancy.staff.email, @vacancy.staff.email, :encode => "hex" %></p>
