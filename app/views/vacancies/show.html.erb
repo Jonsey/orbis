@@ -32,7 +32,7 @@
     </div>
     <div class="text">
       <div class="text-holder">
-        <p><%= @vacancy.role_description %></p>
+        <p><%= Sanitaize.clean(@vacancy.role_description, :elements => ['b','p', 'h1', 'h2', 'h3', 'h4']) %></p>
       </div>
       <% unless @vacancy.staff.nil? %>
       <p><%= @vacancy.staff.to_s %>: <%= mail_to @vacancy.staff.email, @vacancy.staff.email, :encode => "hex" %></p>
