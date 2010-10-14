@@ -6,9 +6,9 @@ Rails::Initializer.run do |config|
   config.load_paths += %W( #{RAILS_ROOT}/app/builders )
 
   config.gem 'configatron'
+  config.gem "sanitize", :version => "1.2.1"
   config.gem "authlogic"
   config.gem "lockdown"
-  config.gem "sanitize"
   config.gem "tidy_table"
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
   config.gem 'paperclip', :source => 'http://gemcutter.org'
