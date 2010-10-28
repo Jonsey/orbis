@@ -11,6 +11,11 @@ class Candidate < User
   def default_vacancies_list
     'live'
   end
+  
+  def deliver_welcome!
+    reset_perishable_token!
+    Notification.deliver_candidate_welcome(self)
+  end
 
   def to_s
     "#{firstname} #{lastname}"

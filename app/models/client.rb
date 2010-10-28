@@ -19,6 +19,11 @@ class Client < User
   def live_vacancies
     vacancies.with_status("live")
   end
+  
+  def deliver_welcome!
+    reset_perishable_token!
+    Notification.deliver_client_welcome(self)
+  end
 
   default_scope :order => "company_name, lastname, firstname"
 

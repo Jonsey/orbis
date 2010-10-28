@@ -12,10 +12,9 @@ class Admin::StaffsController < ApplicationController
     @staff = Staff.new(params[:staff])
     @staff.user_groups << UserGroup.find_by_name('Staffs')
     if @staff.save
-      add_lockdown_session_values
-      flash[:notice] = "Account created.."
-      Notification.deliver_staff_welcome(@staff)
-      redirect_to admin_vacancies_path
+      @staff.deliver_activation_instructions!
+      flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
+      redirect_to root_url
     else
       render :action => 'new'
     end

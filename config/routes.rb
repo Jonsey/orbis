@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # front end
   map.home '/home', :controller => 'home', :action => 'index'
+  map.activate '/activate/:activation_code', :controller => 'activations', :action => 'create'
 
   map.connect 'vacancy/:id', :controller => 'vacancies', :action => 'apply',
               :conditions => { :method => :put }

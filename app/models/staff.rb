@@ -17,6 +17,11 @@ class Staff < User
   def live_vacancies
     vacancies.with_status("live")
   end
+  
+  def deliver_welcome!
+    reset_perishable_token!
+    Notification.deliver_staff_welcome(self)
+  end
 
   default_scope :order => "lastname, firstname"
 

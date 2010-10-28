@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
     c.login_field = 'email'
   end
 
+  def activate!
+    self.active = true
+    save
+  end
 
   def default_vacancies_list
     'awaiting_approval'
@@ -15,6 +19,11 @@ class User < ActiveRecord::Base
   def deliver_password_reset_instructions!
     reset_perishable_token!
     Notification.deliver_password_reset_instructions(self)
+  end
+  
+  def deliver_activation_instructions!
+    reset_perishable_token!
+    Notification.deliver_activation_instructions(self)
   end
 
   def to_s
