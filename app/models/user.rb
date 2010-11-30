@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
+  acts_as_textcaptcha({'api_key' => 'dqx847dqs48c4g4gok0ogo008i925x27'})
   has_and_belongs_to_many :user_groups
 
-  attr_accessible :email, :password, :password_confirmation
+  attr_accessible :email, :password, :password_confirmation, :spam_answer, :cv_attributes, :possible_answers
+
 
   acts_as_authentic do |c|
     c.login_field = 'email'

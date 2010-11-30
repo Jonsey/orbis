@@ -9,16 +9,18 @@ class ClientsController < ApplicationController
 
   def new
     @client = Client.new
+    spamify(@client)
   end
 
   def create
-    @client = Client.new(params[:client])
+    @client = Client.new(params[:client].merge(:possible_answers => session[:possible_answers]))
     @client.user_groups << UserGroup.find_by_name('Clients')
     if @client.save_without_session_maintenance
       @client.deliver_activation_instructions!
       flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
       redirect_to root_url
     else
+      spamify(@client)
       render :action => 'new'
     end
   end

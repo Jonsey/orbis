@@ -6,6 +6,8 @@ Rails::Initializer.run do |config|
   config.load_paths += %W( #{RAILS_ROOT}/app/builders )
 
   config.gem 'configatron'
+  config.gem 'bcrypt-ruby', :lib => 'bcrypt'
+  config.gem 'acts_as_textcaptcha'
   #config.gem "sanitize", :version => "1.2.1"
   config.gem "authlogic"
   config.gem "lockdown"
@@ -13,6 +15,9 @@ Rails::Initializer.run do |config|
   config.gem "thoughtbot-factory_girl", :lib => "factory_girl", :source => "http://gems.github.com"
   config.gem 'paperclip', :source => 'http://gemcutter.org'
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
+
+
+
 
 
   config.time_zone = 'UTC'
