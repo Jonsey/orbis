@@ -1,0 +1,36 @@
+development: &non_production_settings
+  api_key: 8u5ixtdnq9csc84cok0owswgo
+  # bcrypt can be used to encrypt valid possible answers in your session; http://bcrypt-ruby.rubyforge.org/
+  # (recommended if you are using cookie session storage)
+  # NOTE: bcrypt_salt must be a valid bcrypt salt; for security PLEASE CHANGE THIS, open irb and enter; require 'bcrypt'; BCrypt::Engine.generate_salt
+  bcrypt_salt: $2a$10$j0bmycH.SVfD1b5mpEGPpe
+  # an optional logarithmic var which determines how computational expensive the hash is to calculate (a cost of 4 is twice as much work as a cost of 3)
+  bcrypt_cost: 10 # default is 10, must be > 4 (large number means slower encryption)
+  # if you'd rather NOT use bcrypt, just remove these two settings, bcrypt_salt and bcrypt_cost, valid possible answers will be MD5 digested in your session
+  questions:
+      - question: 'Is ice hot or cold?'
+        answers: 'cold'
+      - question: 'what color is an orange?'
+        answers: 'orange'
+      - question: 'what is two plus 3?'
+        answers: '5,five'
+      - question: 'what is 5 times two?'
+        answers: '10,ten'
+      - question: 'How many colors in the list, green, brown, foot and blue?'
+        answers: '3,three'
+      - question: 'what is Georges name?'
+        answers: 'george'
+      - question: '11 minus 1?'
+        answers: '10,ten'
+      - question: 'is boiling water hot or cold?'
+        answers: 'hot'
+      - question: 'what color is my blue shirt today?'
+        answers: 'blue'
+      - question: 'what is 16 plus 4?'
+        answers: '20,twenty'
+
+test:
+  *non_production_settings
+
+production:
+  *non_production_settings
