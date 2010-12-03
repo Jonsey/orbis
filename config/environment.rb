@@ -6,8 +6,8 @@ Rails::Initializer.run do |config|
   config.load_paths += %W( #{RAILS_ROOT}/app/builders )
 
   config.gem 'configatron'
-  config.gem 'bcrypt-ruby', :lib => 'bcrypt'
-  config.gem 'acts_as_textcaptcha'
+  config.gem 'bcrypt-ruby', :lib => 'bcrypt', :version => "2.1.2"
+  config.gem 'acts_as_textcaptcha', :version => "2.1.2"
   #config.gem "sanitize", :version => "1.2.1"
   config.gem "authlogic"
   config.gem "lockdown"
