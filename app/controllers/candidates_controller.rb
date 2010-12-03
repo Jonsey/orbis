@@ -10,18 +10,18 @@ class CandidatesController < ApplicationController
   def new
     @candidate = Candidate.new
     @candidate.build_cv
-    spamify(@candidate)
+    #spamify(@candidate)
   end
 
   def create
-    @candidate = Candidate.new(params[:candidate].merge(:possible_answers => session[:possible_answers]))
+    @candidate = Candidate.new(params[:candidate])
     @candidate.user_groups << UserGroup.find_by_name('Candidates')
     if @candidate.save_without_session_maintenance
       @candidate.deliver_activation_instructions!
       flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
       redirect_to root_url
     else
-      spamify(@candidate)
+      #spamify(@candidate)
       render :action => 'new'
     end
   end

@@ -15,15 +15,7 @@
               <%= f.text_field :email, :class => "txt", :label => "Email:" %>
               <%= f.text_area :enquiry, :cols => 10, :rows => 10, :class => "txt", :label => "Enquiry:" %>
 
-	      <%- if @contact.new_record? -%>
-		<%- if @contact.validate_spam_answer -%>
-		  <%= f.hidden_field :spam_answer, :value => @contact.spam_answer -%>
-		<%- else -%>
-		  <h3>Security question</h3>
-		  <%= f.label :spam_answer, @contact.spam_question %>
-		  <%= f.text_field :spam_answer, :value => '', :label => 'answer' %>
-		<%- end -%>
-	      <%- end -%>
+	
 
               <%= f.submit "Send enquiry" %>
             </fieldset>

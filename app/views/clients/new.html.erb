@@ -27,15 +27,7 @@
             <%= f.text_field :email, :label => "Email:", :class => "txt" %>
             <%= f.password_field :password, :label => "Password:", :class => "txt" %>
             <%= f.password_field :password_confirmation, :label => "Confirm password:", :class => "txt" %>
-	    <%- if @client.new_record? -%>
-		<%- if @client.validate_spam_answer -%>
-		  <%= f.hidden_field :spam_answer, :value => @client.spam_answer -%>
-		<%- else -%>
-		  <h3>Security question</h3>
-		  <%= f.label :spam_answer, @client.spam_question %>
-		  <%= f.text_field :spam_answer, :value => '', :label => 'answer' %>
-		<%- end -%>
-	      <%- end -%>
+	    
             <%= f.submit "Create Account" %>
           </fieldset>
         </div>

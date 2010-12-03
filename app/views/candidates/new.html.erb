@@ -34,16 +34,6 @@
             <%= f.text_field :email, :class => "txt", :label => "Email:" %>
             <%= f.password_field :password, :class => "txt", :label => "Password:" %>
             <%= f.password_field :password_confirmation, :class => "txt", :label => "Confirm password:" %>
-
-	  <%- if @candidate.new_record? -%>
-		<%- if @candidate.validate_spam_answer -%>
-		  <%= f.hidden_field :spam_answer, :value => @candidate.spam_answer -%>
-		<%- else -%>
-		  <h3>Security question</h3>
-		  <%= f.label :spam_answer, @candidate.spam_question %>
-		  <%= f.text_field :spam_answer, :value => '', :label => 'answer' %>
-		<%- end -%>
-	      <%- end -%>
           </fieldset>
         </div>
       </div>
