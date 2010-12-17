@@ -24,9 +24,9 @@ production:
   database: db21636_orbis_prod
   username: db21636_orbis
   password: Orgone654
-  socket: /var/run/mysqld/mysqld.sock
-  #host: internal-db.s21636.gridserver.com
-host: localhost
+  #socket: /var/run/mysqld/mysqld.sock
+  host: internal-db.s21636.gridserver.com
+#host: localhost
 
 
 cucumber:
