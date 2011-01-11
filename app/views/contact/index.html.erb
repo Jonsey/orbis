@@ -15,7 +15,7 @@
               <%= f.text_field :email, :class => "txt", :label => "Email:" %>
               <%= f.text_area :enquiry, :cols => 10, :rows => 10, :class => "txt", :label => "Enquiry:" %>
 
-	
+              <%= get_captcha() %>
 
               <%= f.submit "Send enquiry" %>
             </fieldset>

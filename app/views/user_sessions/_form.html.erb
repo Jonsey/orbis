@@ -3,6 +3,8 @@
   <%= f.error_messages %>
     <%= f.text_field :email, :class => "txt", :label => "Email address:" %>
     <%= f.password_field :password, :class => "txt", :label => "Password:" %>
+    <%= get_captcha() %>
+
   <div class='buttons clearfix'>
     <%= f.submit 'Login' %>
   </div>

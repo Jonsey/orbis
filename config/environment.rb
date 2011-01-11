@@ -9,6 +9,7 @@ Rails::Initializer.run do |config|
   #config.gem 'bcrypt-ruby', :lib => 'bcrypt'
   #config.gem 'acts_as_textcaptcha'
   #config.gem "sanitize", :version => "1.2.1"
+  config.gem 'ruby-recaptcha'
   config.gem "authlogic"
   config.gem "lockdown"
   config.gem "tidy_table"
@@ -30,6 +31,10 @@ Rails::Initializer.run do |config|
 end
 
 require 'formatted_form_for'
+
+RCC_PUB='6LdAYcASAAAAAJ2iabIrOLdF1c1USPah7o5BkSWl'
+RCC_PRIV='6LdAYcASAAAAAEhNRaJ_NuPlafmRYpTIHsd5vt8G'
+
 #require 'sanitize'
 
 #ActiveSupport::Inflector.inflections do |inflect|

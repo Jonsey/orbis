@@ -27,7 +27,7 @@
             <%= f.text_field :email, :label => "Email:", :class => "txt" %>
             <%= f.password_field :password, :label => "Password:", :class => "txt" %>
             <%= f.password_field :password_confirmation, :label => "Confirm password:", :class => "txt" %>
-	    
+	          <%= get_captcha() %>
             <%= f.submit "Create Account" %>
           </fieldset>
         </div>

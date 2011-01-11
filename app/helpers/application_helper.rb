@@ -1,4 +1,5 @@
 module ApplicationHelper
+  include ReCaptcha::ViewHelper
 
   def use_tinymce
     @content_for_tinymce = ""

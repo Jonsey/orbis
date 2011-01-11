@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include ReCaptcha::AppHelper
+  
   helper :all
   protect_from_forgery
 

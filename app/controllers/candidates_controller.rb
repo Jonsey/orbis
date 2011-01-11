@@ -16,7 +16,7 @@ class CandidatesController < ApplicationController
   def create
     @candidate = Candidate.new(params[:candidate])
     @candidate.user_groups << UserGroup.find_by_name('Candidates')
-    if @candidate.save_without_session_maintenance
+    if validate_recap(params, @candidate.errors) && @candidate.save_without_session_maintenance
       @candidate.deliver_activation_instructions!
       flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
       redirect_to root_url

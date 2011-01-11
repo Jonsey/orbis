@@ -19,8 +19,7 @@
           <%= f.text_field :lastname, :class => "txt", :label => "Last name:" %>
           <%= f.text_field :telephone, :class => "txt", :label => "Telephone:" %>
 
-
-
+          <%= get_captcha() %>
 
           <%= f.submit "Create Account" %>
         </fieldset>

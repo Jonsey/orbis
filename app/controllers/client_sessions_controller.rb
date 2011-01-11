@@ -6,7 +6,7 @@ class ClientSessionsController < UserSessionsController
 
   def create
     @user_session = UserSession.new(params[:user_session])
-    if @user_session.save
+    if validate_recap(params, @user_session.errors) &&  @user_session.save
       flash[:success] = "Welcome #{current_user.to_s}"
       set_lockdown_values
       redirect_to successful_login_path

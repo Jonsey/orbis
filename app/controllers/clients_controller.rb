@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(params[:client])
     @client.user_groups << UserGroup.find_by_name('Clients')
-    if @client.save_without_session_maintenance
+    if validate_recap(params, @client.errors) && @client.save_without_session_maintenance
       @client.deliver_activation_instructions!
       flash[:notice] = "Your account has been created. Please check your e-mail for your account activation instructions!"
       redirect_to root_url
